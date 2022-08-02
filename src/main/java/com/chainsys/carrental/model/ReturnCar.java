@@ -11,10 +11,10 @@ import javax.persistence.Table;
 @Table(name = "returncar")
 public class ReturnCar {
 	@Id
-	@Column(name = "CARREGNO")
-	private int carRegno;
+	@Column(name = "CARREGNO") 
+	private int carRegno;      //Foreign key
 	@Column(name = "CUSTOMERID")
-	private int customerId;
+	private int customerId;    //Foreign key
 	@Column(name = "FROMDATE")
 	private Date fromDate;
 	@Column(name = "DUEDATE")

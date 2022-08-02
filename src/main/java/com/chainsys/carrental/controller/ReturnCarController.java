@@ -41,7 +41,7 @@ public class ReturnCarController {
 	// content type ("application/json")
 	public String addNewReturnCar(@ModelAttribute("addreturncar") ReturnCar theCret) {
 		returnCarService.save(theCret);
-		return "redirect:/returncar/list";
+		return "redirect:/returncar/returncarlist";
 	}
 	@GetMapping("/updatereturncarform")
 	public String showUpdateReturnCarForm(@RequestParam("carregno") String id, Model model) {
@@ -52,13 +52,13 @@ public class ReturnCarController {
 	@PostMapping("/updatecarrental")
 	public String Updatereturncars(@ModelAttribute("updatecarrental") ReturnCar theCret) {
 		returnCarService.save(theCret);
-		return "redirect:/returncar/list";
+		return "redirect:/returncar/returncarlist";
 	}
 	@GetMapping("/deletecarrental")
 	public String deleteReturnCar(@RequestParam("carregno") String id) {
 		Optional<ReturnCar> theCret= returnCarService.findById(id);
 		returnCarService.deleteById(id);
-		return "redirect:/returncar/list";
+		return "redirect:/returncar/returncarlist";
 	}
 	@GetMapping("/findreturncarbyid")
 	public String findReturnCarById(@RequestParam("carregno") String id, Model model) {

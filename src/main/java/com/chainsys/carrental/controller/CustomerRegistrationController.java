@@ -40,7 +40,7 @@ public String showAddCustomerForm(Model model) {
 // content type ("application/json")
 public String addNewCustomer(@ModelAttribute("addcustomer") CustomerRegistration theCus) {
 	customerRegistrationService.save(theCus);
-	return "redirect:/customer/list";
+	return "redirect:/customer/customerlist";
 }
 @GetMapping("/updatecustomerform")
 public String showUpdateCustomerForm(@RequestParam("cusid") int id, Model model) {
@@ -51,13 +51,13 @@ public String showUpdateCustomerForm(@RequestParam("cusid") int id, Model model)
 @PostMapping("/updatecus")
 public String Updatecustomers(@ModelAttribute("updatecustomer") CustomerRegistration theCus) {
 	customerRegistrationService.save(theCus);
-	return "redirect:/customer/list";
+	return "redirect:/customer/customerlist";
 }
 @GetMapping("/deletecustomer")
 public String deleteCustomer(@RequestParam("cusid") int id) {
 	CustomerRegistration theCus = customerRegistrationService.findById(id);
 	customerRegistrationService.deleteById(id);
-	return "redirect:/customer/list";
+	return "redirect:/customer/customerlist";
 }
 @GetMapping("/findcustomerbyid")
 public String findCustomerById(@RequestParam("cusid") int id, Model model) {
@@ -66,8 +66,8 @@ public String findCustomerById(@RequestParam("cusid") int id, Model model) {
 	return "find-customer-by-id-form";
 }
 @GetMapping("/getcustomerrentals")
-public String getCustomerCarRentals(@RequestParam("cusid") int id,Model model,String i) {
-	CustomerRentalsDTO crdto =customerRegistrationService.getCustomerAndRentals(id,i);
+public String getCustomerCarRentals(@RequestParam("cusid") int id,Model model) {
+	CustomerRentalsDTO crdto =customerRegistrationService.getCustomerAndRentals(id);
 	model.addAttribute("getcus",crdto.getCustomerregistration());
 	model.addAttribute("rentallist",crdto.getRentallist());
 return "list-customer-carrental";

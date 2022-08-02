@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.model.CustomerRegistration;
@@ -29,12 +30,12 @@ public class CarRentalService {
 		return carRentalRepository.save(cr);
 	}
 
-	public Optional<CarRental> findById(String id) {
+	public Optional<CarRental> findById(CarRentalCompositekey id) {
 		return carRentalRepository.findById(id);
 	}
 
 //	@Transactional
-	public void deleteById(String id) {
+	public void deleteById(CarRentalCompositekey id) {
 		carRentalRepository.deleteById(id);
 	}
 }

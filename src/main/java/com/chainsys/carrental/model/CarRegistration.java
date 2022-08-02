@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class CarRegistration {
 	@Id
 	@Column(name = "CARREGNO")
-	private String carRegno;
+	private String carRegno;   //Primary key
 	@Column(name = "OWNERID")
 	private int ownerId;
 	@Column(name = "CARMAKE")

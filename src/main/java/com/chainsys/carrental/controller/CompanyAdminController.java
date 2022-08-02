@@ -40,7 +40,7 @@ public class CompanyAdminController {
 	// content type ("application/json")
 	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd) {
 		companyAdminService.save(theCmd);
-		return "redirect:/comadmin/list";
+		return "redirect:/comadmin/companyadminlist";
 	}
 
 	@GetMapping("/updateadminform")
@@ -53,14 +53,14 @@ public class CompanyAdminController {
 	@PostMapping("/updatecomadmin")
 	public String updateCompanyAdmin(@ModelAttribute("updatecompanyadmin") CompanyAdmin theCmd) {
 		companyAdminService.save(theCmd);
-		return "redirect:/comadmin/list";
+		return "redirect:/comadmin/companyadminlist";
 	}
 
 	@GetMapping("/deletecomadmin")
 	public String deleteCompanyAdmin(@RequestParam("userid") int id) {
 		CompanyAdmin theCmd = companyAdminService.findById(id);
 		companyAdminService.deleteById(id);
-		return "redirect:/comadmin/list";
+		return "redirect:/comadmin/companyadminlist";
 	}
 
 	@GetMapping("/findcomadminbyid")

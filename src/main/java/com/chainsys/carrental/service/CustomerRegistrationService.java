@@ -79,26 +79,16 @@ public class CustomerRegistrationService {
 //	}
 //}
 	@Transactional
-	public CustomerRentalsDTO getCustomerAndRentals(int id, String i) {
+	public CustomerRentalsDTO getCustomerAndRentals(int id) {
 
 		CustomerRegistration cus = findById(id);
 		CustomerRentalsDTO crdto = new CustomerRentalsDTO();
 		crdto.setCustomerregistration(cus);
-		CarRental cr = new CarRental();
-		cr.setCarRegno(i);
-		cr.setCustomerId(id);
-		Date dt = new Date(22, 12, 12);
-		cr.setFromDate(dt);
-		cr.setDueDate(dt);
-		cr.setRetailFee(id);
-		cr.setFuelLevel(i);
-		cr.setWorkingCondition(i);
-		crdto.addCarRental(cr);
-//		List<CarRental> carrentals= crerepo.findByCustomerId(id);
-//		  Iterator<CarRental> itr=carrentals.iterator();
-//        while(itr.hasNext()) {
-//        	crdto.addCarRental(CarRental) itr.next();
-
+	List<CarRental> carRentals = carRentalRepository.findByCustomerId(id);
+		  Iterator<CarRental> itr=carRentals.iterator();
+        while(itr.hasNext()) {
+        	crdto.addCarRental((CarRental) itr.next());
+        }
 		return crdto;
 	}
 }

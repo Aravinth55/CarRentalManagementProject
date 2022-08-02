@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class CompanyAdmin {
 	@Id
 	@Column(name = "USERID")
-	private int userId;
+	private int userId;    //Primary key
 	@Column(name = "USERNAME")
 	private String userName;
 	@Column(name = "USERPASSWORD")

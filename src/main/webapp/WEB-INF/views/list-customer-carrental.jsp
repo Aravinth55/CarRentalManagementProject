@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -12,49 +12,52 @@
 	<div id="root">
 		<div id="getcus">
 			<form:form action="" method="post" modelAttribute="getcus">
-			</div>
-			<div>
-				<label for="customerId">customer Id</label>
+
 				<div>
-					<form:input path="customerId" readonly="true"/>
+					<label for="customerId">customer Id</label>
+					<div>
+						<form:input path="customerId" readonly="true" />
+					</div>
 				</div>
-			</div>
-			<div>
-				<label for="customerName">Customer Name</label>
 				<div>
-					<form:input path="customerName" readonly="true"/>
+					<label for="customerName">Customer Name</label>
+					<div>
+						<form:input path="customerName" readonly="true" />
+					</div>
 				</div>
-			</div>
-			<div>
-				<label for="address">Address</label>
 				<div>
-					<form:input path="address" readonly="true"/>
+					<label for="address">Address</label>
+					<div>
+						<form:input path="address" readonly="true" />
+					</div>
 				</div>
-			</div>
-			<div>
-				<label for="gender">Gender</label>
 				<div>
-					<form:input path="gender" readonly="true"/>
+					<label for="gender">Gender</label>
+					<div>
+						<form:input path="gender" readonly="true" />
+					</div>
 				</div>
-			</div>
-			<div>
-				<label for="bloodGroup">Blood Group</label>
 				<div>
-					<form:input path="bloodGroup" readonly="true"/>
+					<label for="bloodGroup">Blood Group</label>
+					<div>
+						<form:input path="bloodGroup" readonly="true" />
+					</div>
 				</div>
-			</div>
-			<div>
-				<label for="personType">Person Type</label>
 				<div>
+					<label for="personType">Person Type</label>
+				</div>
 				<div>
-				<label for="joiningDate">Joining Date</label>
-				<div>
-					<form:input path="joiningDate" readonly="true"/>
-				</div></div>
+					<label for="joiningDate">Joining Date</label>
+					<div>
+						<form:input path="joiningDate" readonly="true" />
+					</div>
+				</div>
 			</form:form>
 		</div>
-		<div id="rentallist">
-	<table border="2" width="100%" cellpadding="2">
+	</div>
+
+	<div id="rentallist">
+		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
 					<th>carRegNo</th>
@@ -68,7 +71,7 @@
 			<tbody>
 				<c:forEach var="carrental" items="${rentallist}">
 					<tr>
-						<td>${carrental.carRegNo}</td>
+						<td>${carrental.carRegno}</td>
 						<td>${carrental.customerId}</td>
 						<td>${carrental.fromDate}</td>
 						<td>${carrental.dueDate}</td>
@@ -78,7 +81,10 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		</div>
+	</div>
 	</div>
 </body>
 </html>
+
+
+

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.service.CarRentalService;
@@ -41,28 +42,31 @@ public class CarRentalController {
 	// content type ("application/json")
 	public String addNewCarRental(@ModelAttribute("addcarrental") CarRental theCren) {
 		carRentalService.save(theCren);
-		return "redirect:/carrental/list";
+		return "redirect:/carrental/carrentallist";
 	}
 	@GetMapping("/updatecarrentalform")
-	public String showUpdateCarRentalForm(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRental> theCren = carRentalService.findById(id);
+	public String showUpdateCarRentalForm(@RequestParam("carregno") String id,@RequestParam("cusid") int cusid, Model model) {
+		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(id,cusid);
+		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		model.addAttribute("updatecarrental", theCren);
 		return "update-carrental-form";
 	}
-	@PostMapping("/updatecarren")
+	@PostMapping("/updatecarrental")
 	public String updateCarRentals(@ModelAttribute("updatecarrental") CarRental theCren) {
 		carRentalService.save(theCren);
-		return "redirect:/carrental/list";
+		return "redirect:/carrental/carrentallist";
 	}
-	@GetMapping("/deletecarren")
-	public String deleteCarRental(@RequestParam("carregno") String id) {
-		Optional<CarRental> theCren = carRentalService.findById(id);
-		carRentalService.deleteById(id);
-		return "redirect:/carrental/list";
+	@GetMapping("/deletecarrental")
+	public String deleteCarRental(@RequestParam("carregno") String id,@RequestParam("cusid") int cusid) {
+		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(id,cusid);
+//		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
+		carRentalService.deleteById(carRentalCompositekey);
+		return "redirect:/carrental/carrentallist";
 	}
 	@GetMapping("/findcarrentalbyid")
-	public String findCarRentalById(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRental> theCren = carRentalService.findById(id);
+	public String findCarRentalById(@RequestParam("carregno") String id,@RequestParam("cusid") int cusid, Model model) {
+		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(id,cusid);
+		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		model.addAttribute("findcarrentalbyid", theCren);
 		return "find-carrental-by-id-form";
 	}
