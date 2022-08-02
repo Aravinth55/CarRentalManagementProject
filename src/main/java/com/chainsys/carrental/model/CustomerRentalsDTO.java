@@ -5,15 +5,15 @@ import java.util.List;
 
 
 public class CustomerRentalsDTO {
-	private CustomerRegistration customerregistration;
+	private CustomerRegistration customerRegistration;
 	private List<CarRental> rentallist = new ArrayList<CarRental>();
 
 	public CustomerRegistration getCustomerregistration() {
-		return customerregistration;
+		return customerRegistration;
 	}
 
 	public void setCustomerregistration(CustomerRegistration customerregistration) {
-		this.customerregistration = customerregistration;
+		this.customerRegistration = customerregistration;
 	}
 
 	public List<CarRental> getRentallist() {

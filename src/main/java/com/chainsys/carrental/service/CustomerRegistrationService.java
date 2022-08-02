@@ -18,26 +18,31 @@ import com.chainsys.carrental.repository.CustomerRegistrationRepository;
 @Service
 public class CustomerRegistrationService {
 	@Autowired
-	private CustomerRegistrationRepository crrepo;
+	private CustomerRegistrationRepository  customerRegistrationRepository;
+
 	@Autowired
-	//CarRentalRepository crerepo;
+	private CarRentalRepository carRentalRepository;
 
 	public List<CustomerRegistration> getCustomers() {
-		List<CustomerRegistration> listCr = crrepo.findAll();
-		return listCr;
+		List<CustomerRegistration> listCustomer = customerRegistrationRepository.findAll();
+		return listCustomer;
 	}
-	//@Transactional
+
+	// @Transactional
 	public CustomerRegistration save(CustomerRegistration cr) {
 
-		return crrepo.save(cr);
+		return customerRegistrationRepository.save(cr);
 	}
+
 	public CustomerRegistration findById(int id) {
-		return crrepo.findById(id);
+		return customerRegistrationRepository.findById(id);
 	}
-	//@Transactional
+
+	// @Transactional
 	public void deleteById(int id) {
-		crrepo.deleteById(id);
+		customerRegistrationRepository.deleteById(id);
 	}
+
 //	public CustomerRentalsDTO getCustomerAndRentals(int id)
 //    {
 //        CustomerRegistration cus=findById(id);
@@ -74,22 +79,26 @@ public class CustomerRegistrationService {
 //	}
 //}
 	@Transactional
-	public CustomerRentalsDTO getCustomerAndRentals(int id,String i) {
-		
-		CustomerRegistration cus=findById(id);
-     CustomerRentalsDTO crdto=new CustomerRentalsDTO();
-      crdto.setCustomerregistration(cus);
-      CarRental cr=new CarRental();
-      cr.setCarRegNo(i);
- cr.setCustomerId(id);
- Date dt=new Date(22,12,12);
- cr.setFromDate(dt);
- cr.setDueDate(dt);
-cr.setRetailFee(id);
-cr.setFuelLevel(i);
-cr.setWorkingCondition(i);
-crdto.addCarRental(cr);
-	
-		return crdto ;
+	public CustomerRentalsDTO getCustomerAndRentals(int id, String i) {
+
+		CustomerRegistration cus = findById(id);
+		CustomerRentalsDTO crdto = new CustomerRentalsDTO();
+		crdto.setCustomerregistration(cus);
+		CarRental cr = new CarRental();
+		cr.setCarRegno(i);
+		cr.setCustomerId(id);
+		Date dt = new Date(22, 12, 12);
+		cr.setFromDate(dt);
+		cr.setDueDate(dt);
+		cr.setRetailFee(id);
+		cr.setFuelLevel(i);
+		cr.setWorkingCondition(i);
+		crdto.addCarRental(cr);
+//		List<CarRental> carrentals= crerepo.findByCustomerId(id);
+//		  Iterator<CarRental> itr=carrentals.iterator();
+//        while(itr.hasNext()) {
+//        	crdto.addCarRental(CarRental) itr.next();
+
+		return crdto;
 	}
 }

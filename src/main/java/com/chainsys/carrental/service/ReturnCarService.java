@@ -19,24 +19,24 @@ import com.chainsys.carrental.repository.ReturnCarRepository;
 @Service
 public class ReturnCarService {
 	@Autowired
-	private ReturnCarRepository crtrepo;
+	private ReturnCarRepository returnCarRepository;
 
 	public List<ReturnCar> getReturnCars() {
-		List<ReturnCar> listCre = crtrepo.findAll();
-		return listCre;
+		List<ReturnCar> listCarRental = returnCarRepository.findAll();
+		return listCarRental;
 	}
 
 	public ReturnCar save(ReturnCar cr) {
 
-		return crtrepo.save(cr);
+		return returnCarRepository.save(cr);
 	}
 
 	public Optional<ReturnCar> findById(String id) {
-		return crtrepo.findById(id);
+		return returnCarRepository.findById(id);
 	}
 
 //	@Transactional
 	public void deleteById(String id) {
-		crtrepo.deleteById(id);
+		returnCarRepository.deleteById(id);
 	}
 }

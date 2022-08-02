@@ -19,11 +19,11 @@ import com.chainsys.carrental.service.CompanyAdminService;
 public class CompanyAdminController {
 
 	@Autowired
-	private CompanyAdminService companyadminservice;
+	private CompanyAdminService companyAdminService;
 
-	@GetMapping("/list")
+	@GetMapping("/companyadminlist")
 	public String getCompanyAdmins(Model model) {
-		List<CompanyAdmin> allCmd = companyadminservice.getCompanyAdmins();
+		List<CompanyAdmin> allCmd = companyAdminService.getCompanyAdmins();
 		model.addAttribute("allcompanyadmins", allCmd);
 		return "list-companyadmins";
 	}
@@ -39,33 +39,33 @@ public class CompanyAdminController {
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
 	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd) {
-		companyadminservice.save(theCmd);
+		companyAdminService.save(theCmd);
 		return "redirect:/comadmin/list";
 	}
 
 	@GetMapping("/updateadminform")
 	public String showUpdateAdminForm(@RequestParam("userid") int id, Model model) {
-		CompanyAdmin theCren = companyadminservice.findById(id);
+		CompanyAdmin theCren = companyAdminService.findById(id);
 		model.addAttribute("updatecompanyadmin", theCren);
 		return "update-companyadmin-form";
 	}
 
 	@PostMapping("/updatecomadmin")
 	public String updateCompanyAdmin(@ModelAttribute("updatecompanyadmin") CompanyAdmin theCmd) {
-		companyadminservice.save(theCmd);
+		companyAdminService.save(theCmd);
 		return "redirect:/comadmin/list";
 	}
 
 	@GetMapping("/deletecomadmin")
 	public String deleteCompanyAdmin(@RequestParam("userid") int id) {
-		CompanyAdmin theCmd = companyadminservice.findById(id);
-		companyadminservice.deleteById(id);
+		CompanyAdmin theCmd = companyAdminService.findById(id);
+		companyAdminService.deleteById(id);
 		return "redirect:/comadmin/list";
 	}
 
 	@GetMapping("/findcomadminbyid")
 	public String findCompanyAdminById(@RequestParam("userid") int id, Model model) {
-		CompanyAdmin theCmd = companyadminservice.findById(id);
+		CompanyAdmin theCmd = companyAdminService.findById(id);
 		model.addAttribute("findcomadminbyid", theCmd);
 		return "find-companyadmin-by-id-form";
 	}

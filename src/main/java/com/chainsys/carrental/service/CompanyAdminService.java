@@ -18,24 +18,24 @@ import com.chainsys.carrental.repository.CustomerRegistrationRepository;
 @Service
 public class CompanyAdminService {
 	@Autowired
-	private CompanyAdminRepository cmrepo;
+	private CompanyAdminRepository  companyAdminRepository;
 
 	public List<CompanyAdmin> getCompanyAdmins() {
-		List<CompanyAdmin> listCre = cmrepo.findAll();
-		return listCre;
+		List<CompanyAdmin> listCompanyAdmin = companyAdminRepository.findAll();
+		return listCompanyAdmin;
 	}
 
 	public CompanyAdmin save(CompanyAdmin cr) {
 
-		return cmrepo.save(cr);
+		return companyAdminRepository.save(cr);
 	}
 
 	public CompanyAdmin findById(int id) {
-		return cmrepo.findById(id);
+		return companyAdminRepository.findById(id);
 	}
 
 //	@Transactional
 	public void deleteById(int id) {
-		cmrepo.deleteById(id);
+		companyAdminRepository.deleteById(id);
 	}
 }

@@ -14,9 +14,9 @@
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addcarrental">
 				<div>
-					<label for="carRegNo">Car RegNo</label>
+					<label for="carRegno">Car RegNo</label>
 					<div>
-						<form:input path="carRegNo" />
+						<form:input path="carRegno" />
 					</div>
 				</div>
 				<div>

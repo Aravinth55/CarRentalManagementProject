@@ -15,24 +15,24 @@ import com.chainsys.carrental.repository.CustomerRegistrationRepository;
 @Service
 public class CarRegistrationService {
 	@Autowired
-	private CarRegistrationRepository carrepo;
+	private CarRegistrationRepository carRegistrationRepository;
 
 	public List<CarRegistration> getCars() {
-		List<CarRegistration> listCar = carrepo.findAll();
-		return listCar;
+		List<CarRegistration> listCarRegistration = carRegistrationRepository.findAll();
+		return listCarRegistration;
 	}
 
 	public CarRegistration save(CarRegistration cr) {
 
-		return carrepo.save(cr);
+		return carRegistrationRepository.save(cr);
 	}
 
 	public Optional<CarRegistration>  findById(String id) {
-		return carrepo.findById(id);
+		return carRegistrationRepository.findById(id);
 	}
 
 //	@Transactional
 	public void deleteById(String id) {
-		carrepo.deleteById(id);
+		carRegistrationRepository.deleteById(id);
 	}
 }

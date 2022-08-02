@@ -12,11 +12,11 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updatecarren" method="post" modelAttribute="updatecarrental">
+			<form:form action="updatecarrental" method="post" modelAttribute="updatecarrental">
 				<div>
-					<label for="carRegNo">Car RegNo</label>
+					<label for="carRegno">Car RegNo</label>
 					<div>
-						<form:input path="carRegNo" />
+						<form:input path="carRegno" />
 					</div>
 				</div>
 				<div>

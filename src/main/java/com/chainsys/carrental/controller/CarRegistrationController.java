@@ -21,11 +21,11 @@ import com.chainsys.carrental.service.CarRegistrationService;
 public class CarRegistrationController {
 
 	@Autowired
-private	CarRegistrationService carservice;
+private	CarRegistrationService carRegistrationService;
 
-	@GetMapping("/list")
+	@GetMapping("/carlist")
 	public String getCarRegistrations(Model model) {
-		List<CarRegistration> allCars = carservice.getCars();
+		List<CarRegistration> allCars = carRegistrationService.getCars();
 		model.addAttribute("allcars", allCars);
 		return "list-cars";
 	}
@@ -41,33 +41,33 @@ private	CarRegistrationService carservice;
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
 	public String addNewCar(@ModelAttribute("addcar") CarRegistration theCar) {
-		carservice.save(theCar);
-		return "redirect:/car/list";
+		carRegistrationService.save(theCar);
+		return "redirect:/car/carlist";
 	}
 
 	@GetMapping("/updatecarform")
 	public String showUpdateCarForm(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRegistration> theCar = carservice.findById(id);
+		Optional<CarRegistration> theCar = carRegistrationService.findById(id);
 		model.addAttribute("updatecar", theCar);
 		return "update-car-form";
 	}
 
 	@PostMapping("/updatecar")
 	public String Updatecars(@ModelAttribute("updatecar") CarRegistration theCar) {
-		carservice.save(theCar);
-		return "redirect:/car/list";
+		carRegistrationService.save(theCar);
+		return "redirect:/car/carlist";
 	}
 
 	@GetMapping("/deletecar")
 	public String deleteCustomer(@RequestParam("carregno") String id) {
-		Optional<CarRegistration> theCar = carservice.findById(id);
-		carservice.deleteById(id);
-		return "redirect:/car/list";
+		Optional<CarRegistration> theCar = carRegistrationService.findById(id);
+		carRegistrationService.deleteById(id);
+		return "redirect:/car/carlist";
 	}
 
 	@GetMapping("/findcarbyid")
 	public String findCarById(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRegistration> theCar = carservice.findById(id);
+		Optional<CarRegistration> theCar = carRegistrationService.findById(id);
 		model.addAttribute("findcarbyid", theCar);
 		return "find-car-by-id-form";
 	}

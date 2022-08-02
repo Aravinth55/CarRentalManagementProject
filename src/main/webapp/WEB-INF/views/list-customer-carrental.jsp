@@ -12,51 +12,49 @@
 	<div id="root">
 		<div id="getcus">
 			<form:form action="" method="post" modelAttribute="getcus">
+			</div>
+			<div>
+				<label for="customerId">customer Id</label>
 				<div>
-				<label for="carRegno">carRegno</label>
-				<div>
-					<form:input path="carRegno" readonly="true"/>
+					<form:input path="customerId" readonly="true"/>
 				</div>
 			</div>
 			<div>
-				<label for="ownerId">ownerId</label>
+				<label for="customerName">Customer Name</label>
 				<div>
-					<form:input path="ownerId" readonly="true"/>
+					<form:input path="customerName" readonly="true"/>
 				</div>
 			</div>
 			<div>
-				<label for="carMake">carMake</label>
+				<label for="address">Address</label>
 				<div>
-					<form:input path="carMake" readonly="true"/>
+					<form:input path="address" readonly="true"/>
 				</div>
 			</div>
 			<div>
-				<label for="carModel">carModel</label>
+				<label for="gender">Gender</label>
 				<div>
-					<form:input path="carModel" readonly="true"/>
+					<form:input path="gender" readonly="true"/>
 				</div>
 			</div>
 			<div>
-				<label for="carColour">carColour</label>
+				<label for="bloodGroup">Blood Group</label>
 				<div>
-					<form:input path="carColour" readonly="true"/>
+					<form:input path="bloodGroup" readonly="true"/>
 				</div>
 			</div>
 			<div>
-				<label for="fuelType">fuelType</label>
+				<label for="personType">Person Type</label>
 				<div>
-					<form:input path="fuelType" readonly="true"/>
-				</div>
-			</div>
-			<div>
-				<label for="carCapacity">carCapacity</label>
 				<div>
-					<form:input path="carCapacity" readonly="true"/>
+				<label for="joiningDate">Joining Date</label>
+				<div>
+					<form:input path="joiningDate" readonly="true"/>
 				</div></div>
 			</form:form>
 		</div>
 		<div id="rentallist">
-		<table>
+	<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
 					<th>carRegNo</th>

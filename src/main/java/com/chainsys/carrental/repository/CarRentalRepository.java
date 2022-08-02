@@ -19,5 +19,5 @@ public interface CarRentalRepository extends CrudRepository<CarRental, String> {
 	List<CarRental> findAll();
 
 //	List<CarRental> getCarRental();
- //List<CarRental> findByCustomerId(String id);
+// List<CarRental> findByCustomerId(int id);
 }

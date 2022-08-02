@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class CarRental {
 	@Id
 	@Column(name = "CARREGNO")
-	private String carRegNo;
+	private String carRegno;
 	@Column(name = "CUSTOMERID")
 	private int customerId;
 	@Column(name = "FROMDATE")
@@ -26,14 +26,12 @@ public class CarRental {
 	@Column(name = "WORKINGCONDITION")
 	private String workingCondition;
 
-	
-
-	public String getCarRegNo() {
-		return carRegNo;
+	public String getCarRegno() {
+		return carRegno;
 	}
 
-	public void setCarRegNo(String carRegNo) {
-		this.carRegNo = carRegNo;
+	public void setCarRegno(String carRegno) {
+		this.carRegno = carRegno;
 	}
 
 	public int getCustomerId() {

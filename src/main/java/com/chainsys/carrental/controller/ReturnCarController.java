@@ -21,11 +21,11 @@ import com.chainsys.carrental.service.ReturnCarService;
 public class ReturnCarController {
 
 	@Autowired
-	ReturnCarService returncarservice;
+	ReturnCarService returnCarService;
 
-	@GetMapping("/list")
+	@GetMapping("/returncarlist")
 	public String getReturnCar(Model model) {
-		List<ReturnCar> allCret = returncarservice.getReturnCars();
+		List<ReturnCar> allCret = returnCarService.getReturnCars();
 		model.addAttribute("allreturncars", allCret);
 		return "list-returncars";
 	}
@@ -40,29 +40,29 @@ public class ReturnCarController {
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
 	public String addNewReturnCar(@ModelAttribute("addreturncar") ReturnCar theCret) {
-		returncarservice.save(theCret);
+		returnCarService.save(theCret);
 		return "redirect:/returncar/list";
 	}
 	@GetMapping("/updatereturncarform")
 	public String showUpdateReturnCarForm(@RequestParam("carregno") String id, Model model) {
-		Optional<ReturnCar> theCren = returncarservice.findById(id);
+		Optional<ReturnCar> theCren = returnCarService.findById(id);
 		model.addAttribute("updatecarrental", theCren);
 		return "update-returncar-form";
 	}
-	@PostMapping("/updatecarren")
+	@PostMapping("/updatecarrental")
 	public String Updatereturncars(@ModelAttribute("updatecarrental") ReturnCar theCret) {
-		returncarservice.save(theCret);
+		returnCarService.save(theCret);
 		return "redirect:/returncar/list";
 	}
-	@GetMapping("/deletecarren")
+	@GetMapping("/deletecarrental")
 	public String deleteReturnCar(@RequestParam("carregno") String id) {
-		Optional<ReturnCar> theCret= returncarservice.findById(id);
-		returncarservice.deleteById(id);
+		Optional<ReturnCar> theCret= returnCarService.findById(id);
+		returnCarService.deleteById(id);
 		return "redirect:/returncar/list";
 	}
 	@GetMapping("/findreturncarbyid")
 	public String findReturnCarById(@RequestParam("carregno") String id, Model model) {
-		Optional<ReturnCar> theCret = returncarservice.findById(id);
+		Optional<ReturnCar> theCret = returnCarService.findById(id);
 		model.addAttribute("findreturncarbyid", theCret);
 		return "find-returncar-by-id-form";
 	}

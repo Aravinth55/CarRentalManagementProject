@@ -20,11 +20,11 @@ import com.chainsys.carrental.service.CustomerRegistrationService;
 @RequestMapping("/customer")
 public class CustomerRegistrationController {
 @Autowired
-CustomerRegistrationService customerregistrationservice;
+CustomerRegistrationService customerRegistrationService;
 
-@GetMapping("/list")
+@GetMapping("/customerlist")
 public String getCustomerRegistrations(Model model) {
-	List<CustomerRegistration> allCustomers = customerregistrationservice.getCustomers();
+	List<CustomerRegistration> allCustomers = customerRegistrationService.getCustomers();
 	model.addAttribute("allcustomers",allCustomers);
 	return "list-customers";
 }
@@ -39,35 +39,35 @@ public String showAddCustomerForm(Model model) {
 // We need give from where to read data from the HTTP request and also the
 // content type ("application/json")
 public String addNewCustomer(@ModelAttribute("addcustomer") CustomerRegistration theCus) {
-	customerregistrationservice.save(theCus);
+	customerRegistrationService.save(theCus);
 	return "redirect:/customer/list";
 }
 @GetMapping("/updatecustomerform")
 public String showUpdateCustomerForm(@RequestParam("cusid") int id, Model model) {
-	CustomerRegistration theCus = customerregistrationservice.findById(id);
+	CustomerRegistration theCus = customerRegistrationService.findById(id);
 	model.addAttribute("updatecustomer", theCus);
 	return "update-customer-form";
 }
 @PostMapping("/updatecus")
 public String Updatecustomers(@ModelAttribute("updatecustomer") CustomerRegistration theCus) {
-	customerregistrationservice.save(theCus);
+	customerRegistrationService.save(theCus);
 	return "redirect:/customer/list";
 }
 @GetMapping("/deletecustomer")
 public String deleteCustomer(@RequestParam("cusid") int id) {
-	CustomerRegistration theCus = customerregistrationservice.findById(id);
-	customerregistrationservice.deleteById(id);
+	CustomerRegistration theCus = customerRegistrationService.findById(id);
+	customerRegistrationService.deleteById(id);
 	return "redirect:/customer/list";
 }
 @GetMapping("/findcustomerbyid")
 public String findCustomerById(@RequestParam("cusid") int id, Model model) {
-	CustomerRegistration theCus = customerregistrationservice.findById(id);
+	CustomerRegistration theCus = customerRegistrationService.findById(id);
 	model.addAttribute("findcustomerbyid", theCus);
 	return "find-customer-by-id-form";
 }
 @GetMapping("/getcustomerrentals")
 public String getCustomerCarRentals(@RequestParam("cusid") int id,Model model,String i) {
-	CustomerRentalsDTO crdto =customerregistrationservice.getCustomerAndRentals(id,i);
+	CustomerRentalsDTO crdto =customerRegistrationService.getCustomerAndRentals(id,i);
 	model.addAttribute("getcus",crdto.getCustomerregistration());
 	model.addAttribute("rentallist",crdto.getRentallist());
 return "list-customer-carrental";

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
 					<th>Car RegistrationNo</th>
@@ -26,7 +26,7 @@
 			<tbody>
 				<c:forEach var="ren" items="${allcarrentals}">
 					<tr>
-						<td>${ren.carRegNo}</td>
+						<td>${ren.carRegno}</td>
 						<td>${ren.customerId}</td>
 						<td>${ren.fromDate}</td>
 						<td>${ren.dueDate}</td>

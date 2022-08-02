@@ -21,11 +21,11 @@ import com.chainsys.carrental.service.CarRentalService;
 public class CarRentalController {
 
 	@Autowired
-	private CarRentalService carrentalservice;
+	private CarRentalService carRentalService;
 
-	@GetMapping("/list")
+	@GetMapping("/carrentallist")
 	public String getCarRentals(Model model) {
-		List<CarRental> allCren = carrentalservice.getCarRentals();
+		List<CarRental> allCren = carRentalService.getCarRentals();
 		model.addAttribute("allcarrentals", allCren);
 		return "list-carrentals";
 	}
@@ -40,29 +40,29 @@ public class CarRentalController {
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
 	public String addNewCarRental(@ModelAttribute("addcarrental") CarRental theCren) {
-		carrentalservice.save(theCren);
+		carRentalService.save(theCren);
 		return "redirect:/carrental/list";
 	}
 	@GetMapping("/updatecarrentalform")
 	public String showUpdateCarRentalForm(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRental> theCren = carrentalservice.findById(id);
+		Optional<CarRental> theCren = carRentalService.findById(id);
 		model.addAttribute("updatecarrental", theCren);
 		return "update-carrental-form";
 	}
 	@PostMapping("/updatecarren")
 	public String updateCarRentals(@ModelAttribute("updatecarrental") CarRental theCren) {
-		carrentalservice.save(theCren);
+		carRentalService.save(theCren);
 		return "redirect:/carrental/list";
 	}
 	@GetMapping("/deletecarren")
 	public String deleteCarRental(@RequestParam("carregno") String id) {
-		Optional<CarRental> theCren = carrentalservice.findById(id);
-		carrentalservice.deleteById(id);
+		Optional<CarRental> theCren = carRentalService.findById(id);
+		carRentalService.deleteById(id);
 		return "redirect:/carrental/list";
 	}
 	@GetMapping("/findcarrentalbyid")
 	public String findCarRentalById(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRental> theCren = carrentalservice.findById(id);
+		Optional<CarRental> theCren = carRentalService.findById(id);
 		model.addAttribute("findcarrentalbyid", theCren);
 		return "find-carrental-by-id-form";
 	}
