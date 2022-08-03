@@ -14,11 +14,16 @@
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addcarrental">
 				<div>
-					<label for="carRegno">Car RegNo</label>
-					<div>
-						<form:input path="carRegno" />
-					</div>
-				</div>
+                    <label for="carRegno">Car Registration No : </label>
+                    <div>
+                        <form:select path="carRegno">
+                            <c:forEach var="allCars" items="${allcars}">
+                                <form:option value="${allCars.carRegno}"
+                                    label="${allCars.carRegno}" />
+                            </c:forEach>
+                        </form:select>
+                    </div>
+                </div>
 				<div>
 					<label for=customerId>Customer Id</label>
 					<div>
@@ -28,12 +33,13 @@
 				<div>
 					<label for="fromDate">From Date</label>
 					<div>
-						<form:input path="fromDate" />
+						<form:input path="fromDate" type="date"/>
+					</div>
 					</div>
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
-							<form:input path="dueDate" />
+							<form:input path="dueDate" type="date"/>
 						</div>
 					</div>
 					<div>

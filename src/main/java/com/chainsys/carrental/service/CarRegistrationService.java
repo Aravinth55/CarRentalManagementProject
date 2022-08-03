@@ -35,4 +35,7 @@ public class CarRegistrationService {
 	public void deleteById(String id) {
 		carRegistrationRepository.deleteById(id);
 	}
+	public List<CarRegistration> allCarRegistration(){
+		return carRegistrationRepository.findAll();
+	}
 }

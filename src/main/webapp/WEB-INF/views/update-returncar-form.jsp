@@ -30,12 +30,12 @@
 					<div>
 						<label for="fromDate">From Date</label>
 						<div>
-							<form:input path="fromDate" />
+							<form:input path="fromDate" type="date"/>
 						</div>
 						<div>
 							<label for="dueDate">Due Date</label>
 							<div>
-								<form:input path="dueDate" />
+								<form:input path="dueDate" type="date"/>
 							</div>
 						</div>
 						<div>

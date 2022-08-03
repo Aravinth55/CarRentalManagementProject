@@ -60,9 +60,8 @@
 					<div>
 						<form:input path="carAvailable" />
 					</div>
-					
 						<div>
-							<form:button>Add New Car</form:button>
+							<form:button>Add New CarRegistration</form:button>
 						</div>
 			</form:form>
 		</div>

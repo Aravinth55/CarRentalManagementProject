@@ -1,18 +1,28 @@
 package com.chainsys.carrental.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
+import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
 
 @Entity
 @Table(name = "returncar")
+@IdClass(ReturnCarCompositekey.class)
 public class ReturnCar {
 	@Id
 	@Column(name = "CARREGNO") 
-	private int carRegno;      //Foreign key
+	private String carRegno;      //Foreign key
+	@Id
 	@Column(name = "CUSTOMERID")
 	private int customerId;    //Foreign key
 	@Column(name = "FROMDATE")
@@ -26,11 +36,23 @@ public class ReturnCar {
 	@Column(name = "TOTALFEE")
 	private float totalFee;
 
-	public int getCarRegno() {
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "CUSTOMERID", nullable = false, insertable = false, updatable = false)
+	private CustomerRegistration customerRegistration;
+
+	public CustomerRegistration getCustomerRegistration() {
+		return customerRegistration;
+	}
+
+	public void setCustomerRegistration(CustomerRegistration customerRegistration) {
+		this.customerRegistration = customerRegistration;
+	}
+
+	public String getCarRegno() {
 		return carRegno;
 	}
 
-	public void setCarRegno(int carRegno) {
+	public void setCarRegno(String carRegno) {
 		this.carRegno = carRegno;
 	}
 

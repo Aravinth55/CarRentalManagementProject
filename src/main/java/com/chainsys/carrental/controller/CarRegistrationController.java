@@ -32,6 +32,8 @@ private	CarRegistrationService carRegistrationService;
 
 	@GetMapping("/addcarform")
 	public String showAddCarForm(Model model) {
+		List<CarRegistration>allCarRegistration=carRegistrationService.allCarRegistration();
+		model.addAttribute("allcars", allCarRegistration);
 		CarRegistration theCar = new CarRegistration();
 		model.addAttribute("addcar", theCar);
 		return "add-car-form";

@@ -1,6 +1,7 @@
 package com.chainsys.carrental.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ public class CarRental {
 	private String carRegno; // Foreign key
 	@Id
 	@Column(name = "CUSTOMERID")
-	private int customerId; // Foreign key //many to one
+	private int customerId; // Foreign key    //many to one
 	@Column(name = "FROMDATE")
 	private Date fromDate;
 	@Column(name = "DUEDATE")

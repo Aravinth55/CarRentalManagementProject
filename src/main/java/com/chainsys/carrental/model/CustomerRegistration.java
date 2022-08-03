@@ -1,6 +1,6 @@
 package com.chainsys.carrental.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -33,9 +33,20 @@ public class CustomerRegistration {
 	
 	@OneToMany(mappedBy = "customerRegistration", fetch = FetchType.LAZY)
 	private List<CarRental> carRentals;
-
+	@OneToMany(mappedBy = "customerRegistration", fetch = FetchType.LAZY)
+	private List<ReturnCar> returnCars;	
+	
+	
 	public List<CarRental> getCarRentals() {
 		return carRentals;
+	}
+
+	public List<ReturnCar> getReturnCars() {
+		return returnCars;
+	}
+
+	public void setReturnCars(List<ReturnCar> returnCars) {
+		this.returnCars = returnCars;
 	}
 
 	public void setCarRentals(List<CarRental> carRentals) {

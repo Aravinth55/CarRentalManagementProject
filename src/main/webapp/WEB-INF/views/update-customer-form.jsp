@@ -57,7 +57,7 @@
 					<div>
 						<label for="joiningDate">Joining Date</label>
 						<div>
-							<form:input path="joiningDate" />
+							<form:input path="joiningDate" type="date"/>
 						</div>
 						<div>
 							<form:button>Update Customer</form:button>

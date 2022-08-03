@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.model.CustomerRentalsDTO;
+import com.chainsys.carrental.model.CustomerReturnCarsDTO;
 import com.chainsys.carrental.service.CustomerRegistrationService;
 
 @Controller
@@ -22,10 +23,12 @@ public class CustomerRegistrationController {
 @Autowired
 CustomerRegistrationService customerRegistrationService;
 
+
 @GetMapping("/customerlist")
 public String getCustomerRegistrations(Model model) {
 	List<CustomerRegistration> allCustomers = customerRegistrationService.getCustomers();
 	model.addAttribute("allcustomers",allCustomers);
+	
 	return "list-customers";
 }
 @GetMapping("/addcustomerform")
@@ -71,5 +74,12 @@ public String getCustomerCarRentals(@RequestParam("cusid") int id,Model model) {
 	model.addAttribute("getcus",crdto.getCustomerregistration());
 	model.addAttribute("rentallist",crdto.getRentallist());
 return "list-customer-carrental";
+}
+@GetMapping("/getcustomerreturncars")
+public String getCustomerReturnCars(@RequestParam("cusid") int id,Model model) {
+	CustomerReturnCarsDTO credto =customerRegistrationService.getCustomerAndReturnCars(id);
+	model.addAttribute("getcus",credto.getCustomerRegistration());
+	model.addAttribute("returncarlist",credto.getReturnCarList());
+return "list-customer-returncar";
 }
 }

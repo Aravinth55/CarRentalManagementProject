@@ -33,7 +33,7 @@
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
-							<form:input path="dueDate" />
+							<form:input path="dueDate" type="date"/>
 						</div>
 					</div>
 					<div>
@@ -45,7 +45,7 @@
 					<div>
 						<label for="fuelLevel">Fuel Level</label>
 						<div>
-							<form:input path="fuelLevel" />
+							<form:input path="fuelLevel"  type="date"/>
 						</div>
 					</div>
 					<div>

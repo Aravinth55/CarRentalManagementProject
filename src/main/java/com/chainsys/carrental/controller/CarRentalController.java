@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CarRental;
+import com.chainsys.carrental.service.CarRegistrationService;
 import com.chainsys.carrental.service.CarRentalService;
 
 @Controller
@@ -23,6 +24,8 @@ public class CarRentalController {
 
 	@Autowired
 	private CarRentalService carRentalService;
+	@Autowired
+	private CarRegistrationService carRegistrationService;
 
 	@GetMapping("/carrentallist")
 	public String getCarRentals(Model model) {
@@ -32,6 +35,8 @@ public class CarRentalController {
 	}
 	@GetMapping("/addcarrentalform")
 	public String showAddCarRentalForm(Model model) {
+		List<CarRegistration>allCarRegistration=carRegistrationService.allCarRegistration();
+		model.addAttribute("allcars", allCarRegistration);
 		CarRental theCren = new CarRental();
 		model.addAttribute("addcarrental", theCren);
 		return "add-carrental-form";

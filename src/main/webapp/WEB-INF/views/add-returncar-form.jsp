@@ -15,9 +15,14 @@
 			<form:form action="add" method="post" modelAttribute="addreturncar">
 				<div>
 					<label for="carRegno">Car RegNo</label>
-					<div>
-						<form:input path="carRegno" />
-					</div>
+					 <div>
+                        <form:select path="carRegno">
+                            <c:forEach var="allCars" items="${allcars}">
+                                <form:option value="${allCars.carRegno}"
+                                    label="${allCars.carRegno}" />
+                            </c:forEach>
+                        </form:select>
+                    </div>
 				</div>
 				<div>
 					<label for=customerId>Customer Id</label>
@@ -28,12 +33,12 @@
 				<div>
 					<label for="fromDate">From Date</label>
 					<div>
-						<form:input path="fromDate" />
+						<form:input path="fromDate" type="date"/>
 					</div>
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
-							<form:input path="dueDate" />
+							<form:input path="dueDate" type="date"/>
 						</div>
 					</div>
 					<div>

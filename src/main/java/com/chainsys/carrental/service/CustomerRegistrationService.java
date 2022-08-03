@@ -12,8 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.model.CustomerRentalsDTO;
+import com.chainsys.carrental.model.CustomerReturnCarsDTO;
+import com.chainsys.carrental.model.ReturnCar;
 import com.chainsys.carrental.repository.CarRentalRepository;
 import com.chainsys.carrental.repository.CustomerRegistrationRepository;
+import com.chainsys.carrental.repository.ReturnCarRepository;
 
 @Service
 public class CustomerRegistrationService {
@@ -22,6 +25,9 @@ public class CustomerRegistrationService {
 
 	@Autowired
 	private CarRentalRepository carRentalRepository;
+	
+	@Autowired
+	private ReturnCarRepository returnCarRepository;
 
 	public List<CustomerRegistration> getCustomers() {
 		List<CustomerRegistration> listCustomer = customerRegistrationRepository.findAll();
@@ -90,5 +96,18 @@ public class CustomerRegistrationService {
         	crdto.addCarRental((CarRental) itr.next());
         }
 		return crdto;
+	}
+	@Transactional
+	public CustomerReturnCarsDTO getCustomerAndReturnCars(int id) {
+
+		CustomerRegistration cus = findById(id);
+		CustomerReturnCarsDTO carReturndto = new CustomerReturnCarsDTO();
+		carReturndto.setCustomerRegistration(cus);
+	List<ReturnCar> returnCar = returnCarRepository.findByCustomerId(id);
+		  Iterator<ReturnCar> itr=returnCar.iterator();
+        while(itr.hasNext()) {
+        	carReturndto.addReturnCar((ReturnCar) itr.next());
+        }
+		return carReturndto;
 	}
 }

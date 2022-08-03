@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.ReturnCar;
+import com.chainsys.carrental.service.CarRegistrationService;
 import com.chainsys.carrental.service.ReturnCarService;
 
 @Controller
@@ -22,6 +23,10 @@ public class ReturnCarController {
 
 	@Autowired
 	ReturnCarService returnCarService;
+	
+	@Autowired
+	private CarRegistrationService carRegistrationService;
+
 
 	@GetMapping("/returncarlist")
 	public String getReturnCar(Model model) {
@@ -31,6 +36,8 @@ public class ReturnCarController {
 	}
 	@GetMapping("/addreturncarform")
 	public String showAddReturnCarForm(Model model) {
+		List<CarRegistration>allCarRegistration=carRegistrationService.allCarRegistration();
+		model.addAttribute("allcars", allCarRegistration);
 		ReturnCar theCret = new ReturnCar();
 		model.addAttribute("addreturncar", theCret);
 		return "add-returncar-form";
