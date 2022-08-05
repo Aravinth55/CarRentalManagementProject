@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CarRental;
+import com.chainsys.carrental.model.CompanyAdmin;
 import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.model.CustomerRentalsDTO;
 import com.chainsys.carrental.model.CustomerReturnCarsDTO;
@@ -47,6 +49,12 @@ public class CustomerRegistrationService {
 	// @Transactional
 	public void deleteById(int id) {
 		customerRegistrationRepository.deleteById(id);
+	}
+	public List<CustomerRegistration> allCustomerRegistration(){
+		return customerRegistrationRepository.findAll();
+	}
+	public CustomerRegistration getCustomerIdAndCustomerPassword(int customerId,String customerPassword) {
+		return customerRegistrationRepository.findByCustomerIdAndCustomerPassword(customerId, customerPassword);    //login method 
 	}
 
 //	public CustomerRentalsDTO getCustomerAndRentals(int id)

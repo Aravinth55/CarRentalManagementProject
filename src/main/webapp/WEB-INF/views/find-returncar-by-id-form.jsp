@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="" method="get" modelAttribute="findreturncarbyid">
 				<div>
 					<label for="carRegno">Car RegNo</label>
@@ -29,6 +29,7 @@
 					<label for="fromDate">From Date</label>
 					<div>
 						<form:input path="fromDate" readonly="true" />
+					</div>
 					</div>
 					<div>
 						<label for="dueDate">Due Date</label>
@@ -56,7 +57,6 @@
 					</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

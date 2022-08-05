@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="updatecarrental" method="post" modelAttribute="updatecarrental">
 				<div>
 					<label for="carRegno">Car RegNo</label>
@@ -30,6 +30,7 @@
 					<div>
 						<form:input path="fromDate" />
 					</div>
+				</div>
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
@@ -53,12 +54,12 @@
 						<div>
 							<form:input path="workingCondition" />
 						</div>
+						</div>
 						<div>
 							<form:button>Update Car Rental</form:button>
 						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

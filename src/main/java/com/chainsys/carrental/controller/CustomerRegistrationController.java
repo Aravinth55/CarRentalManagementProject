@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.carrental.model.CarRegistration;
+import com.chainsys.carrental.model.CompanyAdmin;
 import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.model.CustomerRentalsDTO;
 import com.chainsys.carrental.model.CustomerReturnCarsDTO;
@@ -68,7 +69,7 @@ public String findCustomerById(@RequestParam("cusid") int id, Model model) {
 	model.addAttribute("findcustomerbyid", theCus);
 	return "find-customer-by-id-form";
 }
-@GetMapping("/getcustomerrentals")
+@GetMapping("/getcustomerrentalcars")
 public String getCustomerCarRentals(@RequestParam("cusid") int id,Model model) {
 	CustomerRentalsDTO crdto =customerRegistrationService.getCustomerAndRentals(id);
 	model.addAttribute("getcus",crdto.getCustomerregistration());
@@ -81,5 +82,19 @@ public String getCustomerReturnCars(@RequestParam("cusid") int id,Model model) {
 	model.addAttribute("getcus",credto.getCustomerRegistration());
 	model.addAttribute("returncarlist",credto.getReturnCarList());
 return "list-customer-returncar";
+}
+@GetMapping("/customerloginpage")
+public String CustomerLogin(Model model) {
+	CustomerRegistration  customerRegistration=new CustomerRegistration();
+	model.addAttribute("cuslogin", customerRegistration);
+	return "customer-login-form";
+}
+@PostMapping("/customerlogin")
+public String checkingAccess(@ModelAttribute("cuslogin") CustomerRegistration theCus) {
+	CustomerRegistration  customerRegistration=customerRegistrationService.getCustomerIdAndCustomerPassword(theCus.getCustomerId(),theCus.getCustomerPassword());
+	if(customerRegistration!=null) {
+		return "redirect:/home/customer";
+	}else
+		return "Invalid-user-error";
 }
 }

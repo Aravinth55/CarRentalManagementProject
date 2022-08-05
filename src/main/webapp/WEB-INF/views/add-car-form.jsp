@@ -11,9 +11,9 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			 <form:form action="add" method="post"
-                modelAttribute="addcar">
+                modelAttribute="addcar" >
 				<div>
 					<label for="carRegno">Car RegNo</label>
 					<div>
@@ -30,6 +30,7 @@
 					<label for="carMake">Car Make</label>
 					<div>
 						<form:input path="carMake" />
+					</div>
 					</div>
 				<div>
 					<label for="carModel">Car Model</label>
@@ -60,12 +61,12 @@
 					<div>
 						<form:input path="carAvailable" />
 					</div>
+					</div>
 						<div>
 							<form:button>Add New CarRegistration</form:button>
 						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

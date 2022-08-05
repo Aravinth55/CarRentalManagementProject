@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="" method="post" modelAttribute="findcarbyid">
 				<div>
 					<label for="carRegno">Car RegNo</label>
@@ -29,6 +29,7 @@
 					<label for="carMake">Car Make</label>
 					<div>
 						<form:input path="carMake" readonly="true"/>
+					</div>
 					</div>
 					<div>
 						<label for="carModel">Car Model</label>
@@ -59,9 +60,9 @@
 						<div>
 							<form:input path="carAvailable" readonly="true"/>
 						</div>
+						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

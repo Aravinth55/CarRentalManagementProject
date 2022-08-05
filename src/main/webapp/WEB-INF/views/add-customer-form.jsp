@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			 <form:form action="add" method="post"
                 modelAttribute="addcustomer">
 				<div>
@@ -24,6 +24,12 @@
 					<label for="customerName">Customer Name</label>
 					<div>
 						<form:input path="customerName" />
+					</div>
+				</div>
+				<div>
+					<label for="customerPassword">Customer Password</label>
+					<div>
+						<form:input path="customerPassword" />
 					</div>
 				</div>
 				<div>
@@ -41,7 +47,9 @@
 				<div>
 					<label for="gender">Gender</label>
 					<div>
-						<form:input path="gender" />
+						<form:radiobutton path="gender"  value="Male"/>Male
+							<form:radiobutton path="gender"  value="Female"/>Female
+							<form:radiobutton path="gender"  value="Transgender"/>Transgender
 					</div>
 				</div>
 				<div>
@@ -53,19 +61,22 @@
 				<div>
 					<label for="personType">Person Type</label>
 					<div>
-						<form:input path="personType" />
+						<form:radiobutton path="personType" value="Customer"/>Customer
+							<form:radiobutton path="personType" value="Owner"/>Owner
+				
+					</div>
 					</div>
 					<div>
 						<label for="joiningDate">Joining Date</label>
 						<div>
 							<form:input path="joiningDate" type="date"/>
 						</div>
+						</div>
 						<div>
 							<form:button>Add New Customer</form:button>
 						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

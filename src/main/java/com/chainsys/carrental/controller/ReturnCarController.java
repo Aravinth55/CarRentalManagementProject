@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
+import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
 import com.chainsys.carrental.model.CarRegistration;
+import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.model.ReturnCar;
 import com.chainsys.carrental.service.CarRegistrationService;
+import com.chainsys.carrental.service.CustomerRegistrationService;
 import com.chainsys.carrental.service.ReturnCarService;
 
 @Controller
@@ -23,10 +27,12 @@ public class ReturnCarController {
 
 	@Autowired
 	ReturnCarService returnCarService;
-	
+
 	@Autowired
 	private CarRegistrationService carRegistrationService;
 
+	@Autowired
+	private CustomerRegistrationService customerRegistrationService;
 
 	@GetMapping("/returncarlist")
 	public String getReturnCar(Model model) {
@@ -34,10 +40,13 @@ public class ReturnCarController {
 		model.addAttribute("allreturncars", allCret);
 		return "list-returncars";
 	}
+
 	@GetMapping("/addreturncarform")
 	public String showAddReturnCarForm(Model model) {
-		List<CarRegistration>allCarRegistration=carRegistrationService.allCarRegistration();
-		model.addAttribute("allcars", allCarRegistration);
+		List<CarRegistration> allCarRegistration=carRegistrationService.allCarRegistration();
+		model.addAttribute("allCars", allCarRegistration);
+		List<CustomerRegistration> allCustomerRegistration=customerRegistrationService.allCustomerRegistration();
+		model.addAttribute("allCustomer", allCustomerRegistration);
 		ReturnCar theCret = new ReturnCar();
 		model.addAttribute("addreturncar", theCret);
 		return "add-returncar-form";
@@ -50,26 +59,34 @@ public class ReturnCarController {
 		returnCarService.save(theCret);
 		return "redirect:/returncar/returncarlist";
 	}
+
 	@GetMapping("/updatereturncarform")
-	public String showUpdateReturnCarForm(@RequestParam("carregno") String id, Model model) {
-		Optional<ReturnCar> theCren = returnCarService.findById(id);
-		model.addAttribute("updatecarrental", theCren);
+	public String showUpdateReturnCarForm(@RequestParam("carregno") String id, @RequestParam("cusid") int cusid,
+			Model model) {
+		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(id, cusid);
+		Optional<ReturnCar> theCren = returnCarService.findById(returnCarCompositekey);
+		model.addAttribute("updatereturncar", theCren);
 		return "update-returncar-form";
 	}
-	@PostMapping("/updatecarrental")
-	public String Updatereturncars(@ModelAttribute("updatecarrental") ReturnCar theCret) {
+
+	@PostMapping("/updatereturncar")
+	public String Updatereturncars(@ModelAttribute("updatereturncar") ReturnCar theCret) {
 		returnCarService.save(theCret);
 		return "redirect:/returncar/returncarlist";
 	}
-	@GetMapping("/deletecarrental")
-	public String deleteReturnCar(@RequestParam("carregno") String id) {
-		Optional<ReturnCar> theCret= returnCarService.findById(id);
-		returnCarService.deleteById(id);
+
+	@GetMapping("/deletereturncar")
+	public String deleteReturnCar(@RequestParam("carregno") String id, @RequestParam("cusid") int cusid) {
+		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(id, cusid);
+		Optional<ReturnCar> theCret = returnCarService.findById(returnCarCompositekey);
+		returnCarService.deleteById(returnCarCompositekey);
 		return "redirect:/returncar/returncarlist";
 	}
+
 	@GetMapping("/findreturncarbyid")
-	public String findReturnCarById(@RequestParam("carregno") String id, Model model) {
-		Optional<ReturnCar> theCret = returnCarService.findById(id);
+	public String findReturnCarById(@RequestParam("carregno") String id, @RequestParam("cusid") int cusid,Model model) {
+		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(id, cusid);
+		Optional<ReturnCar> theCret = returnCarService.findById(returnCarCompositekey);
 		model.addAttribute("findreturncarbyid", theCret);
 		return "find-returncar-by-id-form";
 	}

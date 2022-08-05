@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="getcus">
+		<div id="getcus" align="center">
 			<form:form action="" method="post" modelAttribute="getcus">
 
 				<div>
@@ -23,6 +23,12 @@
 					<label for="customerName">Customer Name</label>
 					<div>
 						<form:input path="customerName" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="customerPassword">Customer Password</label>
+					<div>
+						<form:input path="customerPassword" />
 					</div>
 				</div>
 				<div>
@@ -82,9 +88,5 @@
 			</tbody>
 		</table>
 	</div>
-	</div>
 </body>
 </html>
-
-
-

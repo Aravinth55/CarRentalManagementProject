@@ -16,6 +16,7 @@
 				<tr>
 					<th>Customer Id</th>
 					<th>Customer Name</th>
+					<th>Customer Password</th>
 					<th>Address</th>
 					<th>Mobile No</th>
 					<th>gender</th>
@@ -29,6 +30,7 @@
 					<tr>
 						<td>${cus.customerId}</td>
 						<td>${cus.customerName}</td>
+						<td>${cus.customerPassword}</td>
 						<td>${cus.address}</td>
 						<td>${cus.mobileNo}</td>
 						<td>${cus.gender}</td>

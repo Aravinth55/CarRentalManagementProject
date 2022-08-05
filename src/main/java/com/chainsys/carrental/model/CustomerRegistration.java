@@ -18,6 +18,8 @@ public class CustomerRegistration {
 	private int customerId; // Primary key one to many
 	@Column(name = "Customer_Name")
 	private String customerName;
+	@Column(name = "Customer_Password")
+	private String customerPassword;
 	@Column(name = "Address")
 	private String address;
 	@Column(name = "Mobile_No")
@@ -67,6 +69,13 @@ public class CustomerRegistration {
 
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
+	}
+	public String getCustomerPassword() {
+		return customerPassword;
+	}
+
+	public void setCustomerPassword(String customerPassword) {
+		this.customerPassword = customerPassword;
 	}
 
 	public String getAddress() {

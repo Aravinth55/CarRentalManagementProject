@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="" method="get" modelAttribute="findcomadminbyid">
 				<div>
 					<label for="userId">User Id</label>
@@ -30,9 +30,9 @@
 					<div>
 						<form:input path="userPassword" readonly="true" />
 					</div>
+					</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

@@ -11,8 +11,9 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
-			<form:form action="updatecar" method="post" modelAttribute="updatecar">
+		<div id="form" align="center">
+			<form:form action="updatecar" method="post"
+				modelAttribute="updatecar">
 				<div>
 					<label for="carRegno">Car RegNo</label>
 					<div>
@@ -30,42 +31,42 @@
 					<div>
 						<form:input path="carMake" />
 					</div>
-				<div>
-					<label for="carModel">Car Model</label>
-					<div>
-						<form:input path="carModel" />
 					</div>
-				</div>
-				<div>
-					<label for="carColour">Car Colour</label>
 					<div>
-						<form:input path="carColour" />
-					</div>
-				</div>
-				<div>
-					<label for="fuelType">Fuel Type</label>
-					<div>
-						<form:input path="fuelType" />
-					</div>
-				</div>
-				<div>
-					<label for="carCapacity">Car Capacity</label>
-					<div>
-						<form:input path="carCapacity" />
-					</div>
-				</div>
-				<div>
-					<label for="carAvailable">Car Available</label>
-					<div>
-						<form:input path="carAvailable" />
-					</div>
-					
+						<label for="carModel">Car Model</label>
 						<div>
-							<form:button>Update Car</form:button>
+							<form:input path="carModel" />
 						</div>
+					</div>
+					<div>
+						<label for="carColour">Car Colour</label>
+						<div>
+							<form:input path="carColour" />
+						</div>
+					</div>
+					<div>
+						<label for="fuelType">Fuel Type</label>
+						<div>
+							<form:input path="fuelType" />
+						</div>
+					</div>
+					<div>
+						<label for="carCapacity">Car Capacity</label>
+						<div>
+							<form:input path="carCapacity" />
+						</div>
+					</div>
+					<div>
+						<label for="carAvailable">Car Available</label>
+						<div>
+							<form:input path="carAvailable" />
+						</div>
+					</div>
+					<div>
+						<form:button>Update Car</form:button>
+					</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

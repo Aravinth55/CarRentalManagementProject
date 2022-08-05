@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="" method="get" modelAttribute="findcustomerbyid">
 				<div>
 					<label for="customerId">Customer Id</label>
@@ -23,6 +23,12 @@
 					<label for="customerName">Customer Name</label>
 					<div>
 						<form:input path="customerName" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="customerPassword">Customer Password</label>
+					<div>
+						<form:input path="customerPassword" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -54,14 +60,15 @@
 					<div>
 						<form:input path="personType" readonly="true" />
 					</div>
+					</div>
 					<div>
 						<label for="joiningDate">Joining Date</label>
 						<div>
 							<form:input path="joiningDate" readonly="true" />
 						</div>
+						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

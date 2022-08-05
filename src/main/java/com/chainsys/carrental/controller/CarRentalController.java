@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.carrental.businesslogic.BusinessLogic;
 import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CarRental;
+import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.service.CarRegistrationService;
 import com.chainsys.carrental.service.CarRentalService;
+import com.chainsys.carrental.service.CustomerRegistrationService;
 
 @Controller
 @RequestMapping("/carrental")
@@ -27,16 +30,23 @@ public class CarRentalController {
 	@Autowired
 	private CarRegistrationService carRegistrationService;
 
+	@Autowired
+	private CustomerRegistrationService customerRegistrationService;
+
+	
 	@GetMapping("/carrentallist")
 	public String getCarRentals(Model model) {
+		
 		List<CarRental> allCren = carRentalService.getCarRentals();
 		model.addAttribute("allcarrentals", allCren);
 		return "list-carrentals";
 	}
 	@GetMapping("/addcarrentalform")
 	public String showAddCarRentalForm(Model model) {
-		List<CarRegistration>allCarRegistration=carRegistrationService.allCarRegistration();
-		model.addAttribute("allcars", allCarRegistration);
+		List<CarRegistration> allCarRegistration=carRegistrationService.allCarRegistration();
+		model.addAttribute("allCars", allCarRegistration);
+		List<CustomerRegistration> allCustomerRegistration=customerRegistrationService.allCustomerRegistration();
+		model.addAttribute("allCustomer", allCustomerRegistration);
 		CarRental theCren = new CarRental();
 		model.addAttribute("addcarrental", theCren);
 		return "add-carrental-form";
@@ -46,7 +56,8 @@ public class CarRentalController {
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
 	public String addNewCarRental(@ModelAttribute("addcarrental") CarRental theCren) {
-		carRentalService.save(theCren);
+//		int day=BusinessLogic.dayCalculation(theCren.getFromDate()+"",theCren.getDueDate()+"");
+//		carRentalService.save(theCren);
 		return "redirect:/carrental/carrentallist";
 	}
 	@GetMapping("/updatecarrentalform")

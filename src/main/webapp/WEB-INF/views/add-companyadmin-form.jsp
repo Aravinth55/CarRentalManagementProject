@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			 <form:form action="add" method="post"
                 modelAttribute="addcompanyadmin">
 				<div>
@@ -31,12 +31,12 @@
 					<div>
 						<form:input path="userPassword" />
 					</div>
+					</div>
 						<div>
 							<form:button>Add New CompanyAdmin</form:button>
 						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

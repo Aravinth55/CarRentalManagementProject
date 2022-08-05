@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="updatecus" method="post" modelAttribute="updatecustomer">
 				<div>
 					<label for="customerId">Customer Id</label>
@@ -23,6 +23,12 @@
 					<label for="customerName">Customer Name</label>
 					<div>
 						<form:input path="customerName" />
+					</div>
+				</div>
+				<div>
+					<label for="customerPassword">Customer Password</label>
+					<div>
+						<form:input path="customerPassword" />
 					</div>
 				</div>
 				<div>
@@ -54,17 +60,18 @@
 					<div>
 						<form:input path="personType" />
 					</div>
+					</div>
 					<div>
 						<label for="joiningDate">Joining Date</label>
 						<div>
 							<form:input path="joiningDate" type="date"/>
+						</div>
 						</div>
 						<div>
 							<form:button>Update Customer</form:button>
 						</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>
