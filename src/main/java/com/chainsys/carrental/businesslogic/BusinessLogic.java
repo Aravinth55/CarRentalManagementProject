@@ -22,5 +22,9 @@ public class BusinessLogic {
 		return difference_In_Days;
           
 	}
+	public static void main(String[] args) {
+	
+		System.out.println(	dayCalculation("01/05/2022", "10/05/2022"));
+	}
 	
 }

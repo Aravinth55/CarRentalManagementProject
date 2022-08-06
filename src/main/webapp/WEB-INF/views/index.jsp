@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
+<style>
+.hero-image {
+    background-image:
+        url("https://images.hdqwalls.com/download/white-rolls-royce-gy-1366x768.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
+<div class="hero-image">
 <div><h1>CompanyAdmin Login</h1></div>
 <div><a href="/companyadmin/adminlogin">CompanyAdmin Login</a></div>
 <div></div>
@@ -49,5 +62,6 @@
 <div><a href="/returncar/deletereturncar?carregno=&cusid=">Delete CarReturn</a></div>
 <div><a href="/returncar/findreturncarbyid?carregno=&cusid=">FindCarReturnId</a></div>
 <div><a href="/customer/getcustomerreturncars?cusid=">GetCustomerReturnCars</a></div>
+</div>
 </body>
 </html>

@@ -8,6 +8,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Return Car</title>
+<script type="text/javascript">
+
+function calculation(){
+	var payelapsed=document.getElementById("payElapsed").value;
+	var totalfee  =parseInt(payelapsed) *500;
+	document.getElementById("carFine").value = totalfee;
+}
+</script>
 </head>
 <body>
 	<div id="root">
@@ -50,13 +58,13 @@
 					<div>
 						<label for="payElapsed">Pay Elapsed</label>
 						<div>
-							<form:input path="payElapsed" />
+							<form:input path="payElapsed" id="payElapsed" name="payElapsed" onchange="calculation()"/>
 						</div>
 					</div>
 					<div>
 						<label for="carFine">Car Fine</label>
 						<div>
-							<form:input path="carFine" />
+							<form:input path="carFine" id="carFine" name="carFine" onchange="calculation(this.form)"/>
 						</div>
 					</div>
 					<div>

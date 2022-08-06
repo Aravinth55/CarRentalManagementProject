@@ -20,4 +20,8 @@ public class IndexController {
 	public String getCustomerUse(Model model) {
 		return "customeraccess";
 	}
+	@GetMapping("/hello")
+	public String getImage(Model model) {
+		return "Home";
+	}
 }
