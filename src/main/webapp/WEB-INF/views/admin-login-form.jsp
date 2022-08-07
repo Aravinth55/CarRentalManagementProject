@@ -9,13 +9,16 @@
 <meta charset="ISO-8859-1">
 <title>Login Page</title>
 <style>
-  body {
-  background: url("https://in.pinterest.com/pin/jeep-wrangler-megaport-media--815081232545467262/")
-   no-repeat center fixed;
-  background-size: cover;
-}
-</style>
-
+body {
+    background-image:
+        url("https://images.hdqwalls.com/wallpapers/cyberpunk-car-4k-me.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
 	<div id="root">

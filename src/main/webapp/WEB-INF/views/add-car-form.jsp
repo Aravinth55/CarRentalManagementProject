@@ -8,6 +8,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Car</title>
+<style>
+body {
+    background-image:
+        url("https://swall.teahub.io/photos/small/117-1174186_ultra-hd-jeep-compass-wallpapers.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
 	<div id="root">

@@ -8,6 +8,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Car</title>
+<script type="text/javascript">
+function dateCalculation(){
+	var date1 = document.getElementById("fromDate").value;
+	var date2 = document.getElementById("dueDate").value;
+	var date3 = new Date(date1);
+	var date4 = new Date(date2);
+	//var date1 = new Date("7/11/2010");
+	//var date2 = new Date("8/11/2010");
+	var total = parseInt((date4 - date3) / (1000 * 60 * 60 * 24), 10); 
+	document.getElementById("retailFee").value = parseInt(total)*1000;
+	return parseInt(total);
+}
+
+</script>
 </head>
 <body>
 	<div id="root">
@@ -28,25 +42,25 @@
 				<div>
 					<label for="fromDate">From Date</label>
 					<div>
-						<form:input path="fromDate" />
+						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()"/>
 					</div>
 				</div>
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
-							<form:input path="dueDate" type="date"/>
+							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()"/>
 						</div>
 					</div>
 					<div>
 						<label for="retailFee">Retail Fee</label>
 						<div>
-							<form:input path="retailFee" />
+							<form:input path="retailFee" id="retailFee" name="retailFee" onchange="dateCalculation(this.form)" />
 						</div>
 					</div>
 					<div>
 						<label for="fuelLevel">Fuel Level</label>
 						<div>
-							<form:input path="fuelLevel"  type="date"/>
+							<form:input path="fuelLevel" />
 						</div>
 					</div>
 					<div>

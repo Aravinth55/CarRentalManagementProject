@@ -8,6 +8,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Customer</title>
+<style>
+body {
+    background-image:
+        url("https://images.hdqwalls.com/download/retrowave-car-4k-fr-1366x768.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
 	<div id="root">

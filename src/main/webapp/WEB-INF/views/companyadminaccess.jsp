@@ -5,6 +5,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CompanyAdmin Access</title>
+<style>
+body {
+    background-image:
+        url("https://wallpapersmug.com/download/1366x768/27aaa0/rolls-royce-phantom-4k.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
 <div><h1>CompanyAdmin Login</h1></div>

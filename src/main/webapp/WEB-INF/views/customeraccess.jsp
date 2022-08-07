@@ -5,6 +5,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Access</title>
+<style>
+body {
+    background-image:
+        url("https://cdn.wallpapersafari.com/92/85/TS1xHW.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
 <div><h1>Customer Registration</h1></div>

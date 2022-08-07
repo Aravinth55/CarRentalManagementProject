@@ -7,30 +7,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Login Page</title>
+<style>
+body {
+    background-image:
+        url("https://wallpapersmug.com/download/1366x768/27aaa0/rolls-royce-phantom-4k.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}</style>
 </head>
 <body>
 	<div id="root">
 		<div id="form" align="center">
 			<form:form action="customerlogin" method="post" modelAttribute="cuslogin">
 				<h1>Customer Login</h1>
-				<table>
-					<tr>
-						<td><label for="customerId">CustomerId :</label></td>
-						<td><form:input path="customerId" placeholder="CustomerId" /></td>
-					</tr>
-					<tr>
-						<td><label for="customerPassword">CustomerPassword :</label></td>
-						<td><form:input path="customerPassword" type="password"
-								placeholder="CustomerPassword" /></td>
-					</tr>
-				</table>
+				
+						<div><label for="customerId">CustomerId :</label></div>
+					<div>	<form:input path="customerId" placeholder="CustomerId" /></div>
+					<div>
+						<label for="customerPassword">CustomerPassword :</label></div>
+						<div><form:input path="customerPassword" type="password"
+								placeholder="CustomerPassword" /></div>
 				<div>
-					<tr>
-						<td><form:button>Sign In</form:button></td>
-						<td><form:button>
+						<form:button>Sign In</form:button></div>
+						<div><form:button>
 								<a href="/customer/addcustomerform">Sign Up</a>
-							</form:button></td>
-					</tr>
+							</form:button><div></div>
 				</div>
 			</form:form>
 		</div>
