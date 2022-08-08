@@ -3,9 +3,12 @@ package com.chainsys.carrental.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,7 +58,10 @@ public class ReturnCarController {
 	@PostMapping("/add")
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
-	public String addNewReturnCar(@ModelAttribute("addreturncar") ReturnCar theCret) {
+	public String addNewReturnCar(@Valid@ModelAttribute("addreturncar") ReturnCar theCret,Errors errors)  {
+		if(errors.hasErrors()) {
+			return "add-returncar-form";
+		}
 		returnCarService.save(theCret);
 		return "redirect:/returncar/returncarlist";
 	}
@@ -70,7 +76,10 @@ public class ReturnCarController {
 	}
 
 	@PostMapping("/updatereturncar")
-	public String Updatereturncars(@ModelAttribute("updatereturncar") ReturnCar theCret) {
+	public String Updatereturncars(@Valid@ModelAttribute("updatereturncar") ReturnCar theCret,Errors errors)  {
+		if(errors.hasErrors()) {
+			return "update-returncar-form";
+		}
 		returnCarService.save(theCret);
 		return "redirect:/returncar/returncarlist";
 	}

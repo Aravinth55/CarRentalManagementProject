@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome to CustomerLogin </title>
+<title>Welcome to AdminLogin</title>
 <style type="text/css">
 body {
 	margin: 0;
 	padding: 0;
 	background: url(https://i.ibb.co/VQmtgjh/6845078.png) no-repeat;
-	height: 100vh;
+	height: 80vh;
 	font-family: sans-serif;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -38,8 +38,8 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 350px;
-	min-height: 200px;
+	width: 500px;
+	min-height: 100px;
 	background: #000000; /*  #FFFFFF */
 	border-radius: 10px;
 	padding: 40px;
@@ -68,7 +68,7 @@ h3 {
 	border: none;
 	border-bottom: 2px solid #262626;
 	outline: none;
-	height: 40px;
+	height: 30px;
 	color: #fff;
 	background: transparent;
 	font-size: 16px;
@@ -95,7 +95,7 @@ h3 {
 
 .inputBox span {
 	position: absolute;
-	top: 10px;
+	top: 10px; 
 	color: #262626
 }
 
@@ -130,24 +130,37 @@ p {
 </head>
 <body>
 	<div class="loginBox">
-		<img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
-			width="100px">
+		<!-- <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
+			width="100px"> -->
 		<h3>Sign in here</h3>
-		<form action="customerlogin"  method="post">
+		<form:form action="add" method="post" modelAttribute="addcustomer">
 			<div class="inputBox">
-				<input id="customerId" type="text" name="customerId" placeholder="Customer Id" title="It should be Number Format"
-				 pattern="^[0-9]+$" required="true">
-				<input id="customerPassword" type="password" name="customerPassword"
-					placeholder="Customer Password" required="true">
-			</div>
-			<input type="submit" name="" value="Login">
-		</form>
+				<input id="customerId" type="text" name="customerId" placeholder="customerId">
+				<input id="customerName" type="text" name="customerName"
+					placeholder="customerName">
+					<input id="customerPassword" type="password" name="customerPassword"
+					placeholder="customerPassword">
+					<input id="address" type="text" name="address"
+					placeholder="address">
+					<input id="mobileNo" type="text" name="mobileNo"
+					placeholder="mobileNo">
+					<input id="gender" type="text" name="gender"
+					placeholder="gender">
+					<input id="bloodGroup" type="text" name="bloodGroup"
+					placeholder="bloodGroup">
+					<input id="personType" type="text" name="personType"
+					placeholder="personType">
+					<input id="joiningDate" type="text" name="joiningDate"
+					placeholder="joiningDate">
+						</div>
+			<input type="submit" name="" value="AddNewCustomer">
+			</form:form>
 		<!-- <a href="#">Forget Password<br>
 		</a> -->
-		<div class="text-center">
-			<p style="color: #59238F;"><a  href="/customer/addcustomerform">Sign-Up</a></p>
+		<!-- <div class="text-center">
+			<p style="color: #59238F;">
+				<a href="/companyadmin/addadminform">Sign-Up</a>
+			</p> -->
 		</div>
-
-	</div>
 </body>
 </html>

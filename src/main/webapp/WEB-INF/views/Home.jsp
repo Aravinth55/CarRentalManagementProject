@@ -197,12 +197,12 @@ color: #fff;
 <li><a href="#">HOME</a></li>
 <li><a href="/companyadmin/adminlogin">ADMIN</a></li>
 <li><a href="/customer/customerloginpage">CUSTOMER</a></li>
-<li><a href="#">CONTACT</a></li>
+<li><a href="/home/cont">CONTACT</a></li>
 </ul>
-<div class="search" >
+<!-- <div class="search" >
 <input class="srch" type="search" name="" placeholder="Type To text">
 <a href="/home/customer"><button class="btn">Search</button></a>
-</div>
+</div> -->
 <!-- <div class="content">
 <h1>Car Rental & <br><span>Development</span><br>Course</h1>
  --><div class="form">

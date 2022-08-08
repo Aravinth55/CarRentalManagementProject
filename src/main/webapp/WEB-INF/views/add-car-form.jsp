@@ -8,17 +8,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Car</title>
-<style>
+<style>   
 body {
-    background-image:
-        url("https://swall.teahub.io/photos/small/117-1174186_ultra-hd-jeep-compass-wallpapers.jpg");
+    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-}</style>
+}
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -28,51 +32,64 @@ body {
 				<div>
 					<label for="carRegno">Car RegNo</label>
 					<div>
-						<form:input path="carRegno" />
+						<form:input path="carRegno" placeholder="Car Regno"/>
 					</div>
 				</div>
+					<form:errors path="carRegno" cssClass="text-danger" />
+	
 				<div>
 					<label for="ownerId">Owner Id</label>
 					<div>
-						<form:input path="ownerId" />
+						<form:input path="ownerId"  placeholder="Owner Id" title="It should be Number Format"
+				 pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="carMake">Car Make</label>
 					<div>
-						<form:input path="carMake" />
+						<form:input path="carMake"  placeholder="Car Make"/>
 					</div>
 					</div>
+						<form:errors path="carMake" cssClass="text-danger" />
+	
 				<div>
 					<label for="carModel">Car Model</label>
 					<div>
-						<form:input path="carModel" />
+						<form:input path="carModel"  placeholder="Car Model"/>
 					</div>
 				</div>
+					<form:errors path="carModel" cssClass="text-danger" />
+	
 				<div>
 					<label for="carColour">Car Colour</label>
 					<div>
-						<form:input path="carColour" />
+						<form:input path="carColour"  placeholder="Car Colour"/>
 					</div>
 				</div>
+					<form:errors path="carColour" cssClass="text-danger" />
+	
 				<div>
 					<label for="fuelType">Fuel Type</label>
 					<div>
-						<form:input path="fuelType" />
+						<form:input path="fuelType"  placeholder="FuelType"/>
 					</div>
 				</div>
+					<form:errors path="fuelType" cssClass="text-danger" />
+	
 				<div>
 					<label for="carCapacity">Car Capacity</label>
 					<div>
-						<form:input path="carCapacity" />
+						<form:input path="carCapacity"  placeholder="Car Capacity"/>
 					</div>
 				</div>
 				<div>
 					<label for="carAvailable">Car Available</label>
 					<div>
-						<form:input path="carAvailable" />
+						<form:input path="carAvailable"  placeholder="Car Available"/>
 					</div>
 					</div>
+						<form:errors path="carAvailable" cssClass="text-danger" />
+	
 						<div>
 							<form:button>Add New CarRegistration</form:button>
 						</div>

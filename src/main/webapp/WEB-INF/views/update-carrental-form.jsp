@@ -8,6 +8,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Car</title>
+<style>
+body {
+    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 <script type="text/javascript">
 function dateCalculation(){
 	var date1 = document.getElementById("fromDate").value;
@@ -30,45 +45,53 @@ function dateCalculation(){
 				<div>
 					<label for="carRegno">Car RegNo</label>
 					<div>
-						<form:input path="carRegno" />
+						<form:input path="carRegno"  placeholder="Car RegNo"/>
 					</div>
 				</div>
+					<form:errors path="carRegno" cssClass="text-danger" />
 				<div>
 					<label for=customerId>Customer Id</label>
 					<div>
-						<form:input path="customerId" />
+						<form:input path="customerId"  placeholder="Customer Id"/>
 					</div>
 				</div>
 				<div>
 					<label for="fromDate">From Date</label>
 					<div>
-						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()"/>
+						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()"  placeholder="From Date" required="true"/>
 					</div>
 				</div>
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
-							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()"/>
+							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()"  placeholder="Due Date" required="true"/>
 						</div>
 					</div>
 					<div>
 						<label for="retailFee">Retail Fee</label>
 						<div>
-							<form:input path="retailFee" id="retailFee" name="retailFee" onchange="dateCalculation(this.form)" />
+							<form:input path="retailFee" id="retailFee" name="retailFee" onchange="dateCalculation(this.form)"  placeholder="Retail Fee"/>
 						</div>
 					</div>
+					<form:errors path="retailFee" cssClass="text-danger" />
 					<div>
 						<label for="fuelLevel">Fuel Level</label>
 						<div>
-							<form:input path="fuelLevel" />
-						</div>
+						<form:radiobutton path="fuelLevel"  value="Full"/>Full
+							<form:radiobutton path="fuelLevel"  value="Half"/>Half
+							<form:radiobutton path="fuelLevel"  value="Low"/>Low
 					</div>
+					</div>
+						<form:errors path="fuelLevel" cssClass="text-danger" />
 					<div>
 						<label for="workingCondition">Working Condition</label>
 						<div>
-							<form:input path="workingCondition" />
+						<form:radiobutton path="workingCondition"  value="Good"/>Good
+							<form:radiobutton path="workingCondition"  value="Average"/>Average
+							<form:radiobutton path="workingCondition"  value="Bad"/>Bad
+					</div>
 						</div>
-						</div>
+							<form:errors path="workingCondition" cssClass="text-danger" />
 						<div>
 							<form:button>Update Car Rental</form:button>
 						</div>

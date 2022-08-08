@@ -11,6 +11,11 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
@@ -21,19 +26,32 @@ import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
 public class ReturnCar {
 	@Id
 	@Column(name = "CARREGNO") 
+	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
+    @NotBlank(message = "*Name can't be Empty")
+    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
+	
 	private String carRegno;      //Foreign key
 	@Id
 	@Column(name = "CUSTOMERID")
 	private int customerId;    //Foreign key
 	@Column(name = "FROMDATE")
+	
 	private Date fromDate;
 	@Column(name = "DUEDATE")
+	
 	private Date dueDate;
 	@Column(name = "PAYELAPSED")
+	
 	private int payElapsed;
 	@Column(name = "CARFINE")
+	@Min(value = 0,message="*value should be greater than 0")
+
+
 	private float carFine;
 	@Column(name = "TOTALFEE")
+	@Min(value = 0,message="*value should be greater than 0")
+
+
 	private float totalFee;
 
 	@ManyToOne(fetch = FetchType.LAZY)

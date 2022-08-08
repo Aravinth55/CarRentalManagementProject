@@ -44,15 +44,15 @@ body {
 <div><a href="/carrental/addcarrentalform">Add Car Rental</a></div>
 <div><a href="/carrental/updatecarrentalform?carregno=&cusid=">Update CarRental</a></div>
 <div><a href="/carrental/deletecarrental?carregno=&cusid=">Delete CarRental</a></div>
-<div><a href="/carrental/findcarrentalbyid?carregno=&cusid=">FindCarRentalId</a></div>
+<div><a href="/carrental/findcarrentalbyid?carregno=&cusid=">Find CarRentalId</a></div>
 <div><a href="/customer/getcustomerrentalcars?cusid=">GetCustomerRentalCars</a></div>
 <div></div>
-<div><h1>Car Return</h1></div>
-<div><a href="/returncar/returncarlist">Car ReturnList</a></div>
+<div><h1>Return Car</h1></div>
+<div><a href="/returncar/returncarlist">Return CarList</a></div>
 <div><a href="/returncar/addreturncarform">Add Car Return</a></div>
 <div><a href="/returncar/updatereturncarform?carregno=&cusid=">Update CarReturn</a></div>
 <div><a href="/returncar/deletereturncar?carregno=&cusid=">Delete CarReturn</a></div>
-<div><a href="/returncar/findreturncarbyid?carregno=&cusid=">FindCarReturnId</a></div>
+<div><a href="/returncar/findreturncarbyid?carregno=&cusid=">Find CarReturnId</a></div>
 <div><a href="/customer/getcustomerreturncars?cusid=">GetCustomerReturnCars</a></div>
 </body>
 </html>

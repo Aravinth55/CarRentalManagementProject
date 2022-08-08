@@ -24,4 +24,20 @@ public class IndexController {
 	public String getImage(Model model) {
 		return "Home";
 	}
+	@GetMapping("/form")
+	public String getDemo(Model model) {
+		return "demo";
+	}
+	@GetMapping("/aaa")
+	public String getDemoCustomer(Model model) {
+		return "customerDemo";
+	}
+	@GetMapping("/bbb")
+	public String getDemoCarrental(Model model) {
+		return "carrentaldemo";
+	}
+	@GetMapping("/cont")
+	public String getDemoContact(Model model) {
+		return "contact";
+	}
 }

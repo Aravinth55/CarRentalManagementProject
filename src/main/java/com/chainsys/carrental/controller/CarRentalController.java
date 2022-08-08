@@ -3,9 +3,12 @@ package com.chainsys.carrental.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,7 +58,10 @@ public class CarRentalController {
 	@PostMapping("/add")
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
-	public String addNewCarRental(@ModelAttribute("addcarrental") CarRental theCren) {
+	public String addNewCarRental(@Valid@ModelAttribute("addcarrental") CarRental theCren,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-carrental-form";
+		}
 //		int day=BusinessLogic.dayCalculation(theCren.getFromDate()+"",theCren.getDueDate()+"");
 //		carRentalService.save(theCren);
 		return "redirect:/carrental/carrentallist";
@@ -68,7 +74,10 @@ public class CarRentalController {
 		return "update-carrental-form";
 	}
 	@PostMapping("/updatecarrental")
-	public String updateCarRentals(@ModelAttribute("updatecarrental") CarRental theCren) {
+	public String updateCarRentals(@Valid@ModelAttribute("updatecarrental") CarRental theCren,Errors errors)  {
+		if(errors.hasErrors()) {
+			return "update-carrental-form";
+		}
 		carRentalService.save(theCren);
 		return "redirect:/carrental/carrentallist";
 	}

@@ -8,19 +8,42 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Return Cars List</title>
+<style>
+body {
+    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: Aquamarine;} /*coral  */
+</style>
 </head>
 <body>
 	<div id="table root">
 		<table>
 			<thead>
 				<tr>
-					<th>Car RegistrationNo</th>
-					<th>Customer Id</th>
-					<th>From Date</th>
-					<th>Due Date</th>
-					<th>Pay Elapsed</th>
-					<th>Car Fine</th>
-					<th>Total Fee</th>
+					<th style="background-color:#87CEFA">Car RegistrationNo</th>
+					<th style="background-color:#87CEFA">Customer Id</th>
+					<th style="background-color:#87CEFA">From Date</th>
+					<th style="background-color:#87CEFA">Due Date</th>
+					<th style="background-color:#87CEFA">Pay Elapsed</th>
+					<th style="background-color:#87CEFA">Car Fine</th>
+					<th style="background-color:#87CEFA">Total Fee</th>
 				</tr>
 			</thead>
 			<tbody>

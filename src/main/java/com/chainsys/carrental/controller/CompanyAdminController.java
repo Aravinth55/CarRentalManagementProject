@@ -2,9 +2,12 @@ package com.chainsys.carrental.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +41,10 @@ public class CompanyAdminController {
 	@PostMapping("/add")
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
-	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd) {
+	public String addNewCompanyAdmin(@Valid@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-companyadmin-form";
+		}
 		companyAdminService.save(theCmd);
 		return "redirect:/companyadmin/companyadminlist";
 	}
@@ -51,7 +57,10 @@ public class CompanyAdminController {
 	}
 
 	@PostMapping("/updatecomadmin")
-	public String updateCompanyAdmin(@ModelAttribute("updatecompanyadmin") CompanyAdmin theCmd) {
+	public String updateCompanyAdmin(@Valid@ModelAttribute("updatecompanyadmin") CompanyAdmin theCmd,Errors errors) {
+		if(errors.hasErrors()) {
+			return  "update-companyadmin-form";
+		}
 		companyAdminService.save(theCmd);
 		return "redirect:/companyadmin/companyadminlist";
 	}
@@ -79,9 +88,32 @@ CompanyAdmin  companyAdmin=new CompanyAdmin();
 	public String checkingAccess(@ModelAttribute("login") CompanyAdmin theCmd) {
 		CompanyAdmin  companyAdmin=companyAdminService.getUserIdAndUserPassword(theCmd.getUserId(),theCmd.getUserPassword());
 		if(companyAdmin!=null) {
-			return "redirect:/home/admin";   
+			return "redirect:/companyadmin/carindex";   
 		}else
 			return "Invalid-user-error";  
 	}
+	@GetMapping("/carindex")
+	public String CarReg() {
+		return "adminaccess";
+	}
+	@GetMapping("/carregistrationindex")
+	public String CarRegistration() {
+		return "carregistration";
+	}
+	@GetMapping("/carrentalindex")
+	public String CarRental() {
+		return "carrental";
+	}
+	@GetMapping("/carreturnindex")
+	public String CarReturn() {
+		return "carreturn";
+	}
+	@GetMapping("/customerindex")
+	public String CustomerRegistration() {
+		return "customerregistration";
+	}
+	
+	
+	
 
 }

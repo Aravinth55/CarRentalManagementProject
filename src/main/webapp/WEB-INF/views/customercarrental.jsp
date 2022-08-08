@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Find CompanyAdmin By Id </title>
+<title>Rental Car</title>
 <style>   
 body {
     background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
@@ -21,28 +18,48 @@ body {
 </style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" align="center">
-			<form:form action="" method="get" modelAttribute="findcomadminbyid">
+	<div align="center">
+		<div>
+			<h1>Rental Cars</h1>
+		</div>
+
+		<div>
+			<h3>
 				<div>
-					<label for="userId">User Id</label>
 					<div>
-						<form:input path="userId" readonly="true" />
+						<a href="/carrental/addcarrentalform">Add Car Rental</a>
 					</div>
 				</div>
+			</h3>
+		</div>
+		<div>
+			<h3>
 				<div>
-					<label for="userName">User Name</label>
 					<div>
-						<form:input path="userName" readonly="true" />
+						<a href="/carrental/updatecarrentalform?carregno=&cusid=">Update
+							CarRental</a>
 					</div>
 				</div>
+			</h3>
+		</div>
+
+		<div>
+			<h3>
 				<div>
-					<label for="userPassword">User Password</label>
 					<div>
-						<form:input path="userPassword" readonly="true" />
+						<a href="/carrental/findcarrentalbyid?carregno=&cusid=">Find CarRentalId</a>
 					</div>
+				</div>
+			</h3>
+		</div>
+		<div>
+			<h3>
+				<div>
+					<div>
+						<a href="/customer/getcustomerrentalcars?cusid=">Get CustomerRentalCars</a>
 					</div>
-			</form:form>
+				</div>
+			</h3>
 		</div>
 	</div>
 </body>

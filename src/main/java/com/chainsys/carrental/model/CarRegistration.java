@@ -6,26 +6,47 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "carregistration")
 public class CarRegistration {
 	@Id
 	@Column(name = "CARREGNO")
+	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
+    @NotBlank(message = "*Name can't be Empty")
+    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String carRegno;   //Primary key
 	@Column(name = "OWNERID")
 	private int ownerId;
 	@Column(name = "CARMAKE")
+	@NotEmpty(message = "*Please enter CarMake")
+	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String carMake;
 	@Column(name = "CARMODEL")
+	@NotEmpty(message = "*Please enter CarModel")
+	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
+	
 	private String carModel;
 	@Column(name = "CARCOLOUR")
+	@NotEmpty(message = "*Please enter CarColour")
+	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
+	
 	private String carColour;
 	@Column(name = "FUELTYPE")
+	@NotEmpty(message = "*Please enter FuelType")
+	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
+	
 	private String fuelType;
 	@Column(name = "CARCAPACITY")
 	private int carCapacity;
 	@Column(name = "CARAVAILABLE")
+	@NotEmpty(message = "*Please enter CarAvailable")
+	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
+	
 	private String carAvailable;
 
 	public String getCarRegno() {

@@ -2,9 +2,12 @@ package com.chainsys.carrental.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,7 +45,10 @@ public String showAddCustomerForm(Model model) {
 @PostMapping("/add")
 // We need give from where to read data from the HTTP request and also the
 // content type ("application/json")
-public String addNewCustomer(@ModelAttribute("addcustomer") CustomerRegistration theCus) {
+public String addNewCustomer(@Valid@ModelAttribute("addcustomer") CustomerRegistration theCus,Errors errors) {
+	if(errors.hasErrors()) {
+		return "add-customer-form";
+	}
 	customerRegistrationService.save(theCus);
 	return "redirect:/customer/customerlist";
 }
@@ -53,7 +59,10 @@ public String showUpdateCustomerForm(@RequestParam("cusid") int id, Model model)
 	return "update-customer-form";
 }
 @PostMapping("/updatecus")
-public String Updatecustomers(@ModelAttribute("updatecustomer") CustomerRegistration theCus) {
+public String Updatecustomers(@Valid@ModelAttribute("updatecustomer") CustomerRegistration theCus,Errors errors) {
+	if(errors.hasErrors()) {
+		return "add-customer-form";
+	}
 	customerRegistrationService.save(theCus);
 	return "redirect:/customer/customerlist";
 }
@@ -93,8 +102,24 @@ public String CustomerLogin(Model model) {
 public String checkingAccess(@ModelAttribute("cuslogin") CustomerRegistration theCus) {
 	CustomerRegistration  customerRegistration=customerRegistrationService.getCustomerIdAndCustomerPassword(theCus.getCustomerId(),theCus.getCustomerPassword());
 	if(customerRegistration!=null) {
-		return "redirect:/home/customer";
+		return "redirect:/customer/customerindex";
 	}else
 		return "Invalid-user-error";
 }
+
+@GetMapping("/customerindex")
+public String CarReg() {
+	return "customeraccess";
 }
+
+@GetMapping("/rentalcustomeruses")
+public String CarRental() {
+	return "customercarrental";
+}
+@GetMapping("/returncustomeruses")
+public String CarReturn() {
+	return "customercarreturn";
+}
+
+}
+

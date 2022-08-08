@@ -8,6 +8,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update CompanyAamin</title>
+<style type="text/css">
+body {
+    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -17,19 +28,19 @@
 				<div>
 					<label for="userId">User Id</label>
 					<div>
-						<form:input path="userId" />
+						<form:input path="userId" placeholder="User Id"/>
 					</div>
 				</div>
 				<div>
 					<label for="userName">User Name</label>
 					<div>
-						<form:input path="userName" />
+						<form:input path="userName" placeholder="User Name"/>
 					</div>
 				</div>
 				<div>
 					<label for="userPassword">User Password</label>
 					<div>
-						<form:input path="userPassword" />
+						<form:input path="userPassword" placeholder="User Password"/>
 					</div>
 					</div>
 						<div>

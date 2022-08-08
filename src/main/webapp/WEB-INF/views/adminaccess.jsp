@@ -20,10 +20,12 @@ body {
 <body>
 <body>
     <div align="center">
-                <div><h1>Customer Access</h1></div>
+                <div><h1>CompanyAdmin Access</h1></div>
             <div>
-            <div><h4><a href="/customer/rentalcustomeruses">Car Rental</a></h4></div>
-             <div><h4><a href="/customer/returncustomeruses">Return Car </a></h4></div>
+            <div><h4><a href="/companyadmin/carregistrationindex">Car Registration</a></h4></div>
+            <div><h4><a href="/companyadmin/carrentalindex">Car Rental</a></h4></div>
+             <div><h4><a href="/companyadmin/carreturnindex">Return Car</a></h4></div>
+              <div><h4><a href="/companyadmin/customerindex">Customer Registration</a></h4></div>
             </div>
     </div>
 </body>
