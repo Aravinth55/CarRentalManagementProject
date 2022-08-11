@@ -17,10 +17,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.ManyToAny;
 
 import com.chainsys.carrental.compositekey.CarRentalCompositekey;
-import com.chainsys.carrental.service.CustomerRegistrationService;
 
 @Entity
 @Table(name = "Carrental")

@@ -10,7 +10,7 @@
 <title>Add Car</title>
 <style>   
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -26,7 +26,7 @@ body {
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" style="text-align:center ;margin-top:5%;">
 			 <form:form action="add" method="post"
                 modelAttribute="addcar" >
 				<div>
@@ -79,7 +79,8 @@ body {
 				<div>
 					<label for="carCapacity">Car Capacity</label>
 					<div>
-						<form:input path="carCapacity"  placeholder="Car Capacity"/>
+						<form:input path="carCapacity"  placeholder="Car Capacity" title="It should be Number Format"
+				 pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<div>

@@ -6,17 +6,16 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.carrental.model.CarRegistration;
+import com.chainsys.carrental.model.Car;
 
 @Repository
-public interface CarRegistrationRepository extends CrudRepository<CarRegistration, String> {
-	Optional<CarRegistration> findById(String id);
+public interface CarRegistrationRepository extends CrudRepository<Car, String> {
+	Optional<Car> findById(String id);
 
-	CarRegistration save(CarRegistration car);
+	Car save(Car car);
 
-	void deleteById(String Car_Id);
+	void deleteById(String carId);
 
-	List<CarRegistration> findAll();
+	List<Car> findAll();
 
-//	List<CarRegistration> getCarRegistrations();
 }

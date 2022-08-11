@@ -135,32 +135,26 @@ p {
 		<h3>Sign in here</h3>
 		<form:form action="add" method="post" modelAttribute="addcustomer">
 			<div class="inputBox">
-				<input id="customerId" type="text" name="customerId" placeholder="customerId">
+				<input id="customerId" type="text" name="customerId" placeholder="customerId" title="Only Number Format" required="true">
 				<input id="customerName" type="text" name="customerName"
-					placeholder="customerName">
+					placeholder="customerName" required="true">
 					<input id="customerPassword" type="password" name="customerPassword"
-					placeholder="customerPassword">
+					placeholder="customerPassword" required="true">
 					<input id="address" type="text" name="address"
-					placeholder="address">
+					placeholder="address" required="true">
 					<input id="mobileNo" type="text" name="mobileNo"
-					placeholder="mobileNo">
+					placeholder="mobileNo" required="true">
 					<input id="gender" type="text" name="gender"
-					placeholder="gender">
+					placeholder="gender" required="true">
 					<input id="bloodGroup" type="text" name="bloodGroup"
-					placeholder="bloodGroup">
+					placeholder="bloodGroup" required="true">
 					<input id="personType" type="text" name="personType"
-					placeholder="personType">
+					placeholder="personType" required="true">
 					<input id="joiningDate" type="text" name="joiningDate"
-					placeholder="joiningDate">
+					placeholder="joiningDate" required="true">
 						</div>
 			<input type="submit" name="" value="AddNewCustomer">
 			</form:form>
-		<!-- <a href="#">Forget Password<br>
-		</a> -->
-		<!-- <div class="text-center">
-			<p style="color: #59238F;">
-				<a href="/companyadmin/addadminform">Sign-Up</a>
-			</p> -->
 		</div>
 </body>
 </html>

@@ -205,7 +205,7 @@ color: #fff;
 </div> -->
 <!-- <div class="content">
 <h1>Car Rental & <br><span>Development</span><br>Course</h1>
- --><div class="form">
+  --><div class="form">
 <h2>Login Here</h2>
 <input type="text" name="text" placeholder="Enter CustomerId Here">
 <input type="password" name="password" placeholder="Enter password Here">

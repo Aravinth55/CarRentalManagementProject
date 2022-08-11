@@ -1,20 +1,16 @@
 package com.chainsys.carrental.service;
 
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.chainsys.carrental.model.CarRegistration;
+import com.chainsys.carrental.dto.CustomerRentalsDTO;
+import com.chainsys.carrental.dto.CustomerReturnCarsDTO;
 import com.chainsys.carrental.model.CarRental;
-import com.chainsys.carrental.model.CompanyAdmin;
 import com.chainsys.carrental.model.CustomerRegistration;
-import com.chainsys.carrental.model.CustomerRentalsDTO;
-import com.chainsys.carrental.model.CustomerReturnCarsDTO;
 import com.chainsys.carrental.model.ReturnCar;
 import com.chainsys.carrental.repository.CarRentalRepository;
 import com.chainsys.carrental.repository.CustomerRegistrationRepository;

@@ -13,11 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
 
 @Entity

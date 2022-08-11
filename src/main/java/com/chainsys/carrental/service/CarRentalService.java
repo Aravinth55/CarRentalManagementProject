@@ -5,15 +5,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.chainsys.carrental.compositekey.CarRentalCompositekey;
-import com.chainsys.carrental.model.CarRegistration;
 import com.chainsys.carrental.model.CarRental;
-import com.chainsys.carrental.model.CustomerRegistration;
-import com.chainsys.carrental.repository.CarRegistrationRepository;
 import com.chainsys.carrental.repository.CarRentalRepository;
-import com.chainsys.carrental.repository.CustomerRegistrationRepository;
 
 @Service
 public class CarRentalService {

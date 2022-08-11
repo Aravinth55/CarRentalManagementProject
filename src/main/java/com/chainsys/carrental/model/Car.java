@@ -2,9 +2,7 @@ package com.chainsys.carrental.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -13,12 +11,12 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "carregistration")
-public class CarRegistration {
+public class Car {
 	@Id
 	@Column(name = "CARREGNO")
 	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
     @NotBlank(message = "*Name can't be Empty")
-    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
+    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid CarRegno ")
 	private String carRegno;   //Primary key
 	@Column(name = "OWNERID")
 	private int ownerId;
@@ -27,9 +25,9 @@ public class CarRegistration {
 	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String carMake;
 	@Column(name = "CARMODEL")
-	@NotEmpty(message = "*Please enter CarModel")
-	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
-	
+	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
+    @NotBlank(message = "*Name can't be Empty")
+    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid CarRegno ")
 	private String carModel;
 	@Column(name = "CARCOLOUR")
 	@NotEmpty(message = "*Please enter CarColour")

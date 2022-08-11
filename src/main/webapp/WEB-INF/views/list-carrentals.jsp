@@ -7,9 +7,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<style>
+<style type="text/css">
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -60,7 +60,9 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 					</tr>
 				</c:forEach>
 			</tbody>
-		</table>
+		</table>	
+	
 	</div>
+		 <div><h3><a href="/home/hello"><b>Back To MainPage</b></a></h3></div>
 </body>
 </html>

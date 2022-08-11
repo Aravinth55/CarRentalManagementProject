@@ -8,10 +8,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Customer</title>
-<style>
+<style>   
 body {
-    background-image:
-        url(""https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg"");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -27,8 +26,8 @@ body {
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
-			 <form:form action="add" method="post"
+		<div id="form" style="text-align:center ;margin-top:5%;">
+			 <form:form style="line-height:29px;" action="add" method="post"
                 modelAttribute="addcustomer">
 				<div>
 					<label for="customerId">Customer Id</label>

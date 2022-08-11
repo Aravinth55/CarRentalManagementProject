@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.carrental.model.CarRegistration;
-import com.chainsys.carrental.model.CompanyAdmin;
+import com.chainsys.carrental.dto.CustomerRentalsDTO;
+import com.chainsys.carrental.dto.CustomerReturnCarsDTO;
 import com.chainsys.carrental.model.CustomerRegistration;
-import com.chainsys.carrental.model.CustomerRentalsDTO;
-import com.chainsys.carrental.model.CustomerReturnCarsDTO;
 import com.chainsys.carrental.service.CustomerRegistrationService;
 
 @Controller
@@ -52,48 +49,73 @@ public String addNewCustomer(@Valid@ModelAttribute("addcustomer") CustomerRegist
 	customerRegistrationService.save(theCus);
 	return "redirect:/customer/customerlist";
 }
+@GetMapping("/updatecustomeridform")
+public String showUpdateForm()
+{
+    return "update-customerid-form";
+}
 @GetMapping("/updatecustomerform")
-public String showUpdateCustomerForm(@RequestParam("cusid") int id, Model model) {
-	CustomerRegistration theCus = customerRegistrationService.findById(id);
+public String showUpdateCustomerForm( int cusid, Model model) {
+	CustomerRegistration theCus = customerRegistrationService.findById(cusid);
 	model.addAttribute("updatecustomer", theCus);
 	return "update-customer-form";
 }
 @PostMapping("/updatecus")
-public String Updatecustomers(@Valid@ModelAttribute("updatecustomer") CustomerRegistration theCus,Errors errors) {
+public String updateCustomer(@Valid@ModelAttribute("updatecustomer") CustomerRegistration theCus,Errors errors) {
 	if(errors.hasErrors()) {
 		return "add-customer-form";
 	}
 	customerRegistrationService.save(theCus);
 	return "redirect:/customer/customerlist";
 }
+@GetMapping("/deletecustomerform")
+public String showFindForm()
+{
+    return "delete-customer-form";
+}
 @GetMapping("/deletecustomer")
-public String deleteCustomer(@RequestParam("cusid") int id) {
-	CustomerRegistration theCus = customerRegistrationService.findById(id);
-	customerRegistrationService.deleteById(id);
+public String deleteCustomer(int cusid) {
+	CustomerRegistration theCus = customerRegistrationService.findById(cusid);
+	customerRegistrationService.deleteById(cusid);
 	return "redirect:/customer/customerlist";
 }
+@GetMapping("/findcustomerform")
+public String showDeleteForm()
+{
+    return "findbycustomerid";
+}
 @GetMapping("/findcustomerbyid")
-public String findCustomerById(@RequestParam("cusid") int id, Model model) {
-	CustomerRegistration theCus = customerRegistrationService.findById(id);
+public String findCustomerById(int cusid, Model model) {
+	CustomerRegistration theCus = customerRegistrationService.findById(cusid);
 	model.addAttribute("findcustomerbyid", theCus);
 	return "find-customer-by-id-form";
 }
+@GetMapping("/findcustomercarrentalform")
+public String showCustomerCarrentalForm()
+{
+    return "fetchcustomercarrentals";
+}
 @GetMapping("/getcustomerrentalcars")
-public String getCustomerCarRentals(@RequestParam("cusid") int id,Model model) {
-	CustomerRentalsDTO crdto =customerRegistrationService.getCustomerAndRentals(id);
+public String getCustomerCarRentals(int cusid,Model model) {
+	CustomerRentalsDTO crdto =customerRegistrationService.getCustomerAndRentals(cusid);
 	model.addAttribute("getcus",crdto.getCustomerregistration());
 	model.addAttribute("rentallist",crdto.getRentallist());
 return "list-customer-carrental";
 }
+@GetMapping("/findcustomerreturncarform")
+public String showCustomerReturnCarForm()
+{
+    return "fetchcustomerreturncar";
+}
 @GetMapping("/getcustomerreturncars")
-public String getCustomerReturnCars(@RequestParam("cusid") int id,Model model) {
-	CustomerReturnCarsDTO credto =customerRegistrationService.getCustomerAndReturnCars(id);
+public String getCustomerReturnCars(int cusid,Model model) {
+	CustomerReturnCarsDTO credto =customerRegistrationService.getCustomerAndReturnCars(cusid);
 	model.addAttribute("getcus",credto.getCustomerRegistration());
 	model.addAttribute("returncarlist",credto.getReturnCarList());
 return "list-customer-returncar";
 }
 @GetMapping("/customerloginpage")
-public String CustomerLogin(Model model) {
+public String customerLogin(Model model) {
 	CustomerRegistration  customerRegistration=new CustomerRegistration();
 	model.addAttribute("cuslogin", customerRegistration);
 	return "customer-login-form";
@@ -108,16 +130,16 @@ public String checkingAccess(@ModelAttribute("cuslogin") CustomerRegistration th
 }
 
 @GetMapping("/customerindex")
-public String CarReg() {
+public String carReg() {
 	return "customeraccess";
 }
 
 @GetMapping("/rentalcustomeruses")
-public String CarRental() {
+public String carRental() {
 	return "customercarrental";
 }
 @GetMapping("/returncustomeruses")
-public String CarReturn() {
+public String carReturn() {
 	return "customercarreturn";
 }
 

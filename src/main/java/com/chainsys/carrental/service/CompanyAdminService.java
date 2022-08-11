@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.chainsys.carrental.model.CarRegistration;
+import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.model.CompanyAdmin;
 import com.chainsys.carrental.model.CustomerRegistration;

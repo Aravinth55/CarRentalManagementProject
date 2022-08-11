@@ -5,29 +5,27 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.chainsys.carrental.model.CarRegistration;
-import com.chainsys.carrental.model.CustomerRegistration;
+import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.repository.CarRegistrationRepository;
-import com.chainsys.carrental.repository.CustomerRegistrationRepository;
 
 @Service
 public class CarRegistrationService {
 	@Autowired
 	private CarRegistrationRepository carRegistrationRepository;
 
-	public List<CarRegistration> getCars() {
-		List<CarRegistration> listCarRegistration = carRegistrationRepository.findAll();
+	
+	public List<Car> getCars() {
+		List<Car> listCarRegistration = carRegistrationRepository.findAll();
 		return listCarRegistration;
 	}
 
-	public CarRegistration save(CarRegistration cr) {
-
+	public Car save(Car cr) {
+		
 		return carRegistrationRepository.save(cr);
 	}
 
-	public Optional<CarRegistration>  findById(String id) {
+	public Optional<Car>  findById(String id) {
 		return carRegistrationRepository.findById(id);
 	}
 
@@ -35,7 +33,7 @@ public class CarRegistrationService {
 	public void deleteById(String id) {
 		carRegistrationRepository.deleteById(id);
 	}
-	public List<CarRegistration> allCarRegistration(){
+	public List<Car> allCarRegistration(){
 		return carRegistrationRepository.findAll();
 	}
 }

@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.carrental.model.CarRegistration;
-import com.chainsys.carrental.model.CompanyAdmin;
-import com.chainsys.carrental.model.CustomerRegistration;
+import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.service.CarRegistrationService;
 @Controller
 @RequestMapping("/car")
@@ -28,16 +25,16 @@ private	CarRegistrationService carRegistrationService;
 
 	@GetMapping("/carlist")
 	public String getCarRegistrations(Model model) {
-		List<CarRegistration> allCars = carRegistrationService.getCars();
+		List<Car> allCars = carRegistrationService.getCars();
 		model.addAttribute("allcars", allCars);
 		return "list-cars";
 	}
 
 	@GetMapping("/addcarform")
 	public String showAddCarForm(Model model) {
-		List<CarRegistration>allCarRegistration=carRegistrationService.allCarRegistration();
+		List<Car>allCarRegistration=carRegistrationService.allCarRegistration();
 		model.addAttribute("allcars", allCarRegistration);
-		CarRegistration theCar = new CarRegistration();
+		Car theCar = new Car();
 		model.addAttribute("addcar", theCar);
 		return "add-car-form";
 	}
@@ -45,40 +42,54 @@ private	CarRegistrationService carRegistrationService;
 	@PostMapping("/add")
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
-	public String addNewCar(@Valid@ModelAttribute("addcar") CarRegistration theCar,Errors errors) {
+	public String addNewCar(@Valid@ModelAttribute("addcar") Car theCar,Errors errors) {
 		if(errors.hasErrors()) {
 			return"add-car-form";
 		}
 		carRegistrationService.save(theCar);
 		return "redirect:/car/carlist";
 	}
-
+	@GetMapping("/updatecaridform")
+	public String showUpdateForm()
+	{
+	    return "update-carid-form";
+	}
 	@GetMapping("/updatecarform")
-	public String showUpdateCarForm(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRegistration> theCar = carRegistrationService.findById(id);
+	public String showUpdateCarForm(String carregno, Model model) {
+		Optional<Car> theCar = carRegistrationService.findById(carregno);
 		model.addAttribute("updatecar", theCar);
 		return "update-car-form";
 	}
 
 	@PostMapping("/updatecar")
-	public String Updatecars(@Valid@ModelAttribute("updatecar") CarRegistration theCar,Errors errors) {
+	public String updatecars(@Valid@ModelAttribute("updatecar") Car theCar,Errors errors) {
 		if(errors.hasErrors()) {
 			return "update-car-form";
 		}
 		carRegistrationService.save(theCar);
 		return "redirect:/car/carlist";
 	}
+	@GetMapping("/deletecaridform")
+	public String showDeleteForm()
+	{
+	    return "delete-carid-form";
+	}
 
 	@GetMapping("/deletecar")
-	public String deleteCustomer(@RequestParam("carregno") String id) {
-		Optional<CarRegistration> theCar = carRegistrationService.findById(id);
-		carRegistrationService.deleteById(id);
+	public String deleteCustomer( String carregno) {
+		Optional<Car> theCar = carRegistrationService.findById(carregno);
+		carRegistrationService.deleteById(carregno);
 		return "redirect:/car/carlist";
+	}
+	@GetMapping("/findcaridform")
+	public String showFindCarForm()
+	{
+	    return "findby-carid-form";
 	}
 
 	@GetMapping("/findcarbyid")
-	public String findCarById(@RequestParam("carregno") String id, Model model) {
-		Optional<CarRegistration> theCar = carRegistrationService.findById(id);
+	public String findCarById( String carregno, Model model) {
+		Optional<Car> theCar = carRegistrationService.findById(carregno);
 		model.addAttribute("findcarbyid", theCar);
 		return "find-car-by-id-form";
 	}

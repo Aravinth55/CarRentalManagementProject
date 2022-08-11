@@ -136,23 +136,16 @@ p {
 		<h3>Sign in here</h3>
 		<form:form action="add" method="post" modelAttribute="addcompanyadmin">
 			<div class="inputBox">
-				<input id="userId" type="text" name="userId" placeholder="User Id">
-				<input id="userName" type="text" name="userName"
-					placeholder="User Name">
+			<form:input id="userId" type="text" path="userId" name="userId" placeholder="User Id" title="It should be Number Formonly" required="true" />
+				<form:input id="userName" path="userName" type="text" name="userName"
+					placeholder="User Name" />
 				
-				<input id="userPassword" type="password" name="User Password"
-					placeholder="User Password">
+				<form:input id="userPassword" path="userPassword" type="password" name="User Password"
+					placeholder="User Password" />
 					<%-- <div class="error" style="background-color:red"><form:errors path="userPassword" cssClass="text-danger" />
 					</div> --%>
 			</div>
-			<input type="submit" name="" value="Add NewAdmin">
-			<!-- <a href="#">Forget Password<br>
-		<!-- </a> -->
-			<!-- <div class="text-center">
-			<p style="color: #59238F;">
-				<a href="/companyadmin/addadminform">Sign-Up</a>
-			</p> 
-			</div> -->
+				<input type="submit" name="submit" value="Add NewAdmin" >
 		</form:form>
 	</div>
 </body>

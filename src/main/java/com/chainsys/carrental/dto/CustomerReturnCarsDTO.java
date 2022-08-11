@@ -1,7 +1,10 @@
-package com.chainsys.carrental.model;
+package com.chainsys.carrental.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.chainsys.carrental.model.CustomerRegistration;
+import com.chainsys.carrental.model.ReturnCar;
 
 public class CustomerReturnCarsDTO {
 	private CustomerRegistration customerRegistration;

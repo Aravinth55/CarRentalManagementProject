@@ -13,12 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
-import com.chainsys.carrental.model.CarRegistration;
-import com.chainsys.carrental.model.CustomerRegistration;
+import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.model.ReturnCar;
 import com.chainsys.carrental.service.CarRegistrationService;
 import com.chainsys.carrental.service.CustomerRegistrationService;
@@ -46,10 +43,13 @@ public class ReturnCarController {
 
 	@GetMapping("/addreturncarform")
 	public String showAddReturnCarForm(Model model) {
-		List<CarRegistration> allCarRegistration=carRegistrationService.allCarRegistration();
+		List<Car> allCarRegistration=carRegistrationService.allCarRegistration();
 		model.addAttribute("allCars", allCarRegistration);
-		List<CustomerRegistration> allCustomerRegistration=customerRegistrationService.allCustomerRegistration();
-		model.addAttribute("allCustomer", allCustomerRegistration);
+		/*
+		 * List<CustomerRegistration>
+		 * allCustomerRegistration=customerRegistrationService.allCustomerRegistration()
+		 * ; model.addAttribute("allCustomer", allCustomerRegistration);
+		 */
 		ReturnCar theCret = new ReturnCar();
 		model.addAttribute("addreturncar", theCret);
 		return "add-returncar-form";
@@ -65,36 +65,48 @@ public class ReturnCarController {
 		returnCarService.save(theCret);
 		return "redirect:/returncar/returncarlist";
 	}
-
+	@GetMapping("/updatereturncaridform")
+	public String showUpdateForm()
+	{
+	    return "update-returncarid-form";
+	}
 	@GetMapping("/updatereturncarform")
-	public String showUpdateReturnCarForm(@RequestParam("carregno") String id, @RequestParam("cusid") int cusid,
+	public String showUpdateReturnCarForm(String carregno, int cusid,
 			Model model) {
-		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(id, cusid);
+		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(carregno, cusid);
 		Optional<ReturnCar> theCren = returnCarService.findById(returnCarCompositekey);
 		model.addAttribute("updatereturncar", theCren);
 		return "update-returncar-form";
 	}
 
 	@PostMapping("/updatereturncar")
-	public String Updatereturncars(@Valid@ModelAttribute("updatereturncar") ReturnCar theCret,Errors errors)  {
+	public String updateReturncars(@Valid@ModelAttribute("updatereturncar") ReturnCar theCret,Errors errors)  {
 		if(errors.hasErrors()) {
 			return "update-returncar-form";
 		}
 		returnCarService.save(theCret);
 		return "redirect:/returncar/returncarlist";
 	}
-
+	@GetMapping("/deletereturncaridform")
+	public String showDeleteForm()
+	{
+	    return "delete-returncarid-form";
+	}
 	@GetMapping("/deletereturncar")
-	public String deleteReturnCar(@RequestParam("carregno") String id, @RequestParam("cusid") int cusid) {
-		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(id, cusid);
+	public String deleteReturnCar(String carregno,int cusid) {
+		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(carregno, cusid);
 		Optional<ReturnCar> theCret = returnCarService.findById(returnCarCompositekey);
 		returnCarService.deleteById(returnCarCompositekey);
 		return "redirect:/returncar/returncarlist";
 	}
-
+	@GetMapping("/findreturncaridform")
+	public String showFindForm()
+	{
+	    return "find-returncarid-form";
+	}
 	@GetMapping("/findreturncarbyid")
-	public String findReturnCarById(@RequestParam("carregno") String id, @RequestParam("cusid") int cusid,Model model) {
-		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(id, cusid);
+	public String findReturnCarById(String carregno,int cusid,Model model) {
+		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(carregno, cusid);
 		Optional<ReturnCar> theCret = returnCarService.findById(returnCarCompositekey);
 		model.addAttribute("findreturncarbyid", theCret);
 		return "find-returncar-by-id-form";

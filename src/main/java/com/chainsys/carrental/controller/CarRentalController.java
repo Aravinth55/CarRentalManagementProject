@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.carrental.businesslogic.BusinessLogic;
 import com.chainsys.carrental.compositekey.CarRentalCompositekey;
-import com.chainsys.carrental.model.CarRegistration;
+import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.model.CarRental;
-import com.chainsys.carrental.model.CustomerRegistration;
 import com.chainsys.carrental.service.CarRegistrationService;
 import com.chainsys.carrental.service.CarRentalService;
 import com.chainsys.carrental.service.CustomerRegistrationService;
@@ -46,10 +43,8 @@ public class CarRentalController {
 	}
 	@GetMapping("/addcarrentalform")
 	public String showAddCarRentalForm(Model model) {
-		List<CarRegistration> allCarRegistration=carRegistrationService.allCarRegistration();
+		List<Car> allCarRegistration=carRegistrationService.allCarRegistration();
 		model.addAttribute("allCars", allCarRegistration);
-		List<CustomerRegistration> allCustomerRegistration=customerRegistrationService.allCustomerRegistration();
-		model.addAttribute("allCustomer", allCustomerRegistration);
 		CarRental theCren = new CarRental();
 		model.addAttribute("addcarrental", theCren);
 		return "add-carrental-form";
@@ -62,13 +57,19 @@ public class CarRentalController {
 		if(errors.hasErrors()) {
 			return "add-carrental-form";
 		}
-//		int day=BusinessLogic.dayCalculation(theCren.getFromDate()+"",theCren.getDueDate()+"");
-//		carRentalService.save(theCren);
+		carRentalService.save(theCren);
+		
 		return "redirect:/carrental/carrentallist";
+		
+	}
+	@GetMapping("/updatecarrentalidform")
+	public String showUpdateForm()
+	{
+	    return "update-carrentalid-form";
 	}
 	@GetMapping("/updatecarrentalform")
-	public String showUpdateCarRentalForm(@RequestParam("carregno") String id,@RequestParam("cusid") int cusid, Model model) {
-		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(id,cusid);
+	public String showUpdateCarRentalForm( String carregno,int cusid, Model model) {
+		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(carregno,cusid);
 		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		model.addAttribute("updatecarrental", theCren);
 		return "update-carrental-form";
@@ -81,16 +82,26 @@ public class CarRentalController {
 		carRentalService.save(theCren);
 		return "redirect:/carrental/carrentallist";
 	}
+	@GetMapping("/deletecarrentalidform")
+	public String showDeleteForm()
+	{
+	    return "delete-carrentalid-form";
+	}
 	@GetMapping("/deletecarrental")
-	public String deleteCarRental(@RequestParam("carregno") String id,@RequestParam("cusid") int cusid) {
-		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(id,cusid);
-//		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
+	public String deleteCarRental(String carregno, int cusid) {
+		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(carregno,cusid);
+		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		carRentalService.deleteById(carRentalCompositekey);
 		return "redirect:/carrental/carrentallist";
 	}
+	@GetMapping("/findcarrentalidform")
+	public String showFindForm()
+	{
+	    return "find-carrentalid-form";
+	}
 	@GetMapping("/findcarrentalbyid")
-	public String findCarRentalById(@RequestParam("carregno") String id,@RequestParam("cusid") int cusid, Model model) {
-		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(id,cusid);
+	public String findCarRentalById(String carregno,int cusid, Model model) {
+		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(carregno,cusid);
 		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		model.addAttribute("findcarrentalbyid", theCren);
 		return "find-carrental-by-id-form";

@@ -13,12 +13,10 @@ public interface CustomerRegistrationRepository extends CrudRepository<CustomerR
 
 	CustomerRegistration save(CarRental carRental);
 
-	void deleteById(int Customer_Id);
+	void deleteById(int customerId);
 
 	List<CustomerRegistration> findAll();
-	//int getNextId();
 	
-//	List<CustomerRegistration> getCustomerRegistrations();
 	
 	CustomerRegistration findByCustomerIdAndCustomerPassword(int id,String str); //login user
 }

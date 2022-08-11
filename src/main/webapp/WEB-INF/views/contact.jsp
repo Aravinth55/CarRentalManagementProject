@@ -15,12 +15,15 @@ body {
     background-size: cover;
     position: relative;
 }
+p {
+  font-size: 30px;
+}
 </style>
 </head>
 <body>
 	<h1>Welcome To Car Rental Management System</h1>
 	<h2>1. Do Not Drink and Drive</h2>
-	<p> <b>A statistic reveals that around 19
+	<p> <strong>A statistic reveals that around 19
 		Indians are killed daily due to drunk-driving road accidents (source)
 
 		As per the current law, the blood alcohol limit permissible for
@@ -28,7 +31,7 @@ body {
 		100 ml of blood. If an individual fails to pass this BAC test, he/she
 		can be fined between Rs.2000 and Rs.10000, based on the final blood
 		alcohol limit. Moreover, such individuals may also be sentenced to a
-		prison term ranging between 7 months and four years.</b></p>
+		prison term ranging between 7 months and four years.</strong>></p>
 		<p>
 		OWNER:ARAVINTHVENKATESAN,<br>
 		ADDRESS:DINDIGUL(DISTRICT) NATHAM(POST),<br>

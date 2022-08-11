@@ -41,17 +41,20 @@ public class CompanyAdminController {
 	@PostMapping("/add")
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
-	public String addNewCompanyAdmin(@Valid@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd,Errors errors) {
-		if(errors.hasErrors()) {
-			return "add-companyadmin-form";
-		}
+	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd) {
+		
 		companyAdminService.save(theCmd);
 		return "redirect:/companyadmin/companyadminlist";
 	}
+	@GetMapping("/updateadminbyidform")
+	public String showUpdateForm()
+	{
+	    return "update-adminbyid-form";
+	}
 
 	@GetMapping("/updateadminform")
-	public String showUpdateAdminForm(@RequestParam("userid") int id, Model model) {
-		CompanyAdmin theCren = companyAdminService.findById(id);
+	public String showUpdateAdminForm(int userid, Model model) {
+		CompanyAdmin theCren = companyAdminService.findById(userid);
 		model.addAttribute("updatecompanyadmin", theCren);
 		return "update-companyadmin-form";
 	}
@@ -64,17 +67,25 @@ public class CompanyAdminController {
 		companyAdminService.save(theCmd);
 		return "redirect:/companyadmin/companyadminlist";
 	}
-
+	@GetMapping("/deleteadminbyidform")
+	public String showFindByForm()
+	{
+	    return "delete-adminbyid-form";
+	}
 	@GetMapping("/deletecomadmin")
-	public String deleteCompanyAdmin(@RequestParam("userid") int id) {
-		CompanyAdmin theCmd = companyAdminService.findById(id);
-		companyAdminService.deleteById(id);
+	public String deleteCompanyAdmin(int userid) {
+		CompanyAdmin theCmd = companyAdminService.findById(userid);
+		companyAdminService.deleteById(userid);
 		return "redirect:/companyadmin/companyadminlist";
 	}
-
+	@GetMapping("/findadminbyidform")
+	public String showDeleteForm()
+	{
+	    return "find-adminbyid-form";
+	}
 	@GetMapping("/findcomadminbyid")
-	public String findCompanyAdminById(@RequestParam("userid") int id, Model model) {
-		CompanyAdmin theCmd = companyAdminService.findById(id);
+	public String findCompanyAdminById( int userid, Model model) {
+		CompanyAdmin theCmd = companyAdminService.findById(userid);
 		model.addAttribute("findcomadminbyid", theCmd);
 		return "find-companyadmin-by-id-form";
 	}
@@ -96,20 +107,24 @@ CompanyAdmin  companyAdmin=new CompanyAdmin();
 	public String CarReg() {
 		return "adminaccess";
 	}
+	@GetMapping("/adminindex")
+	public String adminRegistration() {
+		return "companyadmin";
+	}
 	@GetMapping("/carregistrationindex")
-	public String CarRegistration() {
+	public String carRegistration() {
 		return "carregistration";
 	}
 	@GetMapping("/carrentalindex")
-	public String CarRental() {
+	public String carRental() {
 		return "carrental";
 	}
 	@GetMapping("/carreturnindex")
-	public String CarReturn() {
+	public String carReturn() {
 		return "carreturn";
 	}
 	@GetMapping("/customerindex")
-	public String CustomerRegistration() {
+	public String customerRegistration() {
 		return "customerregistration";
 	}
 	

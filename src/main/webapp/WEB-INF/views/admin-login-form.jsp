@@ -136,7 +136,7 @@ p {
 		<form action="companyuserlogin" method="post">
 			<div class="inputBox">
 				<input id="userId" type="text" name="userId" placeholder="User Id" title="It should be Number Format"
-				 pattern="^[0-9]+$" required="true">
+				 required="true">
 				<input id="userPassword" type="password" name="userPassword"
 					placeholder="User Password">
 			</div>

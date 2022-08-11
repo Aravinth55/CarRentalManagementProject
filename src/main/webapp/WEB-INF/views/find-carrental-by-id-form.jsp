@@ -8,9 +8,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Find CarRental By Id</title>
-<style>   
+<style type="text/css">
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -22,7 +22,7 @@ body {
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" style="text-align:center ;margin-top:5%;">
 			<form:form action="" method="get" modelAttribute="findcarrentalbyid">
 				<div>
 					<label for="carRegno">Car RegNo</label>

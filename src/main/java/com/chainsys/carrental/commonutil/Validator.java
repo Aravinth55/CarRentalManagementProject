@@ -1,8 +1,5 @@
 package com.chainsys.carrental.commonutil;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,7 +13,7 @@ public class Validator {
 		result=match.matches();
 		if(!result) throw new InvalidInputDataException("please enter Integer");
 	}
-	public static void CheckNumberForGreaterThanZero(int data) throws InvalidInputDataException {
+	public static void checkNumberForGreaterThanZero(int data) throws InvalidInputDataException {
 		if(data<0) {
 			throw new InvalidInputDataException("please enter number greater than zero");
 		}
@@ -25,7 +22,7 @@ public class Validator {
 	public static void checklengthOfString(String data) throws InvalidInputDataException{
 		
 		int len=data.length();
-		if(len<15 && len>3) ;
+		if(len<15 && len>3);
 		else throw new InvalidInputDataException("length does meet required length");
 		
 	}
@@ -40,7 +37,7 @@ public class Validator {
 	}
 	
 	
-	public static void CheckNumberForGreaterThanZero(float data) throws InvalidInputDataException {
+	public static void checkNumberForGreaterThanZero(float data) throws InvalidInputDataException {
 		if(data<0) 
 			throw new InvalidInputDataException("please enter value greater than zero");
 		
@@ -87,68 +84,6 @@ public class Validator {
 	 }
 }
 	   
-//	public static boolean checkMail(String data) throws InvalidInputDataException{
-//		boolean result=false;
-//		int count =0;
-//		int spechar=0;
-//		int len=data.length();
-//		for(int index=0;index<len;index++) {
-//			int asc=(int)data.charAt(index);
-//			if(asc<91 && asc>64 || asc==32)
-//				throw new InvalidInputDataException("don't enter uppercase letters");
-//			else if(asc>47 && asc<58)
-//				count+=1;
-//			else if(asc==64)
-//				spechar+=1;
-//		}
-//		
-//		if(count==0) throw new InvalidInputDataException("your email must contain Numerical value");
-//		if(spechar==0 ) throw new InvalidInputDataException("your email must contain @");
-//		if(!data.endsWith(".com"))
-//			throw new InvalidInputDataException("your email must end with \".com\" ");
-//		return result;
-//	}
-//	public static boolean checkStringForParseInt(String data) throws InvalidInputDataException{
-//	//--This method is incomplete 
-//	boolean result =false;
-//	int len=data.length();
-//	for(int index=0;index<len;index++) {
-//	int asc=(int)data.charAt(index);
-//	if(asc>47 && asc<58)
-//		result =true;
-//	else throw new InvalidInputDataException("enter integer value");
-//	}
-//	
-//	//if data is invalid throw new InvalidInputDataException ("The value in String must contain only numbers")
-//	return result;
-//}
-//	public static boolean checkStringOnly(String data) throws InvalidInputDataException {
-//		boolean result =false;
-//		int len=data.length();
-//		for(int index=0;index<len;index++) {
-//			data.toUpperCase();
-//			int asc=(int)data.charAt(index);
-//			if(asc<91 && asc>64 || asc==32) {
-//				result=true;
-//			}
-//			else throw new InvalidInputDataException("Enter only Alphabet");
-//		}
-//		return result;
-//	}
-//	public static void validateDate(String strDate) throws ParseException
-//	   {
-//		if (strDate.trim().equals(""))
-//		{
-//		    throw new NullPointerException("date cannot be null");
-//		}
-//		else
-//		{ 
-//		    SimpleDateFormat sdfrmt = new SimpleDateFormat("MM/dd/yyyy");
-//		    sdfrmt.setLenient(false);
-//		        Date javaDate = sdfrmt.parse(strDate); // it will throw exception
-//		    
-//		}
-//	   }
 
 
 

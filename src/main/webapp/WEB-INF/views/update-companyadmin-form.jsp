@@ -10,7 +10,7 @@
 <title>Update CompanyAamin</title>
 <style type="text/css">
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -22,7 +22,7 @@ body {
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" style="text-align:center ;margin-top:5%;">
 			 <form:form action="updatecomadmin" method="post"
                 modelAttribute="updatecompanyadmin">
 				<div>
@@ -48,5 +48,6 @@ body {
 						</div>
 			</form:form></div>
 	</div>
+	 <div><h3><a href="/home/hello">Back To MainPage</a></h3></div>
 </body>
 </html>

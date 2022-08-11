@@ -10,7 +10,7 @@
 <title>CompanyAdmin List</title>
 <style>
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -40,6 +40,8 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 					<th style="background-color:#87CEFA">User Id</th>
 					<th style="background-color:#87CEFA">User Name</th>
 					<th style="background-color:#87CEFA">User Password</th>
+					<th style="background-color:#87CEFA">Edit User</th>
+					<th style="background-color:#87CEFA">Delete User</th>
 					
 				</tr>
 			</thead>
@@ -49,11 +51,13 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 						<td>${cmad.userId}</td>
 						<td>${cmad.userName}</td>
 						<td>${cmad.userPassword}</td>
-						
+						<td><a  href="updateadminform?userid=${cmad.userId}">Edit User</a></td>
+						<td><a  href="deletecomadmin?userid=${cmad.userId}">Delete User</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+			 <div><h3><a href="/home/hello"><b>Back To MainPage</b></a></h3></div>
 	</div>
 </body>
 </html>

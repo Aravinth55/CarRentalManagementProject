@@ -15,10 +15,9 @@ public interface CarRentalRepository extends CrudRepository<CarRental, CarRental
 
 	CarRental save(CarRental car);
 
-	void deleteById(CarRentalCompositekey Car_Id);
+	void deleteById(CarRentalCompositekey carId);
 
 	List<CarRental> findAll();
 
-//	List<CarRental> getCarRental();
  List<CarRental> findByCustomerId(int id);
 }

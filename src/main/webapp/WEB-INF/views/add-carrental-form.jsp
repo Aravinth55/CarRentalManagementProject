@@ -21,10 +21,27 @@ function dateCalculation(){
 	return parseInt(total);
 }
 
+<!-- </script>
+<script type="text/javascript"> -->
+const form = document.getElementById('form');
+const fromDate = document.getElementById('fromDate');
+const dueDate = document.getElementById('dueDate');
+
+
+form.addEventListener('submit',function(){
+	e.preventDefault();
+const fromDateValue = fromDate.value;
+const dueDateValue = dueDate.value;
+
+localStorage.setItem('fromDate',fromDateValue);
+localStorage.setItem('dueDate',dueDateValue);
+
+window.location.href = "add-carrental-form";
+})
 </script>
 <style>   
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -40,7 +57,7 @@ body {
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" style="text-align:center ;margin-top:5%;">
 			<form:form action="add" method="post" modelAttribute="addcarrental">
 				<div>
                     <label for="carRegno">Car RegistrationNo</label>
@@ -58,25 +75,21 @@ body {
 				<div>
 					<label for="customerId">Customer Id</label>
 					<div>
-                        <form:select path="customerId" placeholder="Customer Id" >
-                            <c:forEach var="allcustomers" items="${allCustomer}">
-                                <form:option value="${allcustomers.customerId}"
-                                    label="${allcustomers.customerId}" />
-                            </c:forEach>
-                        </form:select>
-                    </div>
+							<form:input path="customerId" placeholder="Customer Id"  title="It should be Number Format"
+				 pattern="^[0-9]+$" required="true"/>
+						</div>
 				</div>
 				<div>
 					<label for="fromDate">From Date</label>
 					<div>
-						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()" placeholder="From Date" required="true"/>
+						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()" placeholder="From Date" />
 					</div>
 					</div>
 	
 					<div>
 						<label for="dueDate">Due Date</label>
 						<div>
-							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()" placeholder="Due Date" required="true"/>
+							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()" placeholder="Due Date" />
 						</div>
 					</div>
 	

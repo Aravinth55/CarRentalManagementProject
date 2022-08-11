@@ -23,7 +23,7 @@ th, td {
 tr:hover {background-color: Aquamarine;  /*coral  */
 }
 body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
+    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
     height: 768px;
     width: 1366px;
     background-position: center top;
@@ -45,6 +45,8 @@ body {
 					<th style="background-color:#87CEFA">Fuel Type</th>
 					<th style="background-color:#87CEFA">Car Capacity</th>
 					<th style="background-color:#87CEFA">Car Available</th>
+					<th style="background-color:#87CEFA">Edit Car</th>
+					<th style="background-color:#87CEFA">Delete Car</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,10 +59,14 @@ body {
 						<td>${car.fuelType}</td>
 						<td>${car.carCapacity}</td>
 						<td>${car.carAvailable}</td>
+						<td><a  href="updatecarform?carregno=${car.carRegno}">Edit Car</a></td>
+						<td><a  href="deletecar?carregno=${car.carRegno}">Delete Car</a></td>
+						<td><a ></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+	 <div><h3><a href="/home/hello"><strong>Back To MainPage</strong></a></h3></div>
 	</div>
 </body>
 </html>

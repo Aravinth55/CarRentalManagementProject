@@ -47,7 +47,7 @@ body {
 			<h3>
 				<div>
 					<div>
-						<a href="/carrental/updatecarrentalform?carregno=&cusid=">Update
+						<a href="/carrental/updatecarrentalidform">Update
 							CarRental</a>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ body {
 			<h3>
 				<div>
 					<div>
-						<a href="/carrental/deletecarrental?carregno=&cusid=">Delete
+						<a href="/carrental/deletecarrentalidform">Delete
 							CarRental</a>
 					</div>
 				</div>
@@ -67,7 +67,7 @@ body {
 			<h3>
 				<div>
 					<div>
-						<a href="/carrental/findcarrentalbyid?carregno=&cusid=">FindCarRentalId</a>
+						<a href="/carrental/findcarrentalidform">FindCarRentalId</a>
 					</div>
 				</div>
 			</h3>
@@ -76,11 +76,14 @@ body {
 			<h3>
 				<div>
 					<div>
-						<a href="/customer/getcustomerrentalcars?cusid=">GetCustomerRentalCars</a>
+						<a href="/customer/findcustomercarrentalform">GetCustomerRentalCars</a>
 					</div>
 				</div>
 			</h3>
 		</div>
 	</div>
+	<div>
+						<a href="/companyadmin/carindex">Back To AdminAccess</a>
+					</div>
 </body>
 </html>
