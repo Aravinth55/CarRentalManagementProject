@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 	
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome to AdminLogin</title>
@@ -144,8 +144,6 @@ p {
 </head>
 <body>
 	<div class="loginBox">
-		<!-- <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
-			width="100px"> -->
 		<h3>Sign in here</h3>
 		<form:form action="add" method="post"  modelAttribute="addcarrental" >
 			<div class="inputBox">
@@ -181,12 +179,7 @@ p {
 										</div>
 			<input type="submit" name="" value="AddNewCustomer">
 				</form:form>
-		<!-- <a href="#">Forget Password<br>
-		</a> -->
-		<!-- <div class="text-center">
-			<p style="color: #59238F;">
-				<a href="/companyadmin/addadminform">Sign-Up</a>
-			</p> -->
+
 		</div>
 	
 </body>

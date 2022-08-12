@@ -28,8 +28,7 @@ public class CustomerRegistrationService {
 	private ReturnCarRepository returnCarRepository;
 
 	public List<CustomerRegistration> getCustomers() {
-		List<CustomerRegistration> listCustomer = customerRegistrationRepository.findAll();
-		return listCustomer;
+		return customerRegistrationRepository.findAll();
 	}
 
 	// @Transactional
@@ -53,41 +52,6 @@ public class CustomerRegistrationService {
 		return customerRegistrationRepository.findByCustomerIdAndCustomerPassword(customerId, customerPassword);    //login method 
 	}
 
-//	public CustomerRentalsDTO getCustomerAndRentals(int id)
-//    {
-//        CustomerRegistration cus=findById(id);
-//        CustomerRentalsDTO crdto=new CustomerRentalsDTO();
-//        crdto.setCustomerregistration(cus);
-//         List<CarRental> carrentals= crerepo.findById(id);
-////        for(int i=0;i<=5;i++) 
-////        {
-////            Appointment app=new Appointment();
-////            app.setApp_id(i);
-////            Date dt=new Date(22,7,25);
-////            app.setApp_date(dt); 
-////            app.setId(id);
-////            app.setPatient_name("Anbuselvan");
-////            app.setFees_collected(i*500);
-////            app.setFees_nature("Low");
-////            dto.addAppointment(app);
-////            
-////        }
-//        Iterator<CarRental> itr=carrentals.iterator();
-//        while(itr.hasNext()) {
-//        	crdto.addCarRental(null);
-//        }
-//        return crdto;
-//    }
-//	@Transactional
-//public void addCustomerAndCarRentals(CustomerRentalsDTO crdto) {
-//	CustomerRegistration cr=crdto.getCustomerregistration();
-//	save(cr);
-//	List<CarRental> carrentalList=crdto.getRentallist();
-//	int count=carrentalList.size();
-//	for(int i=0; i<count; i++) {
-//		crrepo.save(carrentalList.get(i));
-//	}
-//}
 	@Transactional
 	public CustomerRentalsDTO getCustomerAndRentals(int id) {
 
@@ -97,7 +61,7 @@ public class CustomerRegistrationService {
 	List<CarRental> carRentals = carRentalRepository.findByCustomerId(id);
 		  Iterator<CarRental> itr=carRentals.iterator();
         while(itr.hasNext()) {
-        	crdto.addCarRental((CarRental) itr.next());
+        	crdto.addCarRental(itr.next());
         }
 		return crdto;
 	}
@@ -110,7 +74,7 @@ public class CustomerRegistrationService {
 	List<ReturnCar> returnCar = returnCarRepository.findByCustomerId(id);
 		  Iterator<ReturnCar> itr=returnCar.iterator();
         while(itr.hasNext()) {
-        	carReturndto.addReturnCar((ReturnCar) itr.next());
+        	carReturndto.addReturnCar(itr.next());
         }
 		return carReturndto;
 	}

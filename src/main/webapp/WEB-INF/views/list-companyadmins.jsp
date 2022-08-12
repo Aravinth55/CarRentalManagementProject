@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>CompanyAdmin List</title>
@@ -34,7 +34,9 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 </head>
 <body>
 	<div id="table root">
-		<table border="2" width="80%" cellpadding="2">
+		<table>
+		<caption>CompanyAdmin list</caption>
+		
 			<thead>
 				<tr>
 					<th style="background-color:#87CEFA">User Id</th>
@@ -57,7 +59,7 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 				</c:forEach>
 			</tbody>
 		</table>
-			 <div><h3><a href="/home/hello"><b>Back To MainPage</b></a></h3></div>
+			 <div><h3><a href="/home/hello">Back To MainPage</a></h3></div>
 	</div>
 </body>
 </html>

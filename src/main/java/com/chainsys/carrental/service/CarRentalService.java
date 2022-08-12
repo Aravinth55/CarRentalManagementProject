@@ -16,8 +16,7 @@ public class CarRentalService {
 	private CarRentalRepository carRentalRepository;
 
 	public List<CarRental> getCarRentals() {
-		List<CarRental> listCarRental = carRentalRepository.findAll();
-		return listCarRental;
+		return carRentalRepository.findAll();
 	}
 
 	public CarRental save(CarRental cr) {

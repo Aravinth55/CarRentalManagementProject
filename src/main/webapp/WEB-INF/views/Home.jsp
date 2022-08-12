@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome</title>
@@ -185,13 +185,6 @@ color: #fff;
 }
 </style></head>
 <body>
-<!-- <h1 id="welcome">Welcome</h1>
-<div>
-<h1 id="admin"> <a href="/companyadmin/adminlogin">CompanyAdmin Login</a></h1>
-</div>
-<div>
-<h1 id="customer"><a href="/customer/customerloginpage">Customer Login</a></h1>
-</div> -->
 <div class="menu">
 <ul>
 <li><a href="#">HOME</a></li>
@@ -199,13 +192,7 @@ color: #fff;
 <li><a href="/customer/customerloginpage">CUSTOMER</a></li>
 <li><a href="/home/cont">CONTACT</a></li>
 </ul>
-<!-- <div class="search" >
-<input class="srch" type="search" name="" placeholder="Type To text">
-<a href="/home/customer"><button class="btn">Search</button></a>
-</div> -->
-<!-- <div class="content">
-<h1>Car Rental & <br><span>Development</span><br>Course</h1>
-  --><div class="form">
+<div class="form">
 <h2>Login Here</h2>
 <input type="text" name="text" placeholder="Enter CustomerId Here">
 <input type="password" name="password" placeholder="Enter password Here">

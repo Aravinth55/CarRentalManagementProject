@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.carrental.model.CompanyAdmin;
 import com.chainsys.carrental.service.CompanyAdminService;
@@ -74,7 +73,6 @@ public class CompanyAdminController {
 	}
 	@GetMapping("/deletecomadmin")
 	public String deleteCompanyAdmin(int userid) {
-		CompanyAdmin theCmd = companyAdminService.findById(userid);
 		companyAdminService.deleteById(userid);
 		return "redirect:/companyadmin/companyadminlist";
 	}
@@ -90,7 +88,7 @@ public class CompanyAdminController {
 		return "find-companyadmin-by-id-form";
 	}
 	@GetMapping("/adminlogin")
-	public String AdminLogin(Model model) {
+	public String adminLogin(Model model) {
 CompanyAdmin  companyAdmin=new CompanyAdmin();
 		model.addAttribute("login", companyAdmin);
 		return "admin-login-form";
@@ -104,7 +102,7 @@ CompanyAdmin  companyAdmin=new CompanyAdmin();
 			return "Invalid-user-error";  
 	}
 	@GetMapping("/carindex")
-	public String CarReg() {
+	public String carReg() {
 		return "adminaccess";
 	}
 	@GetMapping("/adminindex")

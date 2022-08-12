@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Access</title>
@@ -85,12 +85,12 @@ h1 {
 </style>
 </head>
 <body>
-	<h1 align="center">Welcome Customer</h1>
+	<h1 text-align="center">Welcome Customer</h1>
 
 	<div class="navbar">
 		<div class="dropdown">
 			<button class="dropbtn">
-				Customer Registration <i class="fa fa-caret-down"></i>
+				Customer Registration <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/customer/addcustomerform">Add a New Customer</a> <a
@@ -104,7 +104,7 @@ h1 {
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Rentals Cars <i class="fa fa-caret-down"></i>
+				Rentals Cars <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/carrental/addcarrentalform">Add RentalCar to Customer</a>
@@ -118,7 +118,7 @@ h1 {
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Return Cars <i class="fa fa-caret-down"></i>
+				Return Cars <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/returncar/addreturncarform">Add ReturnCar for Customer

@@ -8,7 +8,7 @@ import com.chainsys.carrental.model.ReturnCar;
 
 public class CustomerReturnCarsDTO {
 	private CustomerRegistration customerRegistration;
-	private List<ReturnCar> returnCarList = new ArrayList<ReturnCar>();
+	private List<ReturnCar> returnCarList = new ArrayList<>();
 
 	public CustomerRegistration getCustomerRegistration() {
 		return customerRegistration;

@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Customer</title>
@@ -47,7 +47,7 @@ body {
 				<div>
 					<label for="customerPassword">Customer Password</label>
 					<div>
-						<form:input path="customerPassword" placeholder="Customer Password"/>
+						<form:input path="customerPassword" placeholder="Customer Password" />
 					</div>
 				</div>
 					<form:errors path="customerPassword" cssClass="text-danger" />

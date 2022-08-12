@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Return Cars List</title>
@@ -34,7 +34,8 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table >
+		<caption>Return Car list</caption>
 			<thead>
 				<tr>
 					<th style="background-color:#87CEFA">Car RegistrationNo</th>

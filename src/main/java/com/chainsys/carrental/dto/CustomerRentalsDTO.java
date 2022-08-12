@@ -9,7 +9,7 @@ import com.chainsys.carrental.model.CustomerRegistration;
 
 public class CustomerRentalsDTO {
 	private CustomerRegistration customerRegistration;
-	private List<CarRental> rentallist = new ArrayList<CarRental>();
+	private List<CarRental> rentallist = new ArrayList<>();
 
 	public CustomerRegistration getCustomerregistration() {
 		return customerRegistration;

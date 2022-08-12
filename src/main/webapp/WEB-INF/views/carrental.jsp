@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
 <meta charset="ISO-8859-1">
 <title>Rental Cars</title>
@@ -18,7 +18,7 @@ body {
 </style>
 </head>
 <body>
-	<div align="center">
+	<div text-align="center">
 		<div>
 			<h1>Rental Cars</h1>
 		</div>

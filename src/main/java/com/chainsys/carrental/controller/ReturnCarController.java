@@ -45,11 +45,6 @@ public class ReturnCarController {
 	public String showAddReturnCarForm(Model model) {
 		List<Car> allCarRegistration=carRegistrationService.allCarRegistration();
 		model.addAttribute("allCars", allCarRegistration);
-		/*
-		 * List<CustomerRegistration>
-		 * allCustomerRegistration=customerRegistrationService.allCustomerRegistration()
-		 * ; model.addAttribute("allCustomer", allCustomerRegistration);
-		 */
 		ReturnCar theCret = new ReturnCar();
 		model.addAttribute("addreturncar", theCret);
 		return "add-returncar-form";
@@ -95,7 +90,6 @@ public class ReturnCarController {
 	@GetMapping("/deletereturncar")
 	public String deleteReturnCar(String carregno,int cusid) {
 		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(carregno, cusid);
-		Optional<ReturnCar> theCret = returnCarService.findById(returnCarCompositekey);
 		returnCarService.deleteById(returnCarCompositekey);
 		return "redirect:/returncar/returncarlist";
 	}

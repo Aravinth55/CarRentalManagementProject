@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>CompanyAdmin Access</title>
@@ -84,12 +84,12 @@ h1 {
 </style>
 </head>
 <body>
-	<h1 align="center">Welcome CompanyAdmin</h1>
+	<h1 text-align="center">Welcome CompanyAdmin</h1>
 
 	<div class="navbar">
 		<div class="dropdown">
 			<button class="dropbtn">
-				CompanyAdmin<i class="fa fa-caret-down"></i>
+				CompanyAdmin<em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/companyadmin/addadminform">Add a New CompanyAdmin</a> <a
@@ -104,7 +104,7 @@ h1 {
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Customer Registration <i class="fa fa-caret-down"></i>
+				Customer Registration <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/customer/addcustomerform">Add a New Customer</a> <a
@@ -123,7 +123,7 @@ h1 {
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Rentals Cars <i class="fa fa-caret-down"></i>
+				Rentals Cars <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/carrental/addcarrentalform">Add RentalCar to Customer</a>
@@ -140,7 +140,7 @@ h1 {
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Return Cars <i class="fa fa-caret-down"></i>
+				Return Cars <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/returncar/addreturncarform">Add ReturnCar for Customer
@@ -158,7 +158,7 @@ h1 {
 		</div>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Car Registration <i class="fa fa-caret-down"></i>
+				Car Registration <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
 				<a href="/car/addcarform">Add Car

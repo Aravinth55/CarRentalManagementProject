@@ -63,7 +63,7 @@ public String showUpdateCustomerForm( int cusid, Model model) {
 @PostMapping("/updatecus")
 public String updateCustomer(@Valid@ModelAttribute("updatecustomer") CustomerRegistration theCus,Errors errors) {
 	if(errors.hasErrors()) {
-		return "add-customer-form";
+		return "update-customer-form";
 	}
 	customerRegistrationService.save(theCus);
 	return "redirect:/customer/customerlist";
@@ -75,7 +75,6 @@ public String showFindForm()
 }
 @GetMapping("/deletecustomer")
 public String deleteCustomer(int cusid) {
-	CustomerRegistration theCus = customerRegistrationService.findById(cusid);
 	customerRegistrationService.deleteById(cusid);
 	return "redirect:/customer/customerlist";
 }

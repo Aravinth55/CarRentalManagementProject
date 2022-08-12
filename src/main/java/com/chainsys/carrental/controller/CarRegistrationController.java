@@ -77,7 +77,6 @@ private	CarRegistrationService carRegistrationService;
 
 	@GetMapping("/deletecar")
 	public String deleteCustomer( String carregno) {
-		Optional<Car> theCar = carRegistrationService.findById(carregno);
 		carRegistrationService.deleteById(carregno);
 		return "redirect:/car/carlist";
 	}

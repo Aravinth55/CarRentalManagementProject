@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>List Customer Car Rentals</title>
@@ -33,7 +33,7 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 </head>
 <body>
 	<div id="root">
-		<div id="getcus" align="center">
+		<div id="getcus" text-align="center">
 			<form:form action="" method="post" modelAttribute="getcus">
 
 				<div>
@@ -86,7 +86,8 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 	</div>
 
 	<div id="rentallist">
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption>RentalCar List</caption>
 			<thead>
 				<tr>
 					<th style="background-color:#87CEFA">carRegNo</th>

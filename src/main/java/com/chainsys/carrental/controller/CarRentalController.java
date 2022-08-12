@@ -51,8 +51,6 @@ public class CarRentalController {
 	}
 
 	@PostMapping("/add")
-	// We need give from where to read data from the HTTP request and also the
-	// content type ("application/json")
 	public String addNewCarRental(@Valid@ModelAttribute("addcarrental") CarRental theCren,Errors errors) {
 		if(errors.hasErrors()) {
 			return "add-carrental-form";
@@ -90,7 +88,6 @@ public class CarRentalController {
 	@GetMapping("/deletecarrental")
 	public String deleteCarRental(String carregno, int cusid) {
 		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(carregno,cusid);
-		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		carRentalService.deleteById(carRentalCompositekey);
 		return "redirect:/carrental/carrentallist";
 	}

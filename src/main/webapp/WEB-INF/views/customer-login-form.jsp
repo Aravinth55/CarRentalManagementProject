@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome to CustomerLogin </title>
@@ -130,7 +130,7 @@ p {
 <body>
 	<div class="loginBox">
 		<img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
-			width="100px">
+			width="100px" alt="image">
 		<h3>Sign in here</h3>
 		<form action="customerlogin"  method="post">
 			<div class="inputBox">
@@ -141,8 +141,7 @@ p {
 			</div>
 			<input type="submit" name="" value="Login">
 		</form>
-		<!-- <a href="#">Forget Password<br>
-		</a> -->
+		
 		<div class="text-center">
 			<p style="color: #59238F;"><a  href="/customer/addcustomerform">Sign-Up</a></p>
 		</div>

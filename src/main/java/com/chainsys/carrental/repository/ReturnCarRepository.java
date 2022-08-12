@@ -7,7 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
-import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.model.ReturnCar;
 
 @Repository
@@ -16,10 +15,9 @@ public interface ReturnCarRepository extends CrudRepository<ReturnCar, ReturnCar
 
 	ReturnCar save(ReturnCar car);
 
-	void deleteById(ReturnCarCompositekey Car_Id);
+	void deleteById(ReturnCarCompositekey carId);
 
 	List<ReturnCar> findAll();
 
-//	List<ReturnCar> getReturnCars();
 	 List<ReturnCar> findByCustomerId(int id);
 }

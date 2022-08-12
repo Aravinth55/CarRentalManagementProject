@@ -16,8 +16,7 @@ public class CarRegistrationService {
 
 	
 	public List<Car> getCars() {
-		List<Car> listCarRegistration = carRegistrationRepository.findAll();
-		return listCarRegistration;
+		return carRegistrationRepository.findAll();
 	}
 
 	public Car save(Car cr) {

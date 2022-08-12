@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer List</title>
@@ -32,11 +32,17 @@ th, td {
 tr:hover {
 	background-color: Aquamarine;
 } /*coral  */
+.tabdesign{
+border:2px;
+width:100%;
+cellpadding:2px;
+}
 </style>
 </head>
 <body>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table>
+		<caption>Customer list</caption>
 			<thead>
 				<tr>
 					<th style="background-color: #87CEFA">Customer Id</th>

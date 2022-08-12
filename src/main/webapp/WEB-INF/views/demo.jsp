@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome to AdminLogin</title>
@@ -128,7 +128,7 @@ p {
 <body>
 	<div class="loginBox">
 		<img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
-			width="100px">
+			width="100px" alt="image">
 		<h3>Sign in here</h3>
 		<form action="add" method="post" modelAttribute="addcompanyadmin">
 			<div class="inputBox">
@@ -140,12 +140,6 @@ p {
 						</div>
 			<input type="submit" name="" value="AddNewAdmin">
 		</form>
-		<!-- <a href="#">Forget Password<br>
-		</a> -->
-		<!-- <div class="text-center">
-			<p style="color: #59238F;">
-				<a href="/companyadmin/addadminform">Sign-Up</a>
-			</p> -->
 		</div>
 	</div>
 </body>

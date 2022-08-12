@@ -14,11 +14,10 @@ public interface CompanyAdminRepository extends CrudRepository<CompanyAdmin, Int
 
 	CompanyAdmin save(CarRental car);
 
-	void deleteById(int Car_Id);
+	void deleteById(int carId);
 
 	List<CompanyAdmin> findAll();
 
-//	List<CarRental> getCompanyAdmin();
 	
 	CompanyAdmin findByUserIdAndUserPassword(int id,String str); //login user
 }

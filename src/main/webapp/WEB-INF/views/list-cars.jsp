@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Car List</title>
@@ -35,7 +35,8 @@ body {
 </head>
 <body>
 	<div id="table root">
-	<table border="2" width="100%" cellpadding="2">
+	<table>
+	<caption>Car list</caption>
 			<thead>
 				<tr>
 					<th style="background-color:#87CEFA">Car RegistrationNo</th>

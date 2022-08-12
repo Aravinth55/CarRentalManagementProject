@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <style type="text/css">
@@ -35,7 +35,8 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 </head>
 <body>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2" >
+		<table>
+		<caption>RentalCar List</caption>
 			<thead>
 				<tr>
 					<th style="background-color:#87CEFA">Car RegistrationNo</th>
@@ -63,6 +64,6 @@ tr:hover {background-color: Aquamarine;} /*coral  */
 		</table>	
 	
 	</div>
-		 <div><h3><a href="/home/hello"><b>Back To MainPage</b></a></h3></div>
+		 <div><h3><a href="/home/hello"><strong>Back To MainPage</strong></a></h3></div>
 </body>
 </html>

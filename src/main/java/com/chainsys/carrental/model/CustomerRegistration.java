@@ -146,9 +146,3 @@ public class CustomerRegistration {
 	}
 
 }
-
-//	@Override
-//	public String toString() {
-//		return String.format(
-//				"%d,%s,%s,%d,%s,%s,%s,%s",customer_id,customer_name,address,mobile_no,gender,blood_group,person_type,joining_date);
-//	}
