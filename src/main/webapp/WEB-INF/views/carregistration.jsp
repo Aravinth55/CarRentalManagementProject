@@ -5,18 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Car Registration</title>
-<style>
-body {
-	background-image:
-		url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
-	height: 768px;
-	width: 1366px;
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-</style>
+
 </head>
 <body>
 	<div style="text-align:center ;margin-top:5%;">

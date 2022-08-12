@@ -5,20 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Contact</title>
-<style>   
-body {
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/13/05/49/1000_F_113054950_ZICHXvV3MGY8nGoBuZYKZ9iMacgbsclI.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-p {
-  font-size: 30px;
-}
-</style>
+<style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
 	<h1>Welcome To Car Rental Management System</h1>
