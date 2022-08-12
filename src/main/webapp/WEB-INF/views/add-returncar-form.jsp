@@ -7,21 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Return Car</title>
-<style>   
-body {
-    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
-</style>
+<style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 <script type="text/javascript">
 	function calculation() {
 		var payelapsed = document.getElementById("payElapsed").value;
@@ -39,16 +25,7 @@ body {
 
 		return parseInt(total);
 	}
-	<!--
-</script>
-<script type="text/javascript">
-	-->
 
-	const fromDate = localStorage.getItem('fromDate');
-	const dueDate = localStorage.getItem('dueDate');
-
-	document.getElementById('fromDate').textContent = fromDate;
-	document.getElementById('dueDate').textContent = dueDate;
 </script>
 </head>
 <body>
@@ -66,8 +43,6 @@ body {
 						</form:select>
 					</div>
 				</div>
-				<%-- <form:errors path="carRegno" cssClass="text-danger" />  --%>
-
 				<div>
 					<label for="customerId">Customer Id</label>
 					<div>

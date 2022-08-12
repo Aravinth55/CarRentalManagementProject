@@ -37,18 +37,7 @@ function calculation(){
 } */
 
 </script>
-<style>
-body {
-    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-</style>
-
+<style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
 	<div id="root">

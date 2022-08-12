@@ -21,39 +21,8 @@ function dateCalculation(){
 	return parseInt(total);
 }
 
-<!-- </script>
-<script type="text/javascript"> -->
-const form = document.getElementById('form');
-const fromDate = document.getElementById('fromDate');
-const dueDate = document.getElementById('dueDate');
-
-
-form.addEventListener('submit',function(){
-	e.preventDefault();
-const fromDateValue = fromDate.value;
-const dueDateValue = dueDate.value;
-
-localStorage.setItem('fromDate',fromDateValue);
-localStorage.setItem('dueDate',dueDateValue);
-
-window.location.href = "add-carrental-form";
-})
-</script>
-<style>   
-body {
-    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-.text-danger {
-    color: #e80c4d;
-    font-size: 0.9em;
-}
-</style>
+ </script>
+<style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
 	<div id="root">

@@ -7,30 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List Customer Car Rentals</title>
-<style>
-body {
-    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {background-color: Aquamarine;} /*coral  */
-</style>
-</head>
+<style><%@include file="/WEB-INF/css/listimage.css"%></style></head>
 <body>
 	<div id="root">
 		<div id="getcus" text-align="center">

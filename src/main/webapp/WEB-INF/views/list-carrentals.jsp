@@ -7,30 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<style type="text/css">
-body {
-    background-image: url("https://cdn.wallpapersafari.com/60/8/fUDlIm.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-  color: "FF4500";
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {background-color: Aquamarine;} /*coral  */
-</style>
+<style><%@include file="/WEB-INF/css/listimage.css"%></style>
 <title>Car Rental List</title>
 </head>
 <body>

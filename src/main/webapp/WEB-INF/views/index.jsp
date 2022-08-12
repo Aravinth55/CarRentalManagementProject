@@ -6,17 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
-<style>
-.hero-image {
-    background-image:
-        url("https://images.hdqwalls.com/download/white-rolls-royce-gy-1366x768.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}</style>
+<style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
 <div class="hero-image">

@@ -1,16 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="ISO-8859-1">
-<title>Welcome to AdminLogin</title>
-<style type="text/css">
 body {
 	margin: 0;
 	padding: 0;
 	background: url(https://i.ibb.co/VQmtgjh/6845078.png) no-repeat;
-	height: 80vh;
+	height: 100vh;
 	font-family: sans-serif;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -18,13 +10,13 @@ body {
 	overflow: hidden
 }
 
-@media screen and (max-width: 600px;) {
+/* @media screen and (max-width: 600px;) {
 	body {
 		background-size: cover;
 		:
 		fixed
 	}
-}
+} */
 
 #particles-js {
 	height: 100%
@@ -35,8 +27,8 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 600px;
-	min-height: 100px;
+	width: 350px;
+	min-height: 200px;
 	background: #000000; /*  #FFFFFF */
 	border-radius: 10px;
 	padding: 40px;
@@ -92,7 +84,7 @@ h3 {
 
 .inputBox span {
 	position: absolute;
-	top: 10px; 
+	top: 10px;
 	color: #262626
 }
 
@@ -123,24 +115,3 @@ a:hover {
 p {
 	color: #0000ff
 }
-</style>
-</head>
-<body>
-	<div class="loginBox">
-		<img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
-			width="100px" alt="image">
-		<h3>Sign in here</h3>
-		<form action="add" method="post" modelAttribute="addcompanyadmin">
-			<div class="inputBox">
-				<input id="userId" type="text" name="userId" placeholder="userId">
-				<input id="userName" type="text" name="userName"
-					placeholder="userName">
-					<input id="userPassword" type="password" name="userPassword"
-					placeholder="userPassword">
-						</div>
-			<input type="submit" name="" value="AddNewAdmin">
-		</form>
-		</div>
-	</div>
-</body>
-</html>
