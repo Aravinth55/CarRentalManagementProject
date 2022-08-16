@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.carrental.businessLogic.Logic;
+import com.chainsys.carrental.businesslogic.Logic;
 import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.model.ReturnCar;
