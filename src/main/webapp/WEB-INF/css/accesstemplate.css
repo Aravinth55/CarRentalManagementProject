@@ -1,14 +1,12 @@
 body {
 	background-image: url("https://www.teahub.io/photos/full/259-2593536_car-drift-4k-hd.jpg");
-	background-height: 786px;
-	background-width: 1366px;
 	background-attachment: fixed;
-	background-size: cover;
-	font-family: Arial, Helvetica, sans-serif;
+	background-size:  786px 1366px;
+	font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
 }
 
 h1 {
-	font-family: Times New Roman;
+	font-family:Helvetica, Arial, Verdana, Tahoma, sans-serif;
 	color:  cyan;
 	text-align: center;
 }
@@ -39,7 +37,7 @@ h1 {
 	color: #000000;
 	padding: 14px 16px;
 	background-color: inherit;
-	font-family: inherit;
+	font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
 	margin: 0;
 }
 

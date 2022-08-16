@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	background: url(https://i.ibb.co/VQmtgjh/6845078.png) no-repeat;
 	height: 100vh;
-	font-family: sans-serif;
+	font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -45,7 +45,7 @@ h3 {
 	margin: 0;
 	padding: 0 0 20px;
 	color: #59238F;
-	text-align: center
+	text-align: center;
 }
 
 .loginBox input {
