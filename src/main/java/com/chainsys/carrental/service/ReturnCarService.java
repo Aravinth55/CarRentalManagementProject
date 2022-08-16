@@ -29,7 +29,7 @@ public class ReturnCarService {
 		cr.setDueDate(carRental.getDueDate());
 		int payElapsed=Logic.getPayElapsed(carRental.getDueDate());
 		cr.setPayElapsed(payElapsed);
-		cr.setCarFine(payElapsed * 500);
+		cr.setCarFine(payElapsed * 500f);
 		cr.setTotalFee(Logic.getTotalFees(Logic.getDaysDifferent(carRental.getFromDate(), carRental.getDueDate()), payElapsed));
 		return returnCarRepository.save(cr);
 	}
