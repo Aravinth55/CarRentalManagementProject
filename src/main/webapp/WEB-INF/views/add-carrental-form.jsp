@@ -14,8 +14,6 @@ function dateCalculation(){
 	var date2 = document.getElementById("dueDate").value;
 	var date3 = new Date(date1);
 	var date4 = new Date(date2);
-	//var date1 = new Date("7/11/2010");
-	//var date2 = new Date("8/11/2010");
 	var total = parseInt((date4 - date3) / (1000 * 60 * 60 * 24), 10); 
 	document.getElementById("retailFee").value = parseInt(total)*1000;
 	return parseInt(total);

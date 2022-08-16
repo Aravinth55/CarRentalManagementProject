@@ -68,7 +68,6 @@
 	    	return false;
 	    }
  }
-
  var phoneNumberCheck = function() {
 	 var phoneRg = new RegExp("[1-9]{1}[0-9]{9}");
 	 if(!document.myForm.mobileNo.value.match(phoneRg)){
@@ -96,7 +95,6 @@
     	return false;
     } */
 }
-
 var genderNameCheck = function() {
 	var genderRegex = new RegExp("^[a-zA-Z]+$");
 	if(!document.myForm.gender.value.match(genderRegex)){

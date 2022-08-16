@@ -12,7 +12,6 @@
 	function calculation() {
 		var payelapsed = document.getElementById("payElapsed").value;
 		var totalfee = parseInt(payelapsed) * 500;
-		// document.getElementById("carFine").value = totalfee;
 
 		var date1 = document.getElementById("fromDate").value;
 		var date2 = document.getElementById("dueDate").value;

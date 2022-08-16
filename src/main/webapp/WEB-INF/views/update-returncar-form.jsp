@@ -12,7 +12,6 @@
 function calculation(){
 	var payelapsed=document.getElementById("payElapsed").value;
 	var totalfee =parseInt(payelapsed) *500;
-	// document.getElementById("carFine").value = totalfee;
 	
 	var date1 = document.getElementById("fromDate").value;
 	var date2 = document.getElementById("dueDate").value;
@@ -24,18 +23,6 @@ function calculation(){
 	
 	return parseInt(total);
 }
-/*function dateCalculation(){
-	var date1 = document.getElementById("fromDate").value;
-	var date2 = document.getElementById("dueDate").value;
-	var date3 = new Date(date1);
-	var date4 = new Date(date2);
-	//var date1 = new Date("7/11/2010");
-	//var date2 = new Date("8/11/2010");
-	var total = parseInt((date4 - date3) / (1000 * 60 * 60 * 24), 10); 
-	document.getElementById("totalFee").value = parseInt(total)*1000+parseInt(this.totalfee);
-	return parseInt(total);
-} */
-
 </script>
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
