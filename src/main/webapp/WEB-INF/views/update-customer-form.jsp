@@ -11,91 +11,91 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" style="text-align:center ;margin-top:5%;">
-			<form:form action="updatecus" method="post"
-				modelAttribute="updatecustomer">
-				<div>
-					<label for="customerId">Customer Id</label>
-					<div>
-						<form:input path="customerId" placeholder="Customer Id" />
-					</div>
-				</div>
-				<div>
-					<label for="customerName">Customer Name</label>
-					<div>
-						<form:input path="customerName" placeholder="Customer Name" />
-					</div>
-				</div>
-				<form:errors path="customerName" cssClass="text-danger" />
-
-				<div>
-					<label for="customerPassword">Customer Password</label>
-					<div>
-						<form:input path="customerPassword"
-							placeholder="Customer Password" />
-					</div>
-				</div>
-				<form:errors path="customerPassword" cssClass="text-danger" />
-
-				<div>
-					<label for="address">Address</label>
-					<div>
-						<form:input path="address" placeholder="Address" />
-					</div>
-				</div>
-				<form:errors path="address" cssClass="text-danger" />
-
-				<div>
-					<label for="mobileNo">Mobile No</label>
-					<div>
-						<form:input path="mobileNo" placeholder="Mobile No" title="It should be Number Format"
-				 pattern="^[0-9]+$" required="true"/>
-					</div>
-				</div>
-				<form:errors path="mobileNo" cssClass="text-danger" />
-
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:radiobutton path="gender"  value="Male"/>Male
-							<form:radiobutton path="gender"  value="Female"/>Female
-							<form:radiobutton path="gender"  value="Transgender"/>Transgender
-					</div>
-				</div>
-				<form:errors path="gender" cssClass="text-danger" />
-
-				<div>
-					<label for="bloodGroup">Blood Group</label>
-					<div>
-						<form:input path="bloodGroup" placeholder="Blood Group" />
-					</div>
-				</div>
-				<form:errors path="bloodGroup" cssClass="text-danger" />
-
-				<div>
-					<label for="personType">Person Type</label>
-					<div>
-						<form:radiobutton path="personType" value="Customer"/>Customer
-							<form:radiobutton path="personType" value="Owner"/>Owner
-					</div>
-				</div>
-				<form:errors path="personType" cssClass="text-danger" />
-
-				<div>
-					<label for="joiningDate">Joining Date</label>
-					<div>
-						<form:input path="joiningDate" type="date"
-							placeholder="Joining Date" />
-					</div>
-				</div>
-
-				<div>
-					<form:button>Update Customer</form:button>
-				</div>
-			</form:form>
+	<form:form action="updatecus" method="post"
+		modelAttribute="updatecustomer">
+		<h1>Update Customer Registration</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="customerId">Customer Id</label></td>
+						<td><form:input path="customerId" placeholder="Customer Id" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="customerName">Customer Name</label></td>
+						<td><form:input path="customerName"
+								placeholder="Customer Name" title="It should be Only Alphabet" required="true"/></td>
+					</tr>
+<%-- 					<form:errors path="customerName" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="customerPassword">Customer Password</label></td>
+						<td><form:input path="customerPassword"
+								placeholder="Customer Password" type="password" required="true"/></td>
+					</tr>
+<%-- 					<form:errors path="customerPassword" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="address">Address</label></td>
+						<td><form:input path="address" placeholder="Address"  required="true"/></td>
+					</tr>
+<%-- 					<form:errors path="address" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="mobileNo">Mobile No</label></td>
+						<td><form:input path="mobileNo" placeholder="Mobile No"
+								title="It should be Number Format" pattern="^[0-9]+$"
+								required="true" /></td>
+					</tr>
+<%-- 					<form:errors path="mobileNo" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="gender">Gender</label></td>
+						<td>
+                        <select name="gender">
+                        <option>--Gender--</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                        </select>
+                </td>
+					</tr>
+<%-- 					<form:errors path="gender" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="bloodGroup">Blood Group</label></td>
+						<td><form:input path="bloodGroup" placeholder="Blood Group" title="It should be Only Alphabet"  required="true"/>
+						</td>
+					</tr>
+<%-- 					<form:errors path="bloodGroup" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="personType">Person Type</label></td>
+						<td>
+                        <select name="personType">
+                        <option>--Person Type--</option>
+                        <option value="Customer">Customer</option>
+                        <option value="Owner">Owner</option>
+                        </select>
+                </td>
+					</tr>
+<%-- 					<form:errors path="personType" cssClass="text-danger" />
+ --%>
+					<tr>
+						<td><label for="joiningDate">Joining Date</label></td>
+						
+						<td><form:input path="joiningDate" type="date"
+								placeholder="Joining Date"  required="true"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<form:button>Update Customer</form:button>
 		</div>
-	</div>
-	 <div><h3><a href="/home/hello">Back To MainPage</a></h3></div>
+		
+	</form:form>
 </body>
 </html>
+
+
+

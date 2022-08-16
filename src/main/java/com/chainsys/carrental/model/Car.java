@@ -27,7 +27,7 @@ public class Car {
 	@Column(name = "CARMODEL")
 	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
     @NotBlank(message = "*Name can't be Empty")
-    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid CarRegno ")
+    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Value should be in Alphabets ")
 	private String carModel;
 	@Column(name = "CARCOLOUR")
 	@NotEmpty(message = "*Please enter CarColour")

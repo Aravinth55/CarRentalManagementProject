@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table class="styled-table">
 		<caption>RentalCar List</caption>
 			<thead>
 				<tr>

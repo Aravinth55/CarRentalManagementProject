@@ -1,6 +1,7 @@
 package com.chainsys.carrental.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -47,7 +48,7 @@ public String addNewCustomer(@Valid@ModelAttribute("addcustomer") CustomerRegist
 		return "add-customer-form";
 	}
 	customerRegistrationService.save(theCus);
-	return "redirect:/customer/customerlist";
+	return "redirect:/customer/findcustomerbyid?cusid="+theCus.getCustomerId();
 }
 @GetMapping("/updatecustomeridform")
 public String showUpdateForm()
@@ -85,7 +86,7 @@ public String showDeleteForm()
 }
 @GetMapping("/findcustomerbyid")
 public String findCustomerById(int cusid, Model model) {
-	CustomerRegistration theCus = customerRegistrationService.findById(cusid);
+  CustomerRegistration theCus = customerRegistrationService.findById(cusid);
 	model.addAttribute("findcustomerbyid", theCus);
 	return "find-customer-by-id-form";
 }
@@ -125,7 +126,7 @@ public String checkingAccess(@ModelAttribute("cuslogin") CustomerRegistration th
 	if(customerRegistration!=null) {
 		return "redirect:/customer/customerindex";
 	}else
-		return "Invalid-user-error";
+		return "redirect:/customer/customersubmission";
 }
 
 @GetMapping("/customerindex")
@@ -133,9 +134,9 @@ public String carReg() {
 	return "customeraccess";
 }
 
-@GetMapping("/rentalcustomeruses")
+@GetMapping("/customersubmission")
 public String carRental() {
-	return "customercarrental";
+	return "customersubmissionform";
 }
 @GetMapping("/returncustomeruses")
 public String carReturn() {

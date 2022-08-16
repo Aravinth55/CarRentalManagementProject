@@ -11,8 +11,8 @@
 <style><%@include file="/WEB-INF/css/listimage.css"%></style>
 </head>
 <body>
-	<div id="table root">
-		<table>
+	<div class="form">
+		<table class="styled-table">
 		<caption>Customer list</caption>
 			<thead>
 				<tr>
@@ -45,7 +45,7 @@
 		</table>
 		<div>
 			<h3>
-				<a href="/home/hello">Back To MainPage</a>
+					<a href='/home/hello'><button>Back To Home</button></a>
 			</h3>
 		</div>
 	</div>

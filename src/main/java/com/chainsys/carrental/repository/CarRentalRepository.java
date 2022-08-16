@@ -1,5 +1,6 @@
 package com.chainsys.carrental.repository;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,4 +21,5 @@ public interface CarRentalRepository extends CrudRepository<CarRental, CarRental
 	List<CarRental> findAll();
 
  List<CarRental> findByCustomerId(int id);
+ List<CarRental> findByCustomerIdAndCarRegnoOrderByFromDateDesc(int customerId,String carRegNo);
 }

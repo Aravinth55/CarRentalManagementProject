@@ -40,10 +40,13 @@ public class CompanyAdminController {
 	@PostMapping("/add")
 	// We need give from where to read data from the HTTP request and also the
 	// content type ("application/json")
-	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd) {
-		
+	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd,Errors errors) {
+		if(errors.hasErrors()) {
+			return"add-companyadmin-form";
+		}
 		companyAdminService.save(theCmd);
-		return "redirect:/companyadmin/companyadminlist";
+		return "redirect:/companyadmin/findcomadminbyid?userid="+theCmd.getUserId();
+
 	}
 	@GetMapping("/updateadminbyidform")
 	public String showUpdateForm()
@@ -99,7 +102,7 @@ CompanyAdmin  companyAdmin=new CompanyAdmin();
 		if(companyAdmin!=null) {
 			return "redirect:/companyadmin/carindex";   
 		}else
-			return "Invalid-user-error";  
+			return "redirect:/companyadmin/alartmessage"; 
 	}
 	@GetMapping("/carindex")
 	public String carReg() {
@@ -109,9 +112,9 @@ CompanyAdmin  companyAdmin=new CompanyAdmin();
 	public String adminRegistration() {
 		return "companyadmin";
 	}
-	@GetMapping("/carregistrationindex")
+	@GetMapping("/alartmessage")
 	public String carRegistration() {
-		return "carregistration";
+		return "submissionform";
 	}
 	@GetMapping("/carrentalindex")
 	public String carRental() {

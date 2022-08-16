@@ -6,8 +6,11 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
@@ -20,6 +23,8 @@ import javax.validation.constraints.Size;
 public class CustomerRegistration {
 	@Id
 	@Column(name = "Customer_Id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "Customer_Id")
+    @SequenceGenerator(name = "Customer_Id", sequenceName = "Customer_Id",  allocationSize = 1)
 	private int customerId; // Primary key one to many
 	@Column(name = "Customer_Name")
 	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")

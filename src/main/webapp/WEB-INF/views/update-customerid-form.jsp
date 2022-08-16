@@ -8,14 +8,20 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<h3>Update Customer Registration</h3>
-	<br>
-	<form action="/customer/updatecustomerform" method="get"
-		style="text-align:center ;margin-top:5%;">
-		<label>Enter Customer Id</label> <input type="text"
-			placeholder="Customer Id" name="cusid"> <input type='submit'
-			value="submit" name="submit">
+	<form action="/customer/updatecustomerform" method="get">
+		<h1>Update Customer Registration</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label>Enter Customer Id</label></td>
+						<td><input type="text" placeholder="Customer Id" name="cusid"></td>
+							
+					</tr>
+				</tbody>
+			</table>
+			<input type='submit' value="submit" name="submit">
+		</div>
 	</form>
-
 </body>
 </html>

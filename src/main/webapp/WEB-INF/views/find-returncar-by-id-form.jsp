@@ -11,53 +11,42 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" style="text-align:center ;margin-top:5%;">
-			<form:form action="" method="get" modelAttribute="findreturncarbyid">
-				<div>
-					<label for="carRegno">Car RegNo</label>
-					<div>
-						<form:input path="carRegno" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for=customerId>Customer Id</label>
-					<div>
-						<form:input path="customerId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="fromDate">From Date</label>
-					<div>
-						<form:input path="fromDate" readonly="true" />
-					</div>
-					</div>
-					<div>
-						<label for="dueDate">Due Date</label>
-						<div>
-							<form:input path="dueDate" readonly="true" />
-						</div>
-					</div>
-					<div>
-						<label for="payElapsed">Pay Elapsed</label>
-						<div>
-							<form:input path="payElapsed" readonly="true" />
-						</div>
-					</div>
-					<div>
-						<label for="carFine">Car Fine</label>
-						<div>
-							<form:input path="carFine" readonly="true" />
-						</div>
-					</div>
-					<div>
-						<label for="totalFee">Total Fee</label>
-						<div>
-							<form:input path="totalFee" readonly="true" />
-						</div>
-					</div>
-			</form:form>
+	<form:form action="" method="get" modelAttribute="findreturncarbyid">
+		<h1>Find CarReturning</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="carRegno">Car RegNo</label></td>
+						<td><form:input path="carRegno" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for=customerId>Customer Id</label></td>
+						<td><form:input path="customerId" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="fromDate">From Date</label></td>
+						<td><form:input path="fromDate" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="dueDate">Due Date</label></td>
+						<td><form:input path="dueDate" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="payElapsed">Pay Elapsed</label></td>
+						<td><form:input path="payElapsed" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="carFine">Car Fine</label></td>
+						<td><form:input path="carFine" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="totalFee">Total Fee</label></td>
+						<td><form:input path="totalFee" readonly="true" /></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-	</div>
+	</form:form>
 </body>
 </html>

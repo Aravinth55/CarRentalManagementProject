@@ -42,12 +42,12 @@ public class ReturnCar {
 	
 	private int payElapsed;
 	@Column(name = "CARFINE")
-	@Min(value = 0,message="*value should be greater than 0")
+//	@Min(value = 0,message="*value should be greater than 0")
 
 
 	private float carFine;
 	@Column(name = "TOTALFEE")
-	@Min(value = 0,message="*value should be greater than 0")
+//	@Min(value = 0,message="*value should be greater than 0")
 
 
 	private float totalFee;

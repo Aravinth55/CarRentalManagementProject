@@ -2,7 +2,10 @@ package com.chainsys.carrental.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -12,6 +15,8 @@ import javax.validation.constraints.Size;
 public class CompanyAdmin {
 	@Id
 	@Column(name = "USERID")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "USERID")
+    @SequenceGenerator(name = "USERID", sequenceName = "USERID",  allocationSize = 1)
 	private int userId;    //Primary key
 	@Column(name = "USERNAME")
 	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")

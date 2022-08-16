@@ -8,17 +8,26 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<h3>Update ReturnCar ByCustomerId</h3>
-	<br>
-	<form action="/returncar/updatereturncarform" method="get"
-		style="text-align:center ;margin-top:5%;">
-		<label>Enter Car Registration Number</label>
-		 <input type="text"	placeholder="Car RegNo" name="carregno">
-		 
-		  <label>Enter Customer Id</label> 
-			<input type="text" placeholder="Customer Id" name="cusid">
-		<input type='submit' value="Fetch" name="submit">
-	</form>
+	<form action="/returncar/updatereturncarform" method="get">
+		<h1>Update ReturnCar ByCustomerId</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label>Enter Car Registration Number</label></td>
+						<td><input type="text" placeholder="Car RegNo"
+							name="carregno"></td>
+							</tr>
 
+					<tr>	<td><label>Enter Customer Id</label></td>
+						<td><input type="text" placeholder="Customer Id" name="cusid">
+						</td>
+						<td><input type='submit' value="Fetch" name="submit">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
 </body>
 </html>

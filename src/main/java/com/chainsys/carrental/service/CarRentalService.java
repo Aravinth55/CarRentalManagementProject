@@ -1,5 +1,6 @@
 package com.chainsys.carrental.service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,5 +32,8 @@ public class CarRentalService {
 //	@Transactional
 	public void deleteById(CarRentalCompositekey id) {
 		carRentalRepository.deleteById(id);
+	}
+	public List<CarRental> getLastCarRentalOfCustomer(int customerId,String carRegNo){
+		return carRentalRepository.findByCustomerIdAndCarRegnoOrderByFromDateDesc(customerId, carRegNo);
 	}
 }

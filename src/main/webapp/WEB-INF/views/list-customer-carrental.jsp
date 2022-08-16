@@ -9,70 +9,67 @@
 <title>List Customer Car Rentals</title>
 <style><%@include file="/WEB-INF/css/listimage.css"%></style></head>
 <body>
-	<div id="root">
-		<div id="getcus" text-align="center">
-			<form:form action="" method="post" modelAttribute="getcus">
+	<form:form action="" method="post" modelAttribute="getcus">
+		<div class="form">
+			<table class="styled-table">
+			<caption></caption>
+				<tbody>
+					<tr>
+						<td><label for="customerId">Customer Id</label></td>
 
-				<div>
-					<label for="customerId">customer Id</label>
-					<div>
-						<form:input path="customerId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="customerName">Customer Name</label>
-					<div>
-						<form:input path="customerName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="customerPassword">Customer Password</label>
-					<div>
-						<form:input path="customerPassword" />
-					</div>
-				</div>
-				<div>
-					<label for="address">Address</label>
-					<div>
-						<form:input path="address" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:input path="gender" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="bloodGroup">Blood Group</label>
-					<div>
-						<form:input path="bloodGroup" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="personType">Person Type</label>
-				</div>
-				<div>
-					<label for="joiningDate">Joining Date</label>
-					<div>
-						<form:input path="joiningDate" readonly="true" />
-					</div>
-				</div>
-			</form:form>
+						<td><form:input path="customerId" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="customerName">Customer Name</label></td>
+
+						<td><form:input path="customerName" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="customerPassword">Customer Password</label></td>
+
+						<td><form:input path="customerPassword" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="address">Address</label></td>
+						<td><form:input path="address" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="mobileNo">Mobile No</label></td>
+						<td><form:input path="mobileNo" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="gender">Gender</label></td>
+						<td><form:input path="gender" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="bloodGroup">Blood Group</label></td>
+						<td><form:input path="bloodGroup" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="personType">Person Type</label></td>
+						<td><form:input path="personType" readonly="true" /></td>
+
+					</tr>
+					<tr>
+						<td><label for="joiningDate">Joining Date</label></td>
+						<td><form:input path="joiningDate" readonly="true" /></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-	</div>
+	</form:form>
 
 	<div id="rentallist">
-		<table>
-		<caption>RentalCar List</caption>
+		<table class="styled-table">
+			<caption>RentalCar List</caption>
 			<thead>
 				<tr>
-					<th style="background-color:#87CEFA">carRegNo</th>
-					<th style="background-color:#87CEFA">customerId</th>
-					<th style="background-color:#87CEFA">fromDate</th>
-					<th style="background-color:#87CEFA">dueDate</th>
-					<th style="background-color:#87CEFA">retailFee</th>
-					<th style="background-color:#87CEFA">fuelLevel</th>
+					<th style="background-color: #87CEFA">carRegNo</th>
+					<th style="background-color: #87CEFA">customerId</th>
+					<th style="background-color: #87CEFA">fromDate</th>
+					<th style="background-color: #87CEFA">dueDate</th>
+					<th style="background-color: #87CEFA">retailFee</th>
+					<th style="background-color: #87CEFA">fuelLevel</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -88,8 +85,12 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		 <div><h4><a href="/home/hello">Back To MainPage</a></h4></div>
+		<div>
+			<h4>
+				<a href="/home/hello">Back To MainPage</a>
+			</h4>
+		</div>
 	</div>
-	
+
 </body>
 </html>

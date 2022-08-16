@@ -25,65 +25,77 @@ function dateCalculation(){
 </script>
 </head>
 <body>
-	<div id="root">
-		<div id="form" style="text-align:center ;margin-top:5%;">
 			<form:form action="updatecarrental" method="post" modelAttribute="updatecarrental">
-				<div>
-					<label for="carRegno">Car RegNo</label>
-					<div>
-						<form:input path="carRegno"  placeholder="Car RegNo"/>
-					</div>
-				</div>
-					<form:errors path="carRegno" cssClass="text-danger" />
-				<div>
-					<label for=customerId>Customer Id</label>
-					<div>
-						<form:input path="customerId"  placeholder="Customer Id"/>
-					</div>
-				</div>
-				<div>
-					<label for="fromDate">From Date</label>
-					<div>
+			<h1>Update CarBooking Registration</h1>
+			<div class="form">
+			<table>
+			<tbody>
+				<tr>
+					<td><label for="carRegno">Car RegNo</label></td>
+					
+					<td>	<form:input path="carRegno"  placeholder="Car RegNo"/>
+					</td>
+				</tr>
+<%-- 					<form:errors path="carRegno" cssClass="text-danger" />
+ --%>				<tr>
+					<td><label for=customerId>Customer Id</label></td>
+					<td>
+						<form:input path="customerId"  placeholder="Customer Id"  title="It should be Number Format"
+				 pattern="^[0-9]+$" required="true"/>
+					</td>
+				</tr>
+					<tr>
+				<td>	<label for="fromDate">From Date</label></td>
+				<td>
 						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()"  placeholder="From Date" required="true"/>
-					</div>
-				</div>
-					<div>
-						<label for="dueDate">Due Date</label>
-						<div>
+					</td>
+				</tr>
+						<tr>
+						<td><label for="dueDate">Due Date</label></td>
+						<td>
 							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()"  placeholder="Due Date" required="true"/>
-						</div>
-					</div>
-					<div>
-						<label for="retailFee">Retail Fee</label>
-						<div>
+					</td>
+					</tr>
+						<tr>
+					<td>	<label for="retailFee">Retail Fee</label> </td>
+						<td>
 							<form:input path="retailFee" id="retailFee" name="retailFee" onchange="dateCalculation(this.form)"  placeholder="Retail Fee"/>
+						</td>
+						</tr>
+					
+<%-- 					<form:errors path="retailFee" cssClass="text-danger" />
+ --%>						<tr>
+					
+					<td>	<label for="fuelLevel">Fuel Level</label></td>
+						
+					<td>
+                        <select name="fuelLevel">
+                        <option>--Fuel Level--</option>
+                        <option value="Full">Full</option>
+                        <option value="half">half</option>
+                        <option value="Low">Low</option>
+                        </select>
+                </td>
+					</tr>
+<%-- 						<form:errors path="fuelLevel" cssClass="text-danger" />
+ --%>						<tr>
+						<td><label for="workingCondition">Working Condition</label></td>
+						 <td>
+                        <select name="workingCondition">
+                        <option>--Working Condition--</option>
+                        <option value="Good">Good</option>
+                        <option value="Average">Average</option>
+                        <option value="Bad">Bad</option>
+                        </select>
+                </td>
+						</tr>
+<%-- 							<form:errors path="workingCondition" cssClass="text-danger" />
+ --%>							</tbody>
+							</table>
+								<form:button>Update Car Rental</form:button>
 						</div>
-					</div>
-					<form:errors path="retailFee" cssClass="text-danger" />
-					<div>
-						<label for="fuelLevel">Fuel Level</label>
-						<div>
-						<form:radiobutton path="fuelLevel"  value="Full"/>Full
-							<form:radiobutton path="fuelLevel"  value="Half"/>Half
-							<form:radiobutton path="fuelLevel"  value="Low"/>Low
-					</div>
-					</div>
-						<form:errors path="fuelLevel" cssClass="text-danger" />
-					<div>
-						<label for="workingCondition">Working Condition</label>
-						<div>
-						<form:radiobutton path="workingCondition"  value="Good"/>Good
-							<form:radiobutton path="workingCondition"  value="Average"/>Average
-							<form:radiobutton path="workingCondition"  value="Bad"/>Bad
-					</div>
-						</div>
-							<form:errors path="workingCondition" cssClass="text-danger" />
-						<div>
-							<form:button>Update Car Rental</form:button>
-						</div>
+						
 			</form:form>
-		</div>
-	</div>
 	 <div><h3><a href="/home/hello">Back To MainPage</a></h3></div>
 </body>
 </html>

@@ -40,64 +40,64 @@ function calculation(){
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" style="text-align:center ;margin-top:5%;">
-			<div>
 				<form:form action="updatereturncar" method="post"
 					modelAttribute="updatereturncar">
-					<div>
-						<label for="carRegno">Car RegNo</label>
-						<div>
+					<h1>Update Car Returning</h1>
+					<div class="form">
+					<table>
+					<tbody>
+					<tr>
+						<td><label for="carRegno">Car RegNo</label></td>
+						<td>
 							<form:input path="carRegno" placeholder="Car RegNo"/>
-						</div>
-					</div>
-					<form:errors path="carRegno" cssClass="text-danger" />
-					<div>
-						<label for=customerId>Customer Id</label>
-						<div>
+						</td>
+					</tr>
+<%-- 					<form:errors path="carRegno" cssClass="text-danger" />
+ --%>				<tr>
+						<td><label for=customerId>Customer Id</label></td>
+						<td>
 							<form:input path="customerId" placeholder="Customer Id"/>
-						</div>
-					</div>
-					<div>
-						<label for="fromDate">From Date</label>
-						<div>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="fromDate">From Date</label></td>
+						<td>
 							<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="calculation()" placeholder="From Date" required="true"/>
-						</div>
-						</div>
-						<form:errors path="fromDate" cssClass="text-danger" />
-						<div>
-							<label for="dueDate">Due Date</label>
-							<div>
+						</td>
+						</tr>
+<%-- 						<form:errors path="fromDate" cssClass="text-danger" />
+ --%>						<tr>
+						<td>	<label for="dueDate">Due Date</label></td>
+							<td>
 								<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="calculation()" placeholder="Due Date" required="true"/>
-							</div>
-						</div>
-						<form:errors path="dueDate" cssClass="text-danger" />
-						<div>
-							<label for="payElapsed">Pay Elapsed</label>
-							<div>
+							</td>
+						</tr>
+<%-- 						<form:errors path="dueDate" cssClass="text-danger" />
+ --%>						<tr>
+						<td>	<label for="payElapsed">Pay Elapsed</label></td>
+							<td>
 								<form:input path="payElapsed" id="payElapsed" name="payElapsed" onchange="calculation()" placeholder="Pay Elapsed" title="It should be Number Format"
 				 pattern="^[0-9]+$" required="true"/>
-							</div>
-						</div>
-						<div>
-							<label for="carFine">Car Fine</label>
-							<div>
+							</td>
+						</tr>
+						<tr>
+						<td>	<label for="carFine">Car Fine</label></td>
+							<td>
 								<form:input path="carFine" id="carFine" name="carFine" onchange="calculation(this.form)" placeholder="Car Fine"/>
-							</div>
-						</div>
-						<div>
-							<label for="totalFee">Total Fee</label>
-							<div>
+							</td>
+						</tr>
+						<tr>
+						<td>	<label for="totalFee">Total Fee</label></td>
+							<td>
 								<form:input path="totalFee" id="totalFee" name="totalFee" onchange="calculation(this.form)" placeholder="Total Fee"/>
-							</div>
-							</div>
-							<div>
+							</td>
+							</tr>
+							</tbody>
+							</table>
 								<form:button>Update Return Car</form:button>
 							</div>
+							
 				</form:form>
-			</div>
-		</div>
-	</div>
 		 <div><h3><a href="/home/hello">Back To MainPage</a></h3></div>
 </body>
 </html>

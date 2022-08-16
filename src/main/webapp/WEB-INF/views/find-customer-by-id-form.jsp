@@ -8,68 +8,64 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Customer By Id</title>
-<style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
+<style>
+<%@include file="/WEB-INF/css/backgroundimage.css"%>
+</style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" style="text-align:center ;margin-top:5%;">
-			<form:form action="" method="get" modelAttribute="findcustomerbyid">
-				<div>
-					<label for="customerId">Customer Id</label>
-					<div>
-						<form:input path="customerId" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="customerName">Customer Name</label>
-					<div>
-						<form:input path="customerName" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="customerPassword">Customer Password</label>
-					<div>
-						<form:input path="customerPassword" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="address">Address</label>
-					<div>
-						<form:input path="address" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="mobileNo">Mobile No</label>
-					<div>
-						<form:input path="mobileNo" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender</label>
-					<div>
-						<form:input path="gender" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="bloodGroup">Blood Group</label>
-					<div>
-						<form:input path="bloodGroup" readonly="true" />
-					</div>
-				</div>
-				<div>
-					<label for="personType">Person Type</label>
-					<div>
-						<form:input path="personType" readonly="true" />
-					</div>
-					</div>
-					<div>
-						<label for="joiningDate">Joining Date</label>
-						<div>
-							<form:input path="joiningDate" readonly="true" />
-						</div>
-						</div>
-			</form:form>
+	<form:form action="" method="get" modelAttribute="findcustomerbyid">
+		<h1 style="font-color: white;">Find Customer</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="customerId">Customer Id</label></td>
+
+						<td><form:input path="customerId" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="customerName">Customer Name</label></td>
+
+						<td><form:input path="customerName" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="customerPassword">Customer Password</label></td>
+
+						<td><form:input path="customerPassword" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="address">Address</label></td>
+						<td><form:input path="address" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="mobileNo">Mobile No</label></td>
+						<td><form:input path="mobileNo" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="gender">Gender</label></td>
+						<td><form:input path="gender" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="bloodGroup">Blood Group</label></td>
+						<td><form:input path="bloodGroup" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="personType">Person Type</label></td>
+						<td><form:input path="personType" readonly="true" /></td>
+
+					</tr>
+					<tr>
+						<td><label for="joiningDate">Joining Date</label></td>
+						<td><form:input path="joiningDate" readonly="true" /></td>
+					</tr>
+				</tbody>
+			</table>
+			
 		</div>
-	</div>
+		
+	</form:form>
+	<div class="form">	<a href="/customer/customerloginpage"><button>Back To
+				Login</button></a>
+				</div>
 </body>
 </html>

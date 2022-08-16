@@ -18,11 +18,11 @@
 				CompanyAdmin<em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<a href="/companyadmin/addadminform">Add a New CompanyAdmin</a> <a
+				<a href="/companyadmin/addadminform">CompanyAdmin Registration</a> <a
 					href="/companyadmin/companyadminlist">View all CompanyAdmin
 					details</a> <a href="/companyadmin/updateadminbyidform">Update
 					CompanyAdmin</a> <a href="/companyadmin/deleteadminbyidform">Delete
-					CompanyAdmin</a> <a href="/companyadmin/findadminbyidform">FindByCompanyAdminById</a>
+					CompanyAdmin</a> <a href="/companyadmin/findadminbyidform">FindByCompanyAdmin</a>
 
 			</div>
 		</div>
@@ -33,15 +33,14 @@
 				Customer Registration <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<a href="/customer/addcustomerform">Add a New Customer</a> <a
-					href="/customer/customerlist">View all Customers details</a> <a
-					href="/customer/updatecustomeridform">Update Customer</a>
+			 <a
+					href="/customer/customerlist">View all Customers details</a> 
 				<div>
 					<a href="/customer/deletecustomerform">Delete Customer</a> <a
 						href="/customer/findcustomerform">Find ByCustomer</a> <a
-						href="/customer/findcustomercarrentalform">Rental Car
-						ByCustomerId</a> <a href="/customer/findcustomerreturncarform">Return
-						Car ByCustomerId</a>
+						href="/customer/findcustomercarrentalform">View Car Booking
+						</a> <a href="/customer/findcustomerreturncarform">View Car
+						Returning</a>
 
 				</div>
 			</div>
@@ -49,35 +48,33 @@
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Rentals Cars <em class="fa fa-caret-down"></em>
+				Car Booking <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<a href="/carrental/addcarrentalform">Add RentalCar to Customer</a>
-				<a href="/carrental/carrentallist">View all RntalCars details</a> <a
-					href="/carrental/updatecarrentalidform">Update RentalCar</a>
+				<a href="/carrental/carrentallist">View all Booking details</a> <a
+					href="/carrental/updatecarrentalidform">Update Car Booking</a>
 					<a href="/carrental/deletecarrentalidform">Delete
-							CarRental</a> <a
-					href="/carrental/findcarrentalidform">Find RentalCars</a> <a
+							Car Booking</a> <a
+					href="/carrental/findcarrentalidform">Find Car Booking</a> <a
 					href="/customer/findcustomercarrentalform">Get
-					CustomerRentalCars</a>
+					Customer CarBookings</a>
 
 			</div>
 		</div>
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Return Cars <em class="fa fa-caret-down"></em>
+				 Car Returning <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<a href="/returncar/addreturncarform">Add ReturnCar for Customer
-				</a> <a href="/returncar/returncarlist">View all Customers ReturnCar
+				 <a href="/returncar/returncarlist">View all  Car Returning  
 					details</a> <a href="/returncar/updatereturncaridform">Update
-					ReturnCar</a>
+					 CarReturning</a>
 						<a href="/returncar/deletereturncaridform">Delete
-								CarReturn</a>
+								 CarReturning</a>
 					 <a href="/returncar/findreturncaridform">Find
-					ReturnCar</a> <a href="/customer/findcustomerreturncarform">Get
-					Customer ReturnCars</a>
+					 CarReturning</a> <a href="/customer/findcustomerreturncarform">Get
+					Customer  CarReturning</a>
 
 
 			</div>
@@ -99,6 +96,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

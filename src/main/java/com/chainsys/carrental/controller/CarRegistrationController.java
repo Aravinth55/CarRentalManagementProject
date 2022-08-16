@@ -40,8 +40,6 @@ private	CarRegistrationService carRegistrationService;
 	}
 
 	@PostMapping("/add")
-	// We need give from where to read data from the HTTP request and also the
-	// content type ("application/json")
 	public String addNewCar(@Valid@ModelAttribute("addcar") Car theCar,Errors errors) {
 		if(errors.hasErrors()) {
 			return"add-car-form";

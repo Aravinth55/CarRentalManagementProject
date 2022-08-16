@@ -8,8 +8,9 @@ body {
 }
 
 h1 {
-	font-family: lucida Handwriting, Cursive;
-	color: white;
+	font-family: Times New Roman;
+	color:  cyan;
+	text-align: center;
 }
 
 .navbar {

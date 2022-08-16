@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +8,22 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-    <h3>Find CarById</h3> 
-   <br>
-    <form action="/car/findcarbyid" method="get"
-        style="text-align:center ;margin-top:5%;">
-        <label>Enter Car RegisterNo</label> <input type="text"
-            placeholder="Car RegNo" name="carregno"> 
-      <input type='submit' value="Fetch" name="submit">
-    </form>
+	<form action="/car/findcarbyid" method="get">
+		<h1>Find CarById</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label>Enter Car RegisterNo</label></td>
+						<td><input type="text" placeholder="Car RegNo"
+							name="carregno" required> </td>
+							<td><input type='submit' value="Fetch"
+							name="submit"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
 
 </body>
 </html>

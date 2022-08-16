@@ -11,33 +11,35 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" style="text-align:center ;margin-top:5%;">
-			 <form:form action="updatecomadmin" method="post"
-                modelAttribute="updatecompanyadmin">
-				<div>
-					<label for="userId">User Id</label>
-					<div>
-						<form:input path="userId" placeholder="User Id"/>
-					</div>
-				</div>
-				<div>
-					<label for="userName">User Name</label>
-					<div>
-						<form:input path="userName" placeholder="User Name"/>
-					</div>
-				</div>
-				<div>
-					<label for="userPassword">User Password</label>
-					<div>
-						<form:input path="userPassword" placeholder="User Password"/>
-					</div>
-					</div>
-						<div>
-							<form:button>Update CompanyAdmin</form:button>
-						</div>
-			</form:form></div>
+	<form:form action="updatecomadmin" method="post"
+		modelAttribute="updatecompanyadmin">
+		<h1>Update CompanyAamin Form</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="userId">User Id</label></td>
+
+						<td><form:input path="userId" placeholder="User Id" /></td>
+					</tr>
+					<tr>
+						<td><label for="userName">User Name</label></td>
+						<td><form:input path="userName" placeholder="User Name" /></td>
+					</tr>
+					<tr>
+						<td><label for="userPassword">User Password</label></td>
+						<td><form:input path="userPassword"
+								placeholder="User Password" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<form:button>Update CompanyAdmin</form:button>
+		</div>
+	</form:form>
+	<div>
+		<h3>
+			<a href="/home/hello">Back To MainPage</a>
+		</h3>
 	</div>
-	 <div><h3><a href="/home/hello">Back To MainPage</a></h3></div>
 </body>
 </html>

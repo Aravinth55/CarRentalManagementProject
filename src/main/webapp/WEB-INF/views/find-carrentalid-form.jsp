@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,17 +8,26 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<h3>Find CarRental ByCustomerId</h3>
-	<br>
-	<form action="/carrental/deletecarrental" method="get"
-		style="text-align:center ;margin-top:5%;">
-		<label>Enter Car Registration Number</label>
-		 <input type="text"	placeholder="Car RegNo" name="carregno">
-		 
-		  <label>Enter Customer Id</label> 
-			<input type="text" placeholder="Customer Id" name="cusid">
-		<input type='submit' value="Fetch" name="submit">
+	<form action="/carrental/deletecarrental" method="get">
+		<h1>Find CarRental ByCustomerId</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label>Enter Car Registration Number</label></td>
+						<td><input type="text" placeholder="Car RegNo"
+							name="carregno" required></td>
+</tr>
+					<tr>
+						<td><label>Enter Customer Id</label></td>
+						<td><input type="text" placeholder="Customer Id" name="cusid" required>
+						</td>
+						<td><input type='submit' value="Fetch" name="submit">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</form>
-
 </body>
 </html>

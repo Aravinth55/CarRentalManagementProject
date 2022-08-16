@@ -11,8 +11,8 @@
 <style><%@include file="/WEB-INF/css/listimage.css"%></style>
 </head>
 <body>
-	<div id="table root">
-		<table >
+	<div class="form">
+		<table class="styled-table">
 		<caption>Return Car list</caption>
 			<thead>
 				<tr>

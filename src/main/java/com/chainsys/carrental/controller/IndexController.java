@@ -40,4 +40,5 @@ public class IndexController {
 	public String getDemoContact(Model model) {
 		return "contact";
 	}
+
 }
