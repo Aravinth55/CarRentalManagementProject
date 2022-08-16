@@ -5,9 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Access</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style><%@include file="/WEB-INF/css/accesstemplate.css"%></style>
+<style><%@include file="/WEB-INF/css/accesstemplate.css"%>
+</style>
 </head>
 <body>
 	<h1 text-align="center">Welcome Customer</h1>

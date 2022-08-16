@@ -11,9 +11,12 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -35,12 +38,13 @@ public class CarRental {
 	@Column(name = "CUSTOMERID")
 	private int customerId; // Foreign key    //many to one
 	@Column(name = "FROMDATE")
-	
+//	@FutureOrPresent
 	private Date fromDate;
+	
 	@Column(name = "DUEDATE")
-	
-	
+//	@Future
 	private Date dueDate;
+	
 	@Column(name = "RETAILFEE")
 	@Min(value = 0,message="*value should be greater than 0")
 

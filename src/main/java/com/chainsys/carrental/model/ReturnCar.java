@@ -11,7 +11,6 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -33,10 +32,10 @@ public class ReturnCar {
 	@Column(name = "CUSTOMERID")
 	private int customerId;    //Foreign key
 	@Column(name = "FROMDATE")
-	
+//	@Past
 	private Date fromDate;
 	@Column(name = "DUEDATE")
-	
+//	@Past
 	private Date dueDate;
 	@Column(name = "PAYELAPSED")
 	
