@@ -144,7 +144,10 @@ var personTypeNameCheck = function() {
                  <h1>Customer Registration</h1>
                  <div class="form">
                  <table class="myTable">
-                  <caption></caption>
+                 	<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
                  
                  <tbody>
               

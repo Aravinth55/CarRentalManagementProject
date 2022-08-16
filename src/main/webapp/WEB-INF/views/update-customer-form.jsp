@@ -16,6 +16,10 @@
 		<h1>Update Customer Registration</h1>
 		<div class="form">
 			<table>
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 				<tbody>
 					<tr>
 						<td><label for="customerId">Customer Id</label></td>

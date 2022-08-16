@@ -29,6 +29,10 @@ function dateCalculation(){
 			<h1>Update CarBooking Registration</h1>
 			<div class="form">
 			<table>
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 			<tbody>
 				<tr>
 					<td><label for="carRegno">Car RegNo</label></td>

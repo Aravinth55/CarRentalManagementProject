@@ -12,6 +12,10 @@
 		<h1>Delete Car Registration</h1>
 		<div class="form">
 			<table>
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 				<tbody>
 					<tr>
 			<td>		<label>Enter Car RegisterNo</label></td>

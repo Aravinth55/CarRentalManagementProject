@@ -12,6 +12,14 @@
 		<h1>Update Car Registration Form</h1>
 		<div class="form">
 			<table>
+				<caption></caption>		
+			<tr>
+			<th id=""></th>
+			</tr>
+				<caption></caption>		
+			<tr>
+			<th id=""></th>
+			</tr>
 				<tbody>
 					<tr>
 						<td><label>Enter Car RegisterNo</label></td>

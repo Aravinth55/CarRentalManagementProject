@@ -16,6 +16,10 @@
 		<h1>Update CompanyAamin Form</h1>
 		<div class="form">
 			<table>
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 				<tbody>
 					<tr>
 						<td><label for="userId">User Id</label></td>

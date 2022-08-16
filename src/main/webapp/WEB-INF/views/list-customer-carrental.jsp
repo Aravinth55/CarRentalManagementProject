@@ -12,6 +12,10 @@
 	<form:form action="" method="post" modelAttribute="getcus">
 		<div class="form">
 			<table class="styled-table">
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 			<caption></caption>
 				<tbody>
 					<tr>

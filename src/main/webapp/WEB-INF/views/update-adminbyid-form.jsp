@@ -12,6 +12,10 @@
 		<h1>Update CompanyAdmin</h1>
 		<div class="form">
 			<table>
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 				<tbody>
 					<tr>
 						<td><label>Enter CompanyAdmin Id</label></td>

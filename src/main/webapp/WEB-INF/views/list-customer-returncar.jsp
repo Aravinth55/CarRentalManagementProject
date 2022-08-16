@@ -13,6 +13,10 @@
 			<form:form action="" method="post" modelAttribute="getcus">
 			<div class="form">
 			<table class="styled-table">
+				<caption></caption>		
+			<tr>
+			<th></th>
+			</tr>
 				<tbody>
 					<tr>
 						<td><label for="customerId">Customer Id</label></td>
