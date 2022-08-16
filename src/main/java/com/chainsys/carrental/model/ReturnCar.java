@@ -32,16 +32,13 @@ public class ReturnCar {
 	@Column(name = "CUSTOMERID")
 	private int customerId;    //Foreign key
 	@Column(name = "FROMDATE")
-//	@Past
 	private Date fromDate;
 	@Column(name = "DUEDATE")
-//	@Past
 	private Date dueDate;
 	@Column(name = "PAYELAPSED")
 	
 	private int payElapsed;
 	@Column(name = "CARFINE")
-//	@Min(value = 0,message="*value should be greater than 0")
 
 
 	private float carFine;

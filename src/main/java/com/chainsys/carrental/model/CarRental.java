@@ -35,11 +35,9 @@ public class CarRental {
 	@Column(name = "CUSTOMERID")
 	private int customerId; // Foreign key    //many to one
 	@Column(name = "FROMDATE")
-//	@FutureOrPresent
 	private Date fromDate;
 	
 	@Column(name = "DUEDATE")
-//	@Future
 	private Date dueDate;
 	
 	@Column(name = "RETAILFEE")
