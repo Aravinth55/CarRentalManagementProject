@@ -8,7 +8,7 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<form action="/companyadmin/updateadminform" method="get">
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 		<h1>Update CompanyAdmin</h1>
 		<div class="form">
 			<table>
@@ -19,7 +19,8 @@
 				<tbody>
 					<tr>
 						<td><label>Enter CompanyAdmin Id</label></td>
-						<td><input type="text" placeholder="User Id" name="userid">
+						<td><input type="text" placeholder="User Id" name="userid" title="It should be Number Format"
+				 pattern="^[0-9]+$" required="true">
 						</td>
 						<td><input type='submit' value="Fetch" name="submit">
 						</td>

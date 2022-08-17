@@ -11,7 +11,8 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<form:form action="updatecar" method="post" modelAttribute="updatecar">
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<form:form action="updatecars" method="post" modelAttribute="updatecar">
 		<h1>Update Car Registration</h1>
 		<div class="form">
 			<table>
@@ -22,7 +23,7 @@
 				<tbody>
 					<tr>
 						<td><label for="carRegno">Car RegNo</label></td>
-						<td><form:input path="carRegno" placeholder="Car Regno" required="true"/></td>
+						<td><form:input path="carRegno" placeholder="Car Regno" required="true" readonly="true"/></td>
 					</tr>
 <%-- 					<form:errors path="carRegno" cssClass="text-danger" />
  --%>
@@ -36,24 +37,24 @@
 
 						<td><label for="carMake">Car Make</label></td>
 
-						<td><form:input path="carMake" placeholder="Car Make"  title="It should be Only Alphabet" required="true"/></td>
+						<td><form:input path="carMake" placeholder="Car Make"  pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/></td>
 <%-- 						<form:errors path="carMake" cssClass="text-danger" />
  --%>					<tr>
 						<td><label for="carModel">Car Model</label></td>
-						<td><form:input path="carModel" placeholder="Car Model"  title="It should be Only Alphabet" required="true"/></td>
+						<td><form:input path="carModel" placeholder="Car Model"  title="Enter the Car Model" required="true"/></td>
 					</tr>
-<!-- 	 -->				<form:errors path="carModel" cssClass="text-danger"  title="It should be Only Alphabet" required="true"/>
-
+<%-- <!-- 	 -->				<form:errors path="carModel" cssClass="text-danger"  title="It should be Only Alphabet" required="true"/>
+ --%>
 					<tr>
 						<td><label for="carColour">Car Colour</label></td>
-						<td><form:input path="carColour" placeholder="Car Colour"  title="It should be Only Alphabet" required="true"/>
+						<td><form:input path="carColour" placeholder="Car Colour"  pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
 						</td>
 					</tr>
 <%-- 					<form:errors path="carColour" cssClass="text-danger" />
  --%>
 					<tr>
 						<td><label for="fuelType">Fuel Type</label></td>
-						<td><form:input path="fuelType" placeholder="FuelType"  title="It should be Only Alphabet" required="true"/></td>
+						<td><form:input path="fuelType" placeholder="FuelType" pattern="^[A-Za-z]\\w{2,20}$"  title="It should be Only Alphabet" required="true"/></td>
 					</tr>
 <%-- 					<form:errors path="fuelType" cssClass="text-danger" />
  --%>
@@ -68,13 +69,13 @@
 						<td><label for="carAvailable">Car Available</label></td>
 
 						<td><form:input path="carAvailable"
-								placeholder="Car Available"  title="It should be Only Alphabet" required="true"/></td>
+								placeholder="Car Available" pattern="^[A-Za-z]\\w{2,20}$"  title="It should be Only Alphabet" required="true"/></td>
 					</tr>
 <%-- 					<form:errors path="carAvailable" cssClass="text-danger" />
  --%>				</tbody>
 			</table>
 
-			<form:button>Add New CarRegistration</form:button>
+			<form:button>Update CarRegistration</form:button>
 
 		</div>
 	</form:form>

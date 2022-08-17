@@ -41,6 +41,7 @@ var userpasswordCheck = function() {
 </script>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<div class="loginBox">
 		<img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px"
 			width="100px" alt="image">

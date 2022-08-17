@@ -8,7 +8,8 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
-	<form action="/car/updatecarrentalform" method="get">
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<form action="updatecarform" method="get">
 		<h1>Update Car Registration Form</h1>
 		<div class="form">
 			<table>
@@ -22,9 +23,9 @@
 			</tr>
 				<tbody>
 					<tr>
-						<td><label>Enter Car RegisterNo</label></td>
+						<td><label>Enter Car RegisterNumber</label></td>
 						<td><input type="text" placeholder="Car RegNo"
-							name="carregno"></td>
+							name="carregno"  pattern="^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$" title="Enter the CarRegno" required></td>
 						<td><input type='submit' value="Fetch" name="submit"></td>
 					</tr>
 				</tbody>

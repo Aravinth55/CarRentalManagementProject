@@ -11,6 +11,7 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<form:form action="updatecomadmin" method="post"
 		modelAttribute="updatecompanyadmin">
 		<h1>Update CompanyAamin Form</h1>
@@ -28,7 +29,7 @@
 					</tr>
 					<tr>
 						<td><label for="userName">User Name</label></td>
-						<td><form:input path="userName" placeholder="User Name" /></td>
+						<td><form:input path="userName" placeholder="User Name" pattern="^[A-Za-z]\\w{2,20}$"   title="It should be Only Alphabet" required="true"/></td>
 					</tr>
 					<tr>
 						<td><label for="userPassword">User Password</label></td>

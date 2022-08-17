@@ -28,6 +28,7 @@
 </script>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 			<form:form action="add" method="post" modelAttribute="addreturncar">
 			 <h1>Car Returning</h1>
 				<div class="form">
@@ -90,7 +91,7 @@
  			</tbody>
 				</table>
 				
-					<form:button>Add New Return Car</form:button>
+					<form:button>Car Returning</form:button>
 				
 				
 				</div>

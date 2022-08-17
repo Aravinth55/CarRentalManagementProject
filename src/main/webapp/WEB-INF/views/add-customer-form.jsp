@@ -137,6 +137,7 @@ var personTypeNameCheck = function() {
 </script>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 			 <form:form style="line-height:29px;" action="add" method="post"
                 modelAttribute="addcustomer"  name="myForm">
                  <h1>Customer Registration</h1>
@@ -146,20 +147,11 @@ var personTypeNameCheck = function() {
 			<tr>
 			<th></th>
 			</tr>
-                 
                  <tbody>
-              
-				<%-- <div>
-					<label for="customerId">Customer Id</label>
-					<div>
-						<form:input path="customerId" placeholder="Customer Id" title="It should be Number Format"
-				 pattern="^[0-9]+$" required="true"/>
-					</div>
-				</div> --%>
 				<tr>
 					<td><label for="customerName">Customer Name</label></td>
 					<td class="cus">
-						<form:input path="customerName" id="customerName"  name="customerName"  placeholder="Customer Name" title="It should be Only Alphabet" required="true"/>
+						<form:input path="customerName"  name="customerName"  placeholder="Customer Name" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
 					</td>
 					<%-- <td>	<form:errors path="customerName" cssClass="text-danger" /></td> --%>
 				</tr>
@@ -168,7 +160,7 @@ var personTypeNameCheck = function() {
 				<tr>
 					<td><label for="customerPassword">Customer Password</label></td>
 					<td>
-						<form:input path="customerPassword" name="customerPassword"  placeholder="Customer Password" title="Please Enter the password" required="true"/>
+						<form:input path="customerPassword" name="customerPassword"  placeholder="Customer Password"   title="Please Enter the password" required="true"/>
 				</td>
 			</tr>
 <%-- 					<form:errors path="customerPassword" cssClass="text-danger" />
@@ -182,15 +174,15 @@ var personTypeNameCheck = function() {
  --%>				<tr>
 					<td><label for="mobileNo">Mobile No</label></td>
 				<td>
-						<form:input path="mobileNo" placeholder="Mobile No" name="mobileNo"   title="It should be Number Format"
-				 pattern="^[0-9]+$" required="true"/>
+						<form:input path="mobileNo" placeholder="Mobile No" name="mobileNo" pattern="^\\d{10}$" maxlength="10"  title="It should be Number Format"
+				  required="true"/>
 					</td>
 				</tr>
 <%-- 				<form:errors path="mobileNo" cssClass="text-danger" />
  --%>				<tr>
 					<td><label for="gender">Gender</label></td>
 					<td>
-                        <select name="gender" onblur="genderNameCheck();">
+                        <select name="gender" required>
                         <option>--Gender--</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -201,7 +193,7 @@ var personTypeNameCheck = function() {
 				<tr>
 					<td><label for="bloodGroup">Blood Group</label></td>
 					<td>
-						<form:input path="bloodGroup" name="bloodGroup"  placeholder="Blood Group"  title="It should be Only Alphabet" required="true"/>
+						<form:input path="bloodGroup" name="bloodGroup"  placeholder="Blood Group" pattern="^[A-Za-z]\\w{2,20}$"  title="It should be Only Alphabet" required="true"/>
 					</td>
 				</tr>
 <%-- 				<form:errors path="bloodGroup" cssClass="text-danger" />
@@ -224,7 +216,7 @@ var personTypeNameCheck = function() {
 						</tr>
 						</tbody>
 						</table>
-							<form:button>Add New Customer</form:button>
+							<form:button>Customer Registration</form:button>
 							</div>
 			</form:form>
 					

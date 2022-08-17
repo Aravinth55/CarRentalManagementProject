@@ -9,6 +9,7 @@
 <title>List Customer Car Rentals</title>
 <style><%@include file="/WEB-INF/css/listimage.css"%></style></head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<form:form action="" method="post" modelAttribute="getcus">
 		<div class="form">
 			<table class="styled-table">

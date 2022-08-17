@@ -11,6 +11,7 @@
 <title>Car Rental List</title>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<div id="table root">
 		<table class="styled-table">
 		<caption>RentalCar List</caption>

@@ -13,6 +13,7 @@
 </style>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<form:form action="" method="get" modelAttribute="findcustomerbyid">
 		<h1 style="font-color: white;">Find Customer</h1>
 		<div class="form">

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -23,6 +23,8 @@ function dateCalculation(){
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+
 			<form:form action="add" method="post" modelAttribute="addcarrental">
 			 <h1>Car Booking</h1>
 			 <div class="form">
@@ -75,7 +77,7 @@ function dateCalculation(){
  --%>					<tr>
 							<td>	<label for="fuelLevel">Fuel Level</label></td>
 								<td>
-                        <select name="fuelLevel"  >
+                        <select name="fuelLevel"  required>
                         <option>--Fuel Level--</option>
                         <option value="Full">Full</option>
                         <option value="half">half</option>
@@ -89,7 +91,7 @@ function dateCalculation(){
 					<tr>
 							<td>	<label for="workingCondition">Working Condition</label></td>
 					  <td>
-                        <select name="workingCondition">
+                        <select name="workingCondition" required>
                         <option>--Working Condition--</option>
                         <option value="Good">Good</option>
                         <option value="Average">Average</option>
@@ -102,7 +104,7 @@ function dateCalculation(){
 <%-- 						<form:errors path="workingCondition" cssClass="text-danger" />
  --%>	</tbody>
 	</table>
-		<form:button>Add New Car Rental</form:button>
+		<form:button>Add New Car Registration</form:button>
 	</div>
 					
 			</form:form>

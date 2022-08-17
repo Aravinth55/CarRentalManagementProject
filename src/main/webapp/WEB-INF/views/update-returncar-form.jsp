@@ -27,6 +27,7 @@ function calculation(){
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 				<form:form action="updatereturncar" method="post"
 					modelAttribute="updatereturncar">
 					<h1>Update Car Returning</h1>
@@ -85,7 +86,7 @@ function calculation(){
 							</tr>
 							</tbody>
 							</table>
-								<form:button>Update Return Car</form:button>
+								<form:button>Update Car Returning</form:button>
 							</div>
 							
 				</form:form>

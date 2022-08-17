@@ -11,6 +11,7 @@
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
+<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<form:form action="updatecus" method="post"
 		modelAttribute="updatecustomer">
 		<h1>Update Customer Registration</h1>
@@ -23,13 +24,13 @@
 				<tbody>
 					<tr>
 						<td><label for="customerId">Customer Id</label></td>
-						<td><form:input path="customerId" placeholder="Customer Id" />
+						<td><form:input path="customerId" placeholder="Customer Id" readonly="true" />
 						</td>
 					</tr>
 					<tr>
 						<td><label for="customerName">Customer Name</label></td>
 						<td><form:input path="customerName"
-								placeholder="Customer Name" title="It should be Only Alphabet" required="true"/></td>
+								placeholder="Customer Name" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/></td>
 					</tr>
 <%-- 					<form:errors path="customerName" cssClass="text-danger" />
  --%>
@@ -49,7 +50,7 @@
 					<tr>
 						<td><label for="mobileNo">Mobile No</label></td>
 						<td><form:input path="mobileNo" placeholder="Mobile No"
-								title="It should be Number Format" pattern="^[0-9]+$"
+							pattern="^\\d{10}$" maxlength="10"  title="It should be Number Format"
 								required="true" /></td>
 					</tr>
 <%-- 					<form:errors path="mobileNo" cssClass="text-danger" />
@@ -96,7 +97,6 @@
 			</table>
 			<form:button>Update Customer</form:button>
 		</div>
-		
 	</form:form>
 </body>
 </html>

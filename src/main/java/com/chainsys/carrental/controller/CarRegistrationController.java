@@ -59,7 +59,7 @@ private	CarRegistrationService carRegistrationService;
 		return "update-car-form";
 	}
 
-	@PostMapping("/updatecar")
+	@PostMapping("/updatecars")
 	public String updatecars(@Valid@ModelAttribute("updatecar") Car theCar,Errors errors) {
 		if(errors.hasErrors()) {
 			return "update-car-form";
