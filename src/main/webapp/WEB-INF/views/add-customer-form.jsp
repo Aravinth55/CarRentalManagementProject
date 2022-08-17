@@ -10,26 +10,9 @@
 <title>Add Customer</title>
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 <script type="text/javascript">
-/* var customerIdCheck = function() {
-	var nameRegex = new RegExp("^[a-zA-Z]+$");
-	var rg = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
-	var phoneRg = new RegExp("[1-9]{1}[0-9]{9}");
-	var cityRegex = new RegExp("^[a-zA-Z]+$");
-	if(document.myForm.customerId.value == ""){
-		
-		if(alert("Customer Id cannot be blank")){
-			document.myForm.customerId.focus();
-		}
-		else
-			document.activeElement.blur();
-        	
-    }
-    else{
-        return false;
-    }  */
+
  var userNameCheck = function() {
 	 var nameRegex = new RegExp("^[a-zA-Z]+$");
-	// var name = myTable.getElementsByClassName('customerName');
 	 if(!document.myForm#customerName.value.match(customerPasswordRegex)){
 			if(alert("Name can't be empty or must contain only alphabets")){ 
 				document.getElementById('customerName').focus();
