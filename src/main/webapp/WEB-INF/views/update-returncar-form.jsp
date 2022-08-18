@@ -44,8 +44,7 @@ function calculation(){
 							<form:input path="carRegno" placeholder="Car RegNo"/>
 						</td>
 					</tr>
-<%-- 					<form:errors path="carRegno" cssClass="text-danger" />
- --%>				<tr>
+				<tr>
 						<td><label for=customerId>Customer Id</label></td>
 						<td>
 							<form:input path="customerId" placeholder="Customer Id"/>
@@ -57,15 +56,13 @@ function calculation(){
 							<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="calculation()" placeholder="From Date" required="true"/>
 						</td>
 						</tr>
-<%-- 						<form:errors path="fromDate" cssClass="text-danger" />
- --%>						<tr>
+						<tr>
 						<td>	<label for="dueDate">Due Date</label></td>
 							<td>
 								<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="calculation()" placeholder="Due Date" required="true"/>
 							</td>
 						</tr>
-<%-- 						<form:errors path="dueDate" cssClass="text-danger" />
- --%>						<tr>
+						<tr>
 						<td>	<label for="payElapsed">Pay Elapsed</label></td>
 							<td>
 								<form:input path="payElapsed" id="payElapsed" name="payElapsed" onchange="calculation()" placeholder="Pay Elapsed" title="It should be Number Format"

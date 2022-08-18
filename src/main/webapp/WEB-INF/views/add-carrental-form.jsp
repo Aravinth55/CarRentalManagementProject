@@ -2,52 +2,13 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Car Rental</title>
 <script type="text/javascript">
-function dateCalculation(){
-	var date1 = document.getElementById("fromDate").value;
-	var date2 = document.getElementById("dueDate").value;
-	var date3 = new Date(date1);
-	var date4 = new Date(date2);
-	var total = parseInt((date4 - date3) / (1000 * 60 * 60 * 24), 10); 
-	document.getElementById("retailFee").value = parseInt(total)*1000;
-	return parseInt(total);
-}
-
-var dateCheck = function() {
-	var date1 = document.getElementById("fromDate").valueAsDate;
-	var todayDate = new Date();
-	if(date1 < todayDate){
-        if(alert("Please Enter valid Fromdate")){ 
-             document.form.fromDate.focus();
-        }
-        else
-            document.activeElement.blur();
-    }
- else{
-        return false;
-    } 
-  }
-  
-var dueDateCheck = function() {
-	var date2 = document.getElementById("dueDate").valueAsDate;
-	var todayDate2 = new Date();
-	if(date2 < todayDate2){
-        if(alert("Please Enter valid Duedate")){ 
-             document.form.dueDate.focus();
-        }
-        else
-            document.activeElement.blur();
-    }
- else{
-        return false;
-    } 
-  }
+<%@include file="/WEB-INF/javascript/addcarrental.js"%>
  </script>
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
@@ -85,14 +46,14 @@ var dueDateCheck = function() {
 				<tr>
 						<td>	<label for="fromDate">From Date</label></td>
 					<td>
-						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onblur="dateCheck();" onchange="dateCalculation()" placeholder="From Date" />
+						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onblur="dateCheck();" onchange="dateCalculation()" min="2022-08-18" placeholder="From Date" />
 				</td>
 					</tr>
 	
 					<tr>
 							<td>	<label for="dueDate">Due Date</label></td>
 								<td>
-							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onblur="dueDateCheck();" onchange="dateCalculation()" placeholder="Due Date" />
+							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onblur="dueDateCheck();" onchange="dateCalculation()" min="2022-08-19" placeholder="Due Date" />
 						</td>
 					</tr>
 	
@@ -102,36 +63,30 @@ var dueDateCheck = function() {
 							<form:input path="retailFee" id="retailFee" name="retailFee" onchange="dateCalculation(this.form)" placeholder="Retail Fee" />
 						</td>
 					</tr>
-<%-- 						<form:errors path="retailFee" cssClass="text-danger" />
- --%>					<tr>
+					<tr>
 							<td>	<label for="fuelLevel">Fuel Level</label></td>
 								<td>
                         <select name="fuelLevel"  required>
-                        <option>--Fuel Level--</option>
                         <option value="Full">Full</option>
                         <option value="half">half</option>
                         <option value="Low">Low</option>
                         </select>
                 </td>
-<%--                 	<form:errors path="fuelLevel" cssClass="text-danger" />
- --%>					</tr>
+					</tr>
 					
 	
 					<tr>
 							<td>	<label for="workingCondition">Working Condition</label></td>
 					  <td>
                         <select name="workingCondition" required>
-                        <option>--Working Condition--</option>
                         <option value="Good">Good</option>
                         <option value="Average">Average</option>
                         <option value="Bad">Bad</option>
                         </select>
                 </td>
-<%--                 <form:errors path="workingCondition" cssClass="text-danger" />
- --%>                
+                
 					</tr>
-<%-- 						<form:errors path="workingCondition" cssClass="text-danger" />
- --%>	</tbody>
+	</tbody>
 	</table>
 		<form:button>Add New Car Registration</form:button>
 	</div>

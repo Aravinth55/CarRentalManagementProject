@@ -39,8 +39,7 @@ function dateCalculation(){
 					<td>	<form:input path="carRegno"  placeholder="Car RegNo"/>
 					</td>
 				</tr>
-<%-- 					<form:errors path="carRegno" cssClass="text-danger" />
- --%>				<tr>
+				<tr>
 					<td><label for=customerId>Customer Id</label></td>
 					<td>
 						<form:input path="customerId"  placeholder="Customer Id"  title="It should be Number Format"
@@ -66,34 +65,29 @@ function dateCalculation(){
 						</td>
 						</tr>
 					
-<%-- 					<form:errors path="retailFee" cssClass="text-danger" />
- --%>						<tr>
+						<tr>
 					
 					<td>	<label for="fuelLevel">Fuel Level</label></td>
 						
 					<td>
                         <select name="fuelLevel">
-                        <option>--Fuel Level--</option>
                         <option value="Full">Full</option>
                         <option value="half">half</option>
                         <option value="Low">Low</option>
                         </select>
                 </td>
 					</tr>
-<%-- 						<form:errors path="fuelLevel" cssClass="text-danger" />
- --%>						<tr>
+						<tr>
 						<td><label for="workingCondition">Working Condition</label></td>
 						 <td>
                         <select name="workingCondition">
-                        <option>--Working Condition--</option>
                         <option value="Good">Good</option>
                         <option value="Average">Average</option>
                         <option value="Bad">Bad</option>
                         </select>
                 </td>
 						</tr>
-<%-- 							<form:errors path="workingCondition" cssClass="text-danger" />
- --%>							</tbody>
+							</tbody>
 							</table>
 								<form:button>Update Car Rental</form:button>
 						</div>

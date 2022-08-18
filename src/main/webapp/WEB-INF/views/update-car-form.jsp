@@ -25,8 +25,7 @@
 						<td><label for="carRegno">Car RegNo</label></td>
 						<td><form:input path="carRegno" placeholder="Car Regno" required="true" readonly="true"/></td>
 					</tr>
-<%-- 					<form:errors path="carRegno" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="ownerId">Owner Id</label></td>
 						<td><form:input path="ownerId" placeholder="Owner Id"
@@ -38,26 +37,22 @@
 						<td><label for="carMake">Car Make</label></td>
 
 						<td><form:input path="carMake" placeholder="Car Make"  pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/></td>
-<%-- 						<form:errors path="carMake" cssClass="text-danger" />
- --%>					<tr>
+					<tr>
 						<td><label for="carModel">Car Model</label></td>
 						<td><form:input path="carModel" placeholder="Car Model"  title="Enter the Car Model" required="true"/></td>
 					</tr>
-<%-- <!-- 	 -->				<form:errors path="carModel" cssClass="text-danger"  title="It should be Only Alphabet" required="true"/>
- --%>
+
 					<tr>
 						<td><label for="carColour">Car Colour</label></td>
 						<td><form:input path="carColour" placeholder="Car Colour"  pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
 						</td>
 					</tr>
-<%-- 					<form:errors path="carColour" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="fuelType">Fuel Type</label></td>
 						<td><form:input path="fuelType" placeholder="FuelType" pattern="^[A-Za-z]\\w{2,20}$"  title="It should be Only Alphabet" required="true"/></td>
 					</tr>
-<%-- 					<form:errors path="fuelType" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="carCapacity">Car Capacity</label></td>
 
@@ -71,8 +66,7 @@
 						<td><form:input path="carAvailable"
 								placeholder="Car Available" pattern="^[A-Za-z]\\w{2,20}$"  title="It should be Only Alphabet" required="true"/></td>
 					</tr>
-<%-- 					<form:errors path="carAvailable" cssClass="text-danger" />
- --%>				</tbody>
+				</tbody>
 			</table>
 
 			<form:button>Update CarRegistration</form:button>

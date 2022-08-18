@@ -25,8 +25,7 @@
 					<td><label for="carRegno">Car RegNo</label></td>
 					<td>
 						<form:input path="carRegno" placeholder="Car Regno" pattern="^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$" title="Enter the CarRegno" required="true"/></td>
-<%-- 						<td><form:errors path="carRegno" cssClass="text-danger" /></td>
- --%>				</tr>
+ 		</tr>
 					
 	
 				<tr>
@@ -40,8 +39,7 @@
 				<td>	<label for="carMake">Car Make</label></td>
 				
 					<td>	<form:input path="carMake"  placeholder="Car Make" pattern="^[A-Za-z]\\w{2,20}$"   title="It should be Only Alphabet" required="true"/>
-<%-- 							<form:errors path="carMake" cssClass="text-danger" />
- --%>				</td>
+				</td>
  						 
  						</tr>
 	
@@ -50,8 +48,7 @@
 					<td>
 						<form:input path="carModel"  placeholder="Car Model" title="Enter thr Car Model" required="true"/>
 				</td>
-<%-- 				<form:errors path="carModel" cssClass="text-danger" />
- --%> 			</tr>
+ 			</tr>
 					
 	
 					<tr>
@@ -59,8 +56,7 @@
 					<td>
 						<form:input path="carColour"  placeholder="Car Colour" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
 				</td>
-<%-- 					<form:errors path="carColour" cssClass="text-danger" />
- --%>				</tr>
+ 			</tr>
 				
 	
 				<tr>
@@ -68,8 +64,7 @@
 					</td>
 					<td>	<form:input path="fuelType"  placeholder="FuelType" pattern="^[A-Za-z]\\w{2,20}$"  title="It should be Only Alphabet" required="true"/>
 					</td>
-<%-- 						<form:errors path="fuelType" cssClass="text-danger" />
- --%>				</tr>
+				</tr>
 				
 	
 					<tr>
@@ -84,8 +79,7 @@
 				
 					<td>	<form:input path="carAvailable"  placeholder="Car Available" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
 				</td>
-<%-- 				<form:errors path="carAvailable" cssClass="text-danger" />
- --%>					</tr>
+					</tr>
 						
 	</tbody>
 	</table>

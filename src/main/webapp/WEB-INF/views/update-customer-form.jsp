@@ -32,29 +32,25 @@
 						<td><form:input path="customerName"
 								placeholder="Customer Name" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/></td>
 					</tr>
-<%-- 					<form:errors path="customerName" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="customerPassword">Customer Password</label></td>
 						<td><form:input path="customerPassword"
 								placeholder="Customer Password" type="password" required="true"/></td>
 					</tr>
-<%-- 					<form:errors path="customerPassword" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="address">Address</label></td>
 						<td><form:input path="address" placeholder="Address"  required="true"/></td>
 					</tr>
-<%-- 					<form:errors path="address" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="mobileNo">Mobile No</label></td>
 						<td><form:input path="mobileNo" placeholder="Mobile No"
 							pattern="^\\d{10}$" maxlength="10"  title="It should be Number Format"
 								required="true" /></td>
 					</tr>
-<%-- 					<form:errors path="mobileNo" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="gender">Gender</label></td>
 						<td>
@@ -66,15 +62,13 @@
                         </select>
                 </td>
 					</tr>
-<%-- 					<form:errors path="gender" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="bloodGroup">Blood Group</label></td>
 						<td><form:input path="bloodGroup" placeholder="Blood Group" title="It should be Only Alphabet"  required="true"/>
 						</td>
 					</tr>
-<%-- 					<form:errors path="bloodGroup" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="personType">Person Type</label></td>
 						<td>
@@ -85,8 +79,7 @@
                         </select>
                 </td>
 					</tr>
-<%-- 					<form:errors path="personType" cssClass="text-danger" />
- --%>
+
 					<tr>
 						<td><label for="joiningDate">Joining Date</label></td>
 						
