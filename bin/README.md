@@ -1,2 +1,0 @@
-# CarRentalManagementProject
-Final Project
