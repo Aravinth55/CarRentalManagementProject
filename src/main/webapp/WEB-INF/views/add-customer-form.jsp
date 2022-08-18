@@ -10,8 +10,7 @@
 <title>Add Customer</title>
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 <script type="text/javascript">
-<%-- <%@include file="/WEB-INF/javascript/customerregistration.js"%>
- --%></script>
+</script>
 </head>
 <body>
 <button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
