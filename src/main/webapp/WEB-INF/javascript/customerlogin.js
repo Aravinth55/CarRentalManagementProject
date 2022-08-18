@@ -13,7 +13,7 @@ let CustomerIdCheck = function() {
     } 
 }
 let customerpasswordCheck = function() {
-	 let passwordRegex = customerpasswordCheck("/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/");
+	 let passwordRegex = `("/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/")`;
 	 if(!document.myForm.customerPassword.value.match(passwordRegex)){
 			if(alert("Password should contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character")){ 
 				 document.myForm.customerPassword.focus();
