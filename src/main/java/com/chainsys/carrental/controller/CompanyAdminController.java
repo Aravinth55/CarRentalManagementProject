@@ -23,6 +23,11 @@ public class CompanyAdminController {
 	@Autowired
 	private CompanyAdminService companyAdminService;
 
+	public static final String ADDADMIN = "add-companyadmin-form";
+	public static final String LISTOFADMIN = "redirect:/companyadmin/companyadminlist";
+	public static final String UPDATEADMIN = "update-companyadmin-form";
+	 
+	
 	@GetMapping("/companyadminlist")
 	public String getCompanyAdmins(Model model) {
 		List<CompanyAdmin> allCmd = companyAdminService.getCompanyAdmins();
@@ -34,7 +39,7 @@ public class CompanyAdminController {
 	public String showAddAdminForm(Model model) {
 		CompanyAdmin theCmd = new CompanyAdmin();
 		model.addAttribute("addcompanyadmin", theCmd);
-		return "add-companyadmin-form";
+		return ADDADMIN;
 	}
 
 	@PostMapping("/add")
@@ -42,7 +47,7 @@ public class CompanyAdminController {
 	// content type ("application/json")
 	public String addNewCompanyAdmin(@ModelAttribute("addcompanyadmin") CompanyAdmin theCmd,Errors errors) {
 		if(errors.hasErrors()) {
-			return"add-companyadmin-form";
+			return ADDADMIN;
 		}
 		companyAdminService.save(theCmd);
 		return "redirect:/companyadmin/findcomadminbyid?userid="+theCmd.getUserId();
@@ -58,16 +63,16 @@ public class CompanyAdminController {
 	public String showUpdateAdminForm(int userid, Model model) {
 		CompanyAdmin theCren = companyAdminService.findById(userid);
 		model.addAttribute("updatecompanyadmin", theCren);
-		return "update-companyadmin-form";
+		return UPDATEADMIN;
 	}
 
 	@PostMapping("/updatecomadmin")
 	public String updateCompanyAdmin(@Valid@ModelAttribute("updatecompanyadmin") CompanyAdmin theCmd,Errors errors) {
 		if(errors.hasErrors()) {
-			return  "update-companyadmin-form";
+			return  UPDATEADMIN;
 		}
 		companyAdminService.save(theCmd);
-		return "redirect:/companyadmin/companyadminlist";
+		return LISTOFADMIN;
 	}
 	@GetMapping("/deleteadminbyidform")
 	public String showFindByForm()
@@ -77,7 +82,7 @@ public class CompanyAdminController {
 	@GetMapping("/deletecomadmin")
 	public String deleteCompanyAdmin(int userid) {
 		companyAdminService.deleteById(userid);
-		return "redirect:/companyadmin/companyadminlist";
+		return LISTOFADMIN;
 	}
 	@GetMapping("/findadminbyidform")
 	public String showDeleteForm()

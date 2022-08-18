@@ -8,13 +8,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer List</title>
-<style><%@include file="/WEB-INF/css/listimage.css"%></style>
+<style><%@include file="/WEB-INF/css/listimage.css"%>
+</style>
 </head>
 <body>
 <button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<div class="form">
 		<table class="styled-table">
 		<caption>Customer list</caption>
+		<col span="9" style="background-color: #7FFD4">
+			
 			<thead>
 				<tr>
 					<th style="background-color: #87CEFA">Customer Id</th>

@@ -49,7 +49,8 @@ var userpasswordCheck = function() {
 		<form action="companyuserlogin" method="post" name="myForm">
 			<div class="inputBox">
 				<input id="userId" type="text" name="userId" placeholder="User Id" id="userId" onblur="UserIdCheck();"
-					pattern="^[0-9]+$" title="It should be Number Format" required="true"> <input
+					pattern="^[0-9]+$" title="It should be Number Format" required="true">
+					 <input
 					id="userPassword" type="password" name="userPassword" onblur="userpasswordCheck();"
 					placeholder="User Password" required="true">
 			</div>

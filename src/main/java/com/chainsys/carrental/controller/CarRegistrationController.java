@@ -23,6 +23,10 @@ public class CarRegistrationController {
 	@Autowired
 private	CarRegistrationService carRegistrationService;
 
+	    public static final String ADDCAR = "add-car-form";
+	    public static final String LISTOFCAR = "redirect:/car/carlist";
+	    public static final String UPDATECAR = "update-car-form";
+
 	@GetMapping("/carlist")
 	public String getCarRegistrations(Model model) {
 		List<Car> allCars = carRegistrationService.getCars();
@@ -36,16 +40,16 @@ private	CarRegistrationService carRegistrationService;
 		model.addAttribute("allcars", allCarRegistration);
 		Car theCar = new Car();
 		model.addAttribute("addcar", theCar);
-		return "add-car-form";
+		return ADDCAR;
 	}
 
 	@PostMapping("/add")
 	public String addNewCar(@Valid@ModelAttribute("addcar") Car theCar,Errors errors) {
 		if(errors.hasErrors()) {
-			return"add-car-form";
+			return ADDCAR;
 		}
 		carRegistrationService.save(theCar);
-		return "redirect:/car/carlist";
+		return LISTOFCAR;
 	}
 	@GetMapping("/updatecaridform")
 	public String showUpdateForm()
@@ -56,16 +60,16 @@ private	CarRegistrationService carRegistrationService;
 	public String showUpdateCarForm(String carregno, Model model) {
 		Optional<Car> theCar = carRegistrationService.findById(carregno);
 		model.addAttribute("updatecar", theCar);
-		return "update-car-form";
+		return UPDATECAR;
 	}
 
 	@PostMapping("/updatecars")
 	public String updatecars(@Valid@ModelAttribute("updatecar") Car theCar,Errors errors) {
 		if(errors.hasErrors()) {
-			return "update-car-form";
+			return UPDATECAR;
 		}
 		carRegistrationService.save(theCar);
-		return "redirect:/car/carlist";
+		return LISTOFCAR;
 	}
 	@GetMapping("/deletecaridform")
 	public String showDeleteForm()
@@ -76,7 +80,7 @@ private	CarRegistrationService carRegistrationService;
 	@GetMapping("/deletecar")
 	public String deleteCustomer( String carregno) {
 		carRegistrationService.deleteById(carregno);
-		return "redirect:/car/carlist";
+		return LISTOFCAR;
 	}
 	@GetMapping("/findcaridform")
 	public String showFindCarForm()

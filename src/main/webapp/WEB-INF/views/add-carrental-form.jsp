@@ -19,13 +19,42 @@ function dateCalculation(){
 	return parseInt(total);
 }
 
+var dateCheck = function() {
+	var date1 = document.getElementById("fromDate").valueAsDate;
+	var todayDate = new Date();
+	if(date1 < todayDate){
+        if(alert("Please Enter valid Fromdate")){ 
+             document.form.fromDate.focus();
+        }
+        else
+            document.activeElement.blur();
+    }
+ else{
+        return false;
+    } 
+  }
+  
+var dueDateCheck = function() {
+	var date2 = document.getElementById("dueDate").valueAsDate;
+	var todayDate2 = new Date();
+	if(date2 < todayDate2){
+        if(alert("Please Enter valid Duedate")){ 
+             document.form.dueDate.focus();
+        }
+        else
+            document.activeElement.blur();
+    }
+ else{
+        return false;
+    } 
+  }
  </script>
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
 </head>
 <body>
 <button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 
-			<form:form action="add" method="post" modelAttribute="addcarrental">
+			<form:form action="add" method="post" modelAttribute="addcarrental" name="myForm">
 			 <h1>Car Booking</h1>
 			 <div class="form">
 			 <table>
@@ -56,14 +85,14 @@ function dateCalculation(){
 				<tr>
 						<td>	<label for="fromDate">From Date</label></td>
 					<td>
-						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onchange="dateCalculation()" placeholder="From Date" />
+						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onblur="dateCheck();" onchange="dateCalculation()" placeholder="From Date" />
 				</td>
 					</tr>
 	
 					<tr>
 							<td>	<label for="dueDate">Due Date</label></td>
 								<td>
-							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onchange="dateCalculation()" placeholder="Due Date" />
+							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onblur="dueDateCheck();" onchange="dateCalculation()" placeholder="Due Date" />
 						</td>
 					</tr>
 	

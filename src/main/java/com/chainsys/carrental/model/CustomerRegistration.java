@@ -27,32 +27,18 @@ public class CustomerRegistration {
     @SequenceGenerator(name = "Customer_Id", sequenceName = "Customer_Id",  allocationSize = 1)
 	private int customerId; // Primary key one to many
 	@Column(name = "Customer_Name")
-	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
-	@NotBlank(message = "*Name can't be Empty")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String customerName;
 	@Column(name = "Customer_Password")
-	@Size(max = 20, min = 8, message = "*Password length should be 8 to 20")
-	@NotBlank(message = "*Password can't be Empty")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid password ")
 	private String customerPassword;
 	@Column(name = "Address")
-	@NotEmpty(message = "*Please enter Address")
 	private String address;
 	@Column(name = "Mobile_No")
-	@Digits(message = "*Invalid number.", integer = 10, fraction = 0)
 	private long mobileNo;
 	@Column(name = "Gender")
-	@NotEmpty(message = "*Please enter Gender")
-	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String gender;
 	@Column(name = "Blood_Group")
-	@NotEmpty(message = "*Please enter BloodGroup")
-	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String bloodGroup;
 	@Column(name = "Person_Type")
-	@NotEmpty(message = "*Please enter PersonType")
-	@Pattern(regexp = "^[a-zA-Z]*$", message = "*Value should be in Alphabets ")
 	private String personType;
 	@Column(name = "Joining_Date")
 	private Date joiningDate;

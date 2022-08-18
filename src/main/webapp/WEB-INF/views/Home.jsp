@@ -1,30 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
 <meta charset="ISO-8859-1">
-<title>Welcome</title>
+ <title>HomePage</title>
 <style><%@include file="/WEB-INF/css/homepagetemplate.css"%></style>
-
-</head>
+   </head>
 <body>
-<div class="menu">
-<ul>
-<li><a href="#">HOME</a></li>
-<li><a href="/companyadmin/adminlogin">ADMIN</a></li>
-<li><a href="/customer/customerloginpage">CUSTOMER</a></li>
-<li><a href="/home/cont">CONTACT</a></li>
-</ul>
-<div class="form">
-<h2>Login Here</h2>
-<input type="text" name="text" placeholder="Enter CustomerId Here">
-<input type="password" name="password" placeholder="Enter password Here">
-<button class="btnn"><a href="/home/customer">Login</a></button>
-<p class="link">Don't have an account<br>
-<a href="/customer/addcustomerform">Sign up here</a></p>
-<p class="liw">Log in with</p>
-</div>
-</div>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">CarRental</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="/customer/customerloginpage">Customer</a></li>
+          <li><a href="/companyadmin/adminlogin">Admin</a></li>
+        <li><a href="/home/cont">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">CAR RENTAL AND LIMOUSINE SERVICES</div>
+    <div class="sub_title">WELL ORGANISED CAR POST AND CUSTOMISABLE BOOKING</div>
+    <div class="btns">
+      <button>Learn More</button>
+      <button>Subscribe</button>
+    </div>
+  </div>
 </body>
 </html>

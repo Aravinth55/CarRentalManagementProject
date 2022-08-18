@@ -19,7 +19,6 @@ import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.service.CarRegistrationService;
 import com.chainsys.carrental.service.CarRentalService;
-import com.chainsys.carrental.service.CustomerRegistrationService;
 
 @Controller
 @RequestMapping("/carrental")
@@ -30,8 +29,10 @@ public class CarRentalController {
 	@Autowired
 	private CarRegistrationService carRegistrationService;
 
-	@Autowired
-	private CustomerRegistrationService customerRegistrationService;
+	
+	public static final String ADDCARRENTAL =  "add-carrental-form";
+	public static final String LISTOFCARRENTAL = "redirect:/carrental/carrentallist";
+	public static final String UPDATECARRENTAL = "update-carrental-form";
 
 	
 	@GetMapping("/carrentallist")
@@ -47,17 +48,17 @@ public class CarRentalController {
 		model.addAttribute("allCars", allCarRegistration);
 		CarRental theCren = new CarRental();
 		model.addAttribute("addcarrental", theCren);
-		return "add-carrental-form";
+		return ADDCARRENTAL;
 	}
 
 	@PostMapping("/add")
 	public String addNewCarRental(@Valid@ModelAttribute("addcarrental") CarRental theCren,Errors errors) {
 		if(errors.hasErrors()) {
-			return "add-carrental-form";
+			return ADDCARRENTAL;
 		}
 		carRentalService.save(theCren);
 		
-		return "redirect:/carrental/carrentallist";
+		return LISTOFCARRENTAL;
 		
 	}
 	@GetMapping("/updatecarrentalidform")
@@ -70,15 +71,15 @@ public class CarRentalController {
 		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(carregno,cusid);
 		Optional<CarRental> theCren = carRentalService.findById(carRentalCompositekey);
 		model.addAttribute("updatecarrental", theCren);
-		return "update-carrental-form";
+		return UPDATECARRENTAL;
 	}
 	@PostMapping("/updatecarrental")
 	public String updateCarRentals(@Valid@ModelAttribute("updatecarrental") CarRental theCren,Errors errors)  {
 		if(errors.hasErrors()) {
-			return "update-carrental-form";
+			return UPDATECARRENTAL;
 		}
 		carRentalService.save(theCren);
-		return "redirect:/carrental/carrentallist";
+		return LISTOFCARRENTAL;
 	}
 	@GetMapping("/deletecarrentalidform")
 	public String showDeleteForm()
@@ -89,7 +90,7 @@ public class CarRentalController {
 	public String deleteCarRental(String carregno, int cusid) {
 		CarRentalCompositekey carRentalCompositekey= new CarRentalCompositekey(carregno,cusid);
 		carRentalService.deleteById(carRentalCompositekey);
-		return "redirect:/carrental/carrentallist";
+		return LISTOFCARRENTAL;
 	}
 	@GetMapping("/findcarrentalidform")
 	public String showFindForm()

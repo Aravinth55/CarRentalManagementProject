@@ -18,7 +18,6 @@ import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
 import com.chainsys.carrental.model.Car;
 import com.chainsys.carrental.model.ReturnCar;
 import com.chainsys.carrental.service.CarRegistrationService;
-import com.chainsys.carrental.service.CustomerRegistrationService;
 import com.chainsys.carrental.service.ReturnCarService;
 
 @Controller
@@ -31,9 +30,12 @@ public class ReturnCarController {
 	@Autowired
 	private CarRegistrationService carRegistrationService;
 
-	@Autowired
-	private CustomerRegistrationService customerRegistrationService;
 
+	public static final String ADDRETURNCAR = "add-returncar-form";
+	public static final String LISTOFRETURNCAR = "redirect:/returncar/returncarlist";
+	public static final String UPDATERETURNCAR = "update-returncar-form";
+	
+	
 	@GetMapping("/returncarlist")
 	public String getReturnCar(Model model) {
 		List<ReturnCar> allCret = returnCarService.getReturnCars();
@@ -47,7 +49,7 @@ public class ReturnCarController {
 		model.addAttribute("allCars", allCarRegistration);
 		ReturnCar theCret = new ReturnCar();
 		model.addAttribute("addreturncar", theCret);
-		return "add-returncar-form";
+		return ADDRETURNCAR;
 	}
 
 	@PostMapping("/add")
@@ -55,10 +57,10 @@ public class ReturnCarController {
 	// content type ("application/json")
 	public String addNewReturnCar(@Valid@ModelAttribute("addreturncar") ReturnCar theCret,Errors errors)  {
 		if(errors.hasErrors()) {
-			return "add-returncar-form";
+			return ADDRETURNCAR;
 		}
 		returnCarService.save(theCret);
-		return "redirect:/returncar/returncarlist";
+		return LISTOFRETURNCAR;
 	}
 	@GetMapping("/updatereturncaridform")
 	public String showUpdateForm()
@@ -71,16 +73,16 @@ public class ReturnCarController {
 		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(carregno, cusid);
 		Optional<ReturnCar> theCren = returnCarService.findById(returnCarCompositekey);
 		model.addAttribute("updatereturncar", theCren);
-		return "update-returncar-form";
+		return UPDATERETURNCAR;
 	}
 
 	@PostMapping("/updatereturncar")
 	public String updateReturncars(@Valid@ModelAttribute("updatereturncar") ReturnCar theCret,Errors errors)  {
 		if(errors.hasErrors()) {
-			return "update-returncar-form";
+			return UPDATERETURNCAR;
 		}
 		returnCarService.save(theCret);
-		return "redirect:/returncar/returncarlist";
+		return LISTOFRETURNCAR;
 	}
 	@GetMapping("/deletereturncaridform")
 	public String showDeleteForm()
@@ -91,7 +93,7 @@ public class ReturnCarController {
 	public String deleteReturnCar(String carregno,int cusid) {
 		ReturnCarCompositekey returnCarCompositekey = new ReturnCarCompositekey(carregno, cusid);
 		returnCarService.deleteById(returnCarCompositekey);
-		return "redirect:/returncar/returncarlist";
+		return LISTOFRETURNCAR;
 	}
 	@GetMapping("/findreturncaridform")
 	public String showFindForm()

@@ -24,6 +24,10 @@ public class CustomerRegistrationController {
 @Autowired
 CustomerRegistrationService customerRegistrationService;
 
+public static final String ADDCUSTOMER = "add-customer-form";
+public static final String LISTOFCUSTOMER = "redirect:/customer/customerlist";
+public static final String UPDATECUSTOMER = "update-customer-form";
+
 
 @GetMapping("/customerlist")
 public String getCustomerRegistrations(Model model) {
@@ -36,7 +40,7 @@ public String getCustomerRegistrations(Model model) {
 public String showAddCustomerForm(Model model) {
 	CustomerRegistration theCus = new CustomerRegistration();
 	model.addAttribute("addcustomer", theCus);
-	return "add-customer-form";
+	return ADDCUSTOMER;
 }
 
 @PostMapping("/add")
@@ -44,7 +48,7 @@ public String showAddCustomerForm(Model model) {
 // content type ("application/json")
 public String addNewCustomer(@Valid@ModelAttribute("addcustomer") CustomerRegistration theCus,Errors errors) {
 	if(errors.hasErrors()) {
-		return "add-customer-form";
+		return ADDCUSTOMER;
 	}
 	customerRegistrationService.save(theCus);
 	return "redirect:/customer/findcustomerbyid?cusid="+theCus.getCustomerId();
@@ -58,15 +62,15 @@ public String showUpdateForm()
 public String showUpdateCustomerForm( int cusid, Model model) {
 	CustomerRegistration theCus = customerRegistrationService.findById(cusid);
 	model.addAttribute("updatecustomer", theCus);
-	return "update-customer-form";
+	return UPDATECUSTOMER;
 }
 @PostMapping("/updatecus")
-public String updateCustomer(@Valid@ModelAttribute("updatecustomer") CustomerRegistration theCus,Errors errors) {
+public String updateCustomers(@Valid@ModelAttribute("updatecustomer") CustomerRegistration theCus,Errors errors) {
 	if(errors.hasErrors()) {
-		return "update-customer-form";
+		return UPDATECUSTOMER;
 	}
 	customerRegistrationService.save(theCus);
-	return "redirect:/customer/customerlist";
+	return LISTOFCUSTOMER;
 }
 @GetMapping("/deletecustomerform")
 public String showFindForm()
@@ -76,7 +80,7 @@ public String showFindForm()
 @GetMapping("/deletecustomer")
 public String deleteCustomer(int cusid) {
 	customerRegistrationService.deleteById(cusid);
-	return "redirect:/customer/customerlist";
+	return LISTOFCUSTOMER;
 }
 @GetMapping("/findcustomerform")
 public String showDeleteForm()
