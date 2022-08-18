@@ -6,16 +6,16 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.model.ReturnCar;
 
 @Repository
-public interface ReturnCarRepository extends CrudRepository<ReturnCar, ReturnCarCompositekey> {
-	Optional<ReturnCar> findById(ReturnCarCompositekey id);
+public interface ReturnCarRepository extends CrudRepository<ReturnCar, CarRentalCompositekey> {
+	Optional<ReturnCar> findById(CarRentalCompositekey id);
 
 	ReturnCar save(ReturnCar car);
 
-	void deleteById(ReturnCarCompositekey carId);
+	void deleteById(CarRentalCompositekey carId);
 
 	List<ReturnCar> findAll();
 

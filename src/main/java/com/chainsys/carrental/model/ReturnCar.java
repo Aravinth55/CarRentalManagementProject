@@ -15,11 +15,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 
 @Entity
 @Table(name = "returncar")
-@IdClass(ReturnCarCompositekey.class)
+@IdClass(CarRentalCompositekey.class)
 public class ReturnCar {
 	@Id
 	@Column(name = "CARREGNO") 

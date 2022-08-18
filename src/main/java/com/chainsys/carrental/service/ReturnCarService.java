@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.carrental.businesslogic.Logic;
-import com.chainsys.carrental.compositekey.ReturnCarCompositekey;
+import com.chainsys.carrental.compositekey.CarRentalCompositekey;
 import com.chainsys.carrental.model.CarRental;
 import com.chainsys.carrental.model.ReturnCar;
 import com.chainsys.carrental.repository.ReturnCarRepository;
@@ -34,12 +34,12 @@ public class ReturnCarService {
 		return returnCarRepository.save(cr);
 	}
 
-	public Optional<ReturnCar> findById(ReturnCarCompositekey id) {
+	public Optional<ReturnCar> findById(CarRentalCompositekey id) {
 		return returnCarRepository.findById(id);
 	}
 
 //	@Transactional
-	public void deleteById(ReturnCarCompositekey id) {
+	public void deleteById(CarRentalCompositekey id) {
 		returnCarRepository.deleteById(id);
 	}
 }

@@ -6,7 +6,7 @@ import javax.persistence.Column;
 
 public class CarRentalCompositekey implements Serializable {
 	@Column(name = "CARREGNO")
-	private String carRegno;       //Foreign key
+	private String carRegno;  
 	@Column(name = "CUSTOMERID")
 	private int customerId;
 	CarRentalCompositekey(){
