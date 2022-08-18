@@ -1,4 +1,4 @@
-package com.chainsys.carrental.businesslogic;
+package com.chainsys.businesslogic;
 
 import java.sql.Date;
 import java.text.ParseException;
