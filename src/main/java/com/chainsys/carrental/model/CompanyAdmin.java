@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "companyadmin")
@@ -19,14 +17,9 @@ public class CompanyAdmin {
     @SequenceGenerator(name = "USERID", sequenceName = "USERID",  allocationSize = 1)
 	private int userId;    //Primary key
 	@Column(name = "USERNAME")
-	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
-//	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	
 	private String userName;
 	@Column(name = "USERPASSWORD")
-//	@Size(max = 20, min = 8, message = "*Password length should be 8 to 20")
-	@NotBlank(message = "*Password can't be Empty")
-//	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid password ")
 	
 	private String userPassword;
 
