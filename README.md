@@ -1,7 +1,3 @@
-# CarRentalManagementProject
-Final Project
-
-
 # Title : Car Rental Management System
 
 
@@ -23,50 +19,50 @@ A car rental, hire car or car hire agency is a company that rents automobiles fo
    
     HOME ---> -Contact   ->CompanyAdmin Information
 			 
-       -Learn More->  Refer Some Website 
+			 -Learn More->  Refer Some Website 
 			 
-       -Customer  ->   CustomerLogin --> CarBooking      -Car Booking
+			 -Customer  ->   CustomerLogin --> CarBooking      -Car Booking
 			                                                    -Update CarBooking
-																                          -Find Customer CarBooking
-															                          	-View Customer CarBooking
+									    -Find Customer CarBooking
+									    -View Customer CarBooking
 																
 				              
-							                --> CarReturning            -Car Returning
-                                                          -Update CarReturning
-															                          	-Find Customer CarReturning
-															                          	-View Customer CarReturning
+							--> CarReturning    -Car Returning
+                                                                            -Update CarReturning
+									    -Find Customer CarReturning
+									    -View Customer CarReturning
                              
-    							            --> Customer                -Customer Registration
+    					                --> Customer        -Customer Registration
 			                                                    -Update CustomerRegistration
 			 
 			 
 			 
 			 -CompanyAdmin--->   ->AdminLogin --> CompanyAdmin  -List CompanyAdmin Details 
 			                                                    -CompanyAdmin Registration
-															                          	-Update CompanyAdmin
+									    -Update CompanyAdmin
 			                                                    -Delete CompanyAdmin
-												                                  -Find CompanyAdmin
+			                                                    -Find CompanyAdmin
 			 
 			 
 			                                  --> Customer      -List CustomerRegistration Details 
 			                                                    -Delete CustomerRegistration
-												                                  -Find CustomerRegistration
+			                                                    -Find CustomerRegistration
 			 
 			                                  --> CarBooking    -List Booking Details
 			                                                    -Delete Booking
-										                                      -Find Booking
-										                                      -Get All Customer CarBookings
+								            -Find Booking
+								            -Get All Customer CarBookings
 				              
-							                         --> CarReturning   -List CarReturning Details
-                                                          -Delete CarReturning
-											                                    -Find CarReturning
-                        					                        -Get All Customer CarReturnings         
+							  --> CarReturning  -List CarReturning Details
+                                                                            -Delete CarReturning
+								            -Find CarReturning
+                        					            -Get All Customer CarReturnings         
  
-                                      --> CarRegistration    -Car Registration
-							                                               -List Car Details
-                                                             -Delete Car
-											                                       -Update Car
-                        					                           -Find Car       
+                                            --> CarRegistration             -Car Registration
+							                    -List Car Details
+                                                                            -Delete Car
+								            -Update Car
+                        					            -Find Car       
                 
 
 # Features
