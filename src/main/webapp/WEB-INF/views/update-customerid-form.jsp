@@ -26,7 +26,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<input type='submit' value="submit" name="submit">
+			<input type='submit' value="Update" name="submit">
 		</div>
 	</form>
 </body>

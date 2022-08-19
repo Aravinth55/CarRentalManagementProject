@@ -13,7 +13,7 @@ let userNameCheck = function() {
   
 }
 let userpasswordCheck = function() {
-	 let passwordRegex =`("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/")`;
+	 let passwordRegex =`("^[a-zA-Z0-9]*$")`;
 	 if(!document.myForm.userPassword.value.match(passwordRegex)){
 			if(alert("Password must be contain 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter")){ 
 				 document.myForm.userPassword.focus();

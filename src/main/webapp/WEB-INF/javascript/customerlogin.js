@@ -1,8 +1,8 @@
-let CustomerIdCheck = function() {
-	if(document.myForm.customerId.value == ""){
+let CustomerNameCheck = function() {
+	if(document.myForm.customerName.value == ""){
 		
-		if(alert("Customer Id cannot be blank")){
-			document.myForm.customerId.focus();
+		if(alert("Customer Name cannot be blank")){
+			document.myForm.customerName.focus();
 		}
 		else
 			document.activeElement.blur();

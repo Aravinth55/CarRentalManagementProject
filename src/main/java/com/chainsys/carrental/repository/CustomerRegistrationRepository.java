@@ -18,5 +18,5 @@ public interface CustomerRegistrationRepository extends CrudRepository<CustomerR
 	List<CustomerRegistration> findAll();
 	
 	
-	CustomerRegistration findByCustomerIdAndCustomerPassword(int id,String str); //login user
+	CustomerRegistration findByCustomerNameAndCustomerPassword(String name,String str); //login user
 }

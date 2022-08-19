@@ -9,8 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Add Customer</title>
 <style><%@include file="/WEB-INF/css/backgroundimage.css"%></style>
-<script type="text/javascript">
-</script>
+<script ><%@include file="/WEB-INF/javascript/addcustomer.js"%></script>
 </head>
 <body>
 <button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
@@ -27,7 +26,7 @@
 				<tr>
 					<td><label for="customerName">Customer Name</label></td>
 					<td class="cus">
-						<form:input path="customerName"  name="customerName" onblur="userNameCheck();" placeholder="Customer Name" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
+						<form:input path="customerName"  name="customerName" onchange="dateFormat();" placeholder="Customer Name" pattern="^[A-Za-z]\\w{2,20}$" title="It should be Only Alphabet" required="true"/>
 					</td>
 				</tr>
 				
@@ -81,7 +80,7 @@
  			<tr>
 						<td><label for="joiningDate">Joining Date</label></td>
 						
-								<td><form:input path="joiningDate" id="joiningDate" type="date" onblur="dateCheck();" placeholder="Joining Date"/></td>
+								<td><form:input path="joiningDate" id="joiningDate" type="date" onchange="dateFormat(this.form);" placeholder="Joining Date"/></td>
 						</tr>
 						</tbody>
 						</table>

@@ -26,7 +26,7 @@
 						<td><label>Enter Car RegisterNumber</label></td>
 						<td><input type="text" placeholder="Car RegNo"
 							name="carregno"  pattern="^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$" title="Enter the CarRegno" required></td>
-						<td><input type='submit' value="Fetch" name="submit"></td>
+						<td><input type='submit' value="Update" name="submit"></td>
 					</tr>
 				</tbody>
 			</table>

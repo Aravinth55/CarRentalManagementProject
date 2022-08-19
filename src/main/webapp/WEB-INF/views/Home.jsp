@@ -9,15 +9,13 @@
   <nav>
     <div class="menu">
       <div class="logo">
-        <a href="#">CarRental</a>
+        <a href="/customer/customerloginpage">CarRental</a>
       </div>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/home/hello">Home</a></li>
         <li><a href="/customer/customerloginpage">Customer</a></li>
           <li><a href="/companyadmin/adminlogin">Admin</a></li>
         <li><a href="/home/cont">Contact</a></li>
-        <li><a href="#">Feedback</a></li>
       </ul>
     </div>
   </nav>
@@ -26,8 +24,7 @@
     <div class="title">CAR RENTAL AND LIMOUSINE SERVICES</div>
     <div class="sub_title">WELL ORGANISED CAR POST AND CUSTOMISABLE BOOKING</div>
     <div class="btns">
-      <button>Learn More</button>
-      <button>Subscribe</button>
+    <a href="https://www.cardekho.com/mostpopularcars" ><button>Learn More</button></a>
     </div>
   </div>
 </body>

@@ -27,7 +27,7 @@
 					<tr>	<td><label>Enter Customer Id</label></td>
 						<td><input type="text" placeholder="Customer Id" name="cusid"  title="It should be Number Format"
 				 pattern="^[0-9]+$" required="true"></td>
-						<td><input type='submit' value="submit" name="submit"></td>
+						<td><input type='submit' value="Delete" name="submit"></td>
 					</tr>
 				</tbody>
 			</table>

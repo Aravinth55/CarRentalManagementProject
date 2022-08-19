@@ -22,7 +22,7 @@
 			<td>		<label>Enter Car RegisterNo</label></td>
 						<td><input type="text" placeholder="Car RegNo"
 							name="carregno" title="Please Enther the Carregno" pattern="^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$" title="Enter the CarRegno" required="true"> </td>
-							<td><input type='submit' value="submit"
+							<td><input type='submit' value="Delete"
 							name="submit"></td>
 					</tr>
 				</tbody>

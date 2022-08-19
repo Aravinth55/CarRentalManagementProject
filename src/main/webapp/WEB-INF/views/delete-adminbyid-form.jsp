@@ -20,9 +20,10 @@
 			</tr>
 				<tbody>
 					<tr>
-					<td>	<label>Enter Car RegisterNo</label></td>
-						<td><input type="text" placeholder="User Id" name="userid" title="Enter Your Id" required></td>
-						<td>	<input type='submit' value="submit" name="submit"></td>
+					<td>	<label>Enter CompanyAdmin</label></td>
+						<td><input type="text" placeholder="User Id" name="userid"  title="It should be Number Format"
+				 pattern="^[0-9]+$" required="true"></td>
+						<td>	<input type='submit' value="Delete" name="submit"></td>
 					</tr>
 
 				</tbody>

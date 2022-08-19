@@ -48,8 +48,8 @@ public class CustomerRegistrationService {
 	public List<CustomerRegistration> allCustomerRegistration(){
 		return customerRegistrationRepository.findAll();
 	}
-	public CustomerRegistration getCustomerIdAndCustomerPassword(int customerId,String customerPassword) {
-		return customerRegistrationRepository.findByCustomerIdAndCustomerPassword(customerId, customerPassword);    //login method 
+	public CustomerRegistration getCustomerNameAndCustomerPassword(String customername,String customerPassword) {
+		return customerRegistrationRepository.findByCustomerNameAndCustomerPassword(customername, customerPassword);    //login method 
 	}
 
 	@Transactional

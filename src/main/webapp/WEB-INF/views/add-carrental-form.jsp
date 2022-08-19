@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Car Rental</title>
+<title>Car Booking</title>
 <script type="text/javascript">
 <%@include file="/WEB-INF/javascript/addcarrental.js"%>
  </script>
@@ -46,14 +46,14 @@
 				<tr>
 						<td>	<label for="fromDate">From Date</label></td>
 					<td>
-						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onblur="dateCheck();" onchange="dateCalculation()" min="2022-08-18" placeholder="From Date" />
+						<form:input path="fromDate" type="date" id="fromDate" name="fromDate" onblur="dateCheck();" onchange="dateCalculation()"  placeholder="From Date" />
 				</td>
 					</tr>
 	
 					<tr>
 							<td>	<label for="dueDate">Due Date</label></td>
 								<td>
-							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onblur="dueDateCheck();" onchange="dateCalculation()" min="2022-08-19" placeholder="Due Date" />
+							<form:input path="dueDate" type="date" id="dueDate" name="dueDate" onblur="dueDateCheck();" onchange="dateCalculation()"  placeholder="Due Date" />
 						</td>
 					</tr>
 	
@@ -88,7 +88,7 @@
 					</tr>
 	</tbody>
 	</table>
-		<form:button>Add New Car Registration</form:button>
+		<form:button>Car Booking</form:button>
 	</div>
 					
 			</form:form>

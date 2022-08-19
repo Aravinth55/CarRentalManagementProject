@@ -8,8 +8,9 @@ body {
     background-image:
         url(https://wallpaperaccess.com/full/1537250.jpg);
     background-repeat: no-repeat;
-    background-size: 1366px 768px;
+    background-size: cover;
     text-align: center;
+    height: 100%;
 }
 ::selection{
   color: #000;
@@ -60,7 +61,7 @@ nav .menu{
   color: black;
 }
 .img{
-  background: url('img3.jpg')no-repeat;
+  background: url('https://wallpaperaccess.com/full/1537250.jpg')no-repeat;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -71,7 +72,7 @@ nav .menu{
   content: '';
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 50%;
   background: rgba(0, 0, 0, 0.4);
 } 
 .center{
@@ -82,6 +83,7 @@ nav .menu{
   width: 100%;
   padding: 0 20px;
   text-align: center;
+  padding-top:20%;
 }
 .center .title{
   color: #fff;
@@ -121,3 +123,12 @@ nav .menu{
   background: white;
   color: black;
 }
+/* .cards{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.card{
+	    margin: 40px 35px 0px 35px;
+}
+ */

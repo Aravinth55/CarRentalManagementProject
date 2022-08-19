@@ -30,7 +30,7 @@
 						<td><input type="text" placeholder="Customer Id" name="cusid" title="It should be Number Format"
 				 pattern="^[0-9]+$" required>
 						</td>
-						<td><input type='submit' value="Fetch" name="submit">
+						<td><input type='submit' value="Update" name="submit">
 						</td>
 					</tr>
 				</tbody>

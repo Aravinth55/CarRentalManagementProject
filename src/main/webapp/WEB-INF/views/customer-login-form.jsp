@@ -21,8 +21,8 @@
 		<h3>Customer Login</h3>
 		<form action="customerlogin"  method="post"  name="myForm">
 			<div class="inputBox">
-				<input id="customerId" type="text" name="customerId" onblur="CustomerIdCheck();" placeholder="Customer Id" title="It should be Number Format"
-				 pattern="^[0-9]+$" required="true">
+				<input id="customerName" type="text" name="customerName" onblur="CustomerNameCheck();" placeholder="Customer Name" title="It should be Alphabet only"
+				 pattern="^[A-Za-z\s]*$" required="true">
 				<input id="customerPassword" type="password" name="customerPassword"  onblur="customerpasswordCheck();"
 					placeholder="Customer Password" required="true">
 			</div>

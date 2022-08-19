@@ -19,5 +19,5 @@ public interface CompanyAdminRepository extends CrudRepository<CompanyAdmin, Int
 	List<CompanyAdmin> findAll();
 
 	
-	CompanyAdmin findByUserIdAndUserPassword(int id,String str); //login user
+	CompanyAdmin findByUserNameAndUserPassword(String name,String str); //login user
 }

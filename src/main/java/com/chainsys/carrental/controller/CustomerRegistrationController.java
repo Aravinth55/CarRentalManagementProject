@@ -125,7 +125,7 @@ public String customerLogin(Model model) {
 }
 @PostMapping("/customerlogin")
 public String checkingAccess(@ModelAttribute("cuslogin") CustomerRegistration theCus) {
-	CustomerRegistration  customerRegistration=customerRegistrationService.getCustomerIdAndCustomerPassword(theCus.getCustomerId(),theCus.getCustomerPassword());
+	CustomerRegistration  customerRegistration=customerRegistrationService.getCustomerNameAndCustomerPassword(theCus.getCustomerName(),theCus.getCustomerPassword());
 	if(customerRegistration!=null) {
 		return "redirect:/customer/customerindex";
 	}else

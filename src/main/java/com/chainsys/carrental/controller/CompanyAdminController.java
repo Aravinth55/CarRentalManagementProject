@@ -103,7 +103,7 @@ CompanyAdmin  companyAdmin=new CompanyAdmin();
 	}
 	@PostMapping("/companyuserlogin")
 	public String checkingAccess(@ModelAttribute("login") CompanyAdmin theCmd) {
-		CompanyAdmin  companyAdmin=companyAdminService.getUserIdAndUserPassword(theCmd.getUserId(),theCmd.getUserPassword());
+		CompanyAdmin  companyAdmin=companyAdminService.getUserNameAndUserPassword(theCmd.getUserName(),theCmd.getUserPassword());
 		if(companyAdmin!=null) {
 			return "redirect:/companyadmin/carindex";   
 		}else

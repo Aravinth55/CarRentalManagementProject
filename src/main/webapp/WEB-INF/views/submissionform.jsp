@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="form" style="text-align:center; margin-top:7%;">
-<h1 style="color:red">Please Enter The Correct UserId And Password</h1>
+<h1 style="color:red">Please Enter The Correct UserName And UserPassword</h1>
 <div>
 		<button onclick="history.back()">Go Back</button>
 	</div>

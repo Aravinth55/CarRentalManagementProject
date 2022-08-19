@@ -30,7 +30,7 @@ public class CompanyAdminService {
 	public void deleteById(int id) {
 		companyAdminRepository.deleteById(id);
 	}
-	public CompanyAdmin getUserIdAndUserPassword(int userId,String userPassword) {
-		return companyAdminRepository.findByUserIdAndUserPassword(userId, userPassword);    //login method 
+	public CompanyAdmin getUserNameAndUserPassword(String userName,String userPassword) {
+		return companyAdminRepository.findByUserNameAndUserPassword(userName, userPassword);    //login method 
 	}
 }
